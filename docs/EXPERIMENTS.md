@@ -119,20 +119,33 @@ an exploratory mathematical program with fresh falsification criteria, while
 retaining the unresolved reconstruction limits and negative controls below.
 Neither a finite feature match nor a failed search is a spacetime certificate.
 
-## B. Background-free growth — exploratory, with reconstruction limits retained
+## B. Background-free growth — implemented, ordinary-CSG limit obstructed
 
 **Question:** Can an explicitly specified rule on abstract orders produce stable
 continuum-like statistics without supplied positions or metric?
 
-Before using growth results as geometric evidence, specify and validate the
-continuum assumptions and convergence requirements above. For an explicitly
-exploratory model, start with the transition rules in
-[Rideout and Sorkin (2000)](https://arxiv.org/abs/gr-qc/9904062), including
-transitive percolation as a control. Specify allowed transitions, probabilities,
-transitive closure and relabeling invariance before running anything. Retain
-failed parameter regions. Compare ensembles across event counts with prescribed
-Minkowski sprinklings and trivial or layered orders. Predeclare which joint
-statistics must persist as size increases; do not tune to one favorable plot.
+[Experiment 5](BACKGROUND_FREE_GROWTH_RESULTS.md) implements intrinsic fixed-p
+transitive percolation, verifies elementary birth-history covariance and follows
+individual histories through N512 with paired thinning. All six registered
+settings fail the necessary finite signature. Both the d2 reference and an
+analytic height-two control pass, while conditional interval laws expose other
+differences. The study preserves insufficient support and adverse control
+results, including a false rejection by the small-N secondary TV rule.
+
+The [mathematical foundations](BACKGROUND_FREE_GROWTH_THEORY.md), documented
+before implementation, establish a fixed-p almost-sure chain sampling limit and
+the wider Brightwell–Georgiou almost-semiorder obstruction for ordinary CSG.
+These results concern specified global finite-suborder sampling limits, not all
+possible intrinsic dynamics or local scaling limits. Dense chain sampling also
+does not imply that almost all events lie in one chain.
+
+**Decision:** no further parameter or classifier optimization of this baseline.
+A limited next step is mathematical design under explicitly changed assumptions,
+or a different precise convergence question. Before a new kernel is implemented,
+establish normalization, compatible prefixes, genuine birth covariance and the
+status of Bell causality. An order-and-measure limit, concentration, quantified
+reconstruction/uniqueness, mesoscopic scale separation and universality remain
+unverified. Merely making a rule depend on local motifs does not supply them.
 
 **Refutation:** signatures disappear with increasing size, depend on birth labels,
 require hidden coordinates, or cannot distinguish matched controls. Even success

@@ -162,3 +162,58 @@ figures. The results report records exact digests, test/CI evidence and costs.
 Stop classifier optimization; prioritize specified continuum convergence,
 embedding and scale-control conditions. Exploratory intrinsic causal dynamics
 is a separate research direction, not evidence of emergent gravity.
+
+## 2026-10-25 — Background-free causal growth v1
+
+**Preparation:** verified Experiment 4 merged at `f841536`, its independent
+reviews/archive replay and green post-merge CI. Committed mathematical protocol
+and known continuum restrictions as `4268ad3`, before growth implementation.
+The timing-only pilot selected R32 per batch, preserving every size/control.
+Source and the workload amendment were frozen at `9fbf2d5` before primary data.
+A smoke-stream overlap caught in review was corrected with fresh reserved
+primary/reference seeds; the initial smoke was excluded from inference.
+
+**Executed:** intrinsic transitive percolation at six fixed probabilities,
+three independent batches, single-history prefixes N32..512 and four half-thinnings
+per source size. Five independent comparison families include d2/3/4 diamonds,
+a semiorder and an analytically matched height-two order law. There are 1,056
+stochastic histories, two deterministic endpoints and 17,986 dependent records.
+No coordinates, dimension or target features enter the intrinsic generator.
+
+**Primary result:** every growth setting fails. All 18 late-size 2+2 level bands
+contradict the d2 target beyond ±.005; all 54 batch-specific means are below its
+lower practical band. Among 48 simultaneous entries, 23 contradict, 19 meet
+their margins and six remain inconclusive. Both the d2 reference and matched
+height-two control pass their separate eight-entry signatures. The latter has
+no nonempty intervals and no 3+1, so the signature is demonstrably insufficient.
+
+**Structural findings:** natural-label path weights equal `p^L(1-p)^I`; genuine
+birth covariance, prefix consistency and induced thinning were independently
+verified. For fixed 0<p<1, the almost-sure chain sampling limit coexists
+with persistent incomparable adjacent births and a nonspanning longest chain.
+At p=.3,N512, r=.981585 but H/N=.395609. Uniform thinning is motif-unbiased for
+every parent; its contrast with a smaller birth prefix is a different question.
+Global/local reference-equivalent dimensions and joint interval patterns can
+disagree strongly even when a selected marginal agrees with a flat reference.
+
+**Adverse controls and limits:** all 21 N512 own-reference conditional margins
+pass, yet the d2 local-dimension interval excludes 2. At d2,N32 the secondary
+TV rule falsely rejects the known reference, with an upward-biased percentile
+interval. Sparse size-eight intervals remain insufficient at p=.005; missing
+height-two intervals remain undefined. Low-p motif densities still rise in the
+finite window. These outcomes are retained without retuning or corrective fits.
+
+**Verification:** 813 tests, complete CLI smoke/audit, independently reconstructed
+221 selected records, 4,877 separate statistical checks with zero discrepancies,
+and nine visually reviewed figures. Two clean full runs reproduce all 31 data,
+table and figure artifacts byte for byte, with scientific digest
+`534c51d1745f4d370a87ced03b895b5ff935e3811a362f9349554b164f0a57da`.
+Primary/repeat total times are 664.97/673.50 s; conservative aggregate memory is
+1.067/1.073 GB, within the registered limits. See the
+[complete report](BACKGROUND_FREE_GROWTH_RESULTS.md) and audited archive.
+
+**Decision:** no-go for ordinary CSG as a Minkowski sampling-limit candidate,
+consistent with the known almost-semiorder theorem. Stop tuning this baseline.
+Further intrinsic dynamics requires a mathematical reason to change specified
+assumptions, fresh covariance/consistency analysis and a precise convergence
+target. No physical spacetime, gravity or singularity claim follows.
