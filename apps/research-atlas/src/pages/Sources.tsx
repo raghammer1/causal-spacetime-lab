@@ -16,7 +16,7 @@ export default function Sources() {
         </p>
       </header>
       <div className="provenance-banner">
-        <span className="tag green">VERIFIED RESEARCH BASELINE</span>
+        <span className="tag green">PINNED RESEARCH ARCHIVE · EXPERIMENTS 1–7</span>
         <a
           href={
             "https://github.com/raghammer1/causal-spacetime-lab/commit/" +
@@ -64,6 +64,14 @@ export default function Sources() {
             </dd>
           </div>
         </dl>
+      </section>
+      <section className="sources-experiment">
+        <p className="eyebrow">PROGRAMME CLOSURE</p>
+        <h2>The complete research conclusion</h2>
+        <div className="source-list">
+          <a href={sourceUrl("docs/FINAL_RESEARCH_SYNTHESIS.md")}>Seven-experiment synthesis <ArrowUpRight size={15} /></a>
+          <a href={sourceUrl("docs/DYNAMICAL_LOCALITY_RESULTS.md")}>Final experiment: results, audits and limitations <ArrowUpRight size={15} /></a>
+        </div>
       </section>
       {experiments.map((e) => (
         <section className="sources-experiment" key={e.id}>

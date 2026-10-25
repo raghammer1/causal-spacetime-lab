@@ -1,4 +1,65 @@
-# Atlas v1 verification
+# Final seven-experiment atlas verification
+
+Verified 25 October 2026. The frontend presents the completed programme and its
+explicit conclusion B. Research inputs and citations are pinned to immutable
+commit `4e1a667ad2d590ee365a395021f0c9772e63b8d1`. Experiment 7 PR #8 is now merged;
+its post-merge Python CI passed at `c01373596570aecd4de8c83787b0529efe3402bb`.
+This separate frontend follow-up starts from that verified main baseline and
+deploys only through `main` after review and merge.
+
+| Check | Result |
+| --- | --- |
+| Complete Python research suite | 1,142 passed; three pre-existing empty-legend warnings |
+| End-to-end baseline CLI | Seed 20261025, 100 repeats; completed under ignored `results/atlas-closure-baseline` |
+| Deterministic archive conversion | 20 generated datasets match pinned source locks |
+| Python data transformation checks | 18 passed |
+| Frontend unit and interaction checks | 105 passed across 10 files |
+| TypeScript, ESLint and production build | Passed |
+| Playwright production-browser checks | 46 passed: desktop, mobile and additional tablet layout checks |
+| Automated accessibility | No axe WCAG 2 A/AA or 2.1 AA violations on 14 routes at desktop and mobile widths |
+| Data navigation and export | All 20 dataset views load; filters, tables, full-precision exports and immutable source URLs verified |
+| Previous frontend observations | All 16,541 observation records in the earlier 13 datasets unchanged; source URLs deliberately repinned |
+| Scientific preservation | No changes to research `src/`, root `tests/`, primary archives or frozen protocol/theory/source files |
+| Publication review | No credentials or private-machine paths in changed publishable files; local Markdown links resolve |
+
+`npm run check` completed as one end-to-end command. Browser tests use the
+production build under the GitHub Pages repository base path. They cover navigation
+through all seven experiments to the synthesis, reading levels, closure statements,
+quantum model/size controls, dynamical gate counts, the tiny conditional valid mass,
+keyboard navigation, reduced motion, mobile menus and document overflow.
+
+The final review corrected three presentation issues: the active gate's text
+contrast; a missing explicit warning about Model A's degenerate MDS basis; and
+one-sided confidence bounds that had previously been omitted from chart marks.
+One-sided bounds now have explicit caps/arrows, labels and inspector text without
+an invented second endpoint. Incomplete two-sided intervals remain unavailable,
+not reclassified as one-sided evidence. Tests include the actual quantum-chain
+lower bounds and existing adverse two-sided intervals.
+
+Quantum summaries retain 60 wholly undefined selected metrics as explicit null
+rows with their recorded undefined counts. Bootstrap undercoverage, deterministic
+states without ensemble intervals, dependent times/targets and the distinction
+between conditional and unconditioned response are disclosed in the UI and exports.
+No browser quantum evolution, new research cohort or fitted scientific criterion
+was introduced.
+
+Visual review includes [desktop synthesis](docs/screenshots/desktop-synthesis.png),
+[mobile synthesis](docs/screenshots/mobile-synthesis.png),
+[Experiment 6](docs/screenshots/desktop-experiment-6.png),
+[Experiment 7](docs/screenshots/desktop-experiment-7.png), and the updated
+[home page](docs/screenshots/desktop-home.png). Screenshots document the current
+appearance, rather than acting as golden-image approvals. Large historical
+conditional datasets remain lazy chunks; the existing Vite chunk-size advisory
+is retained rather than silenced. Automated checks do not certify every device
+or assistive technology.
+
+The original verification below is retained as historical context. Its old counts,
+source pin and deployment observations describe the initial five-experiment atlas.
+Current screenshots at shared filenames reflect the completed seven-experiment UI.
+
+---
+
+# Initial atlas verification — historical Experiments 1–5
 
 Verified 25 October 2026. Scientific baseline: `9bc5984c656271c247354e0079fd900702642064` (the verified main merge of Experiment 5). The application is isolated under `apps/research-atlas`; the only changes outside it are the README entry and the new frontend workflow.
 

@@ -4,7 +4,7 @@ import { loadDataset } from "./loader";
 
 describe("metadata-first archive access", () => {
   it("offers the complete selection catalog without carrying observation rows", () => {
-    expect(datasetCatalog).toHaveLength(13);
+    expect(datasetCatalog).toHaveLength(20);
     expect(datasetCatalog.every((dataset) => dataset.rowCount > 0)).toBe(true);
     expect(
       datasetCatalog.every(

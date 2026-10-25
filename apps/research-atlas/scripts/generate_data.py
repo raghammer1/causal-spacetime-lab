@@ -2,13 +2,15 @@
 """Transcribe the reviewed research archive into frontend JSON, without simulation.
 
 All numerical outputs are copied from the archived tables. Derived convenience
-columns only split an existing two-endpoint interval; no sample is resampled,
+columns split existing intervals, display explicit count ratios, or join recorded
+parameter labels; no sample is resampled,
 pooled, fitted, removed for its outcome, or treated as a new observation.
 """
 from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import gzip
 import json
 import math
 import re
@@ -17,7 +19,7 @@ from pathlib import Path
 APP = Path(__file__).resolve().parents[1]
 ROOT = APP.parents[1]
 OUTPUT = APP / 'src/data/generated'
-COMMIT = '9bc5984c656271c247354e0079fd900702642064'
+COMMIT = '4e1a667ad2d590ee365a395021f0c9772e63b8d1'
 BASE = f'https://github.com/raghammer1/causal-spacetime-lab/blob/{COMMIT}/'
 ARCHIVE = 'docs/experiments/'
 SOURCE_LOCK = json.loads((APP / 'scripts/source-lock.json').read_text())
@@ -148,13 +150,149 @@ def build():
     path=f'{ARCHIVE}background-free-growth-v1/conditional.csv'
     rows=split_interval(compact([r for r in read_csv(path) if r['scope']=='equal_batch_mean']))
     add('growth-conditional',5,'Growth local-law comparisons and missing support',path,rows,{'x':'count','y':'difference','low':'ci_low','high':'ci_high','series':'parameter','reference':0,'referenceLabel':'Agreement with selected reference','label':'Conditional reference difference / TV','unit':'probability units'},{'family':'percolation','parameter':.02,'dimension':2,'stage':'prefix','metric':'connected2'},'All equal-batch conditional outcomes, preserving false rejections of genuine controls, insufficient information and reference disagreements.','Pointwise 95% history bootstrap with independent reference uncertainty. Near-zero TV percentile bootstrap is biased; it can exclude the point estimate. Not simultaneous bands.','96 histories per family. Conditional ratios pool counts within a batch; batch estimates are averaged equally. Interval counts are not independent sample sizes.','At least 30 positive histories and 100 mean interval exposures per batch. The matched height-two control has no nonempty intervals: missing is not agreement.','All equal_batch_mean rows; within-batch diagnostics and nested support remain in source. All scalar outcomes and original intervals retained; ci_low/high split ci95.')
+    # Experiments 6 and 7: transcribe archived results, never rerun a model.
+    path=f'{ARCHIVE}quantum-information-v1/summary.json'
+    quantum=read_json(path)
+    selected_metrics={
+        'edge_auc','edge_recall_top_n_minus_1','mi_mean','mi_contrast','negativity_mean',
+        'entangled_pair_fraction','stress_d3','positive_participation_rank',
+        'triangle_violation_fraction','negative_eigenvalue_mass','phase_minus_stress_d3',
+        'shuffle_minus_stress_d3','overlap_base_k2','overlap_ground_k2',
+        'spearman_mi_coupling','spearman_mi_zz','cut_balanced_mean_abs_normalized_defect',
+        'epsilon_agreement_k2','neighbor_tie_fraction_k2',
+    }
+    quantum_rows=[]
+    for cell in quantum:
+        for metric,estimate in cell['metrics'].items():
+            if metric not in selected_metrics: continue
+            ci=estimate.get('ci95') or (None,None)
+            quantum_rows.append({**{key:cell[key] for key in ('family','n','h','preparation','delta','time','attempted','valid','failures')},
+                'metric':metric,'mean':estimate['mean'],'sd':estimate.get('sd'),
+                'ci_low':ci[0],'ci_high':ci[1],'lower':estimate.get('lower'),
+                'alpha_lower':estimate.get('alpha_lower'),'independent_units':estimate['n'],
+                'undefined':estimate['undefined'],'deterministic':estimate.get('deterministic',False),
+                'weak_small_sample':estimate.get('weak_small_sample')})
+    for cell in quantum:
+        for metric,undefined in cell['undefined_metrics'].items():
+            if metric not in selected_metrics or metric in cell['metrics']: continue
+            assert undefined==cell['valid']
+            quantum_rows.append({**{key:cell[key] for key in ('family','n','h','preparation','delta','time','attempted','valid','failures')},
+                'metric':metric,'mean':None,'sd':None,'ci_low':None,'ci_high':None,'lower':None,'alpha_lower':None,
+                'independent_units':0,'undefined':undefined,
+                'deterministic':all(value.get('deterministic',False) for value in cell['metrics'].values()),'weak_small_sample':None})
+    add('quantum-summary',6,'Quantum correlations · supplied and random interactions',path,quantum_rows,
+        {'x':'n','y':'mean','low':'ci_low','high':'ci_high','series':'family','label':'Archived metric mean','unit':'selected metric units'},
+        {'preparation':'ground','h':1,'delta':0,'time':0,'metric':'stress_d3'},
+        'Supplied chains, symmetric and random all-to-all interactions, and state controls. A stable correlation ranking or a low-dimensional projection is not operational locality or spacetime.',
+        'Archived percentile intervals and one-sided lower bounds are descriptive: independent calibration covered only 91.25% of known means at nominal 95%. They must not be read as validated confidence guarantees. Deterministic states have null intervals; exact chain-success bounds are separate.',
+        'Whole independent coupling/preparation realizations; stochastic main cells have 24 units across three batches. Pairs, cuts, perturbations and repeated times are dependent within a unit. A symmetric deterministic preparation is one specified state.',
+        'Fixed transverse-field Ising interactions; supplied tensor factors and external time. Mutual information measures total correlation. Participation rank is not a spacetime dimension. Uniform Model A has a degenerate MDS eigenspace. Its truncated three-dimensional stress and shuffle contrasts depend on an arbitrary basis and cannot support structural conclusions.',
+        'Nineteen named scientific metrics from all 141 archived summary groups: 1,983 reported estimates and 60 explicit null rows for wholly undefined metrics declared by the source. Null rows have zero defined units and copied undefined counts. No field, preparation or adverse scalar result within that metric selection is filtered by outcome. Existing ci95 endpoints are split; batch means and other metrics remain in the source.')
+    chain=[]
+    for cell in quantum:
+        if 'chain_success' not in cell:continue
+        entry=cell['chain_success']
+        chain.append({**{key:cell[key] for key in ('n','h','delta','preparation','time')},**entry,
+            'success_fraction':entry['successes']/entry['attempted'] if entry['attempted'] else None})
+    add('quantum-chain',6,'Supplied-chain recovery · exact success bounds',path,chain,
+        {'x':'n','y':'success_fraction','low':'lower','series':'preparation','reference':.8,'referenceLabel':'Registered success-probability requirement 0.8','label':'Chain recovery success','unit':'fraction of independent chain realizations'},
+        {'h':1,'delta':0},
+        'All 72 registered h=1 supplied-chain realizations succeed. This validates reconstruction of locality already present in the Hamiltonian; it does not show that locality emerged.',
+        'Exact one-sided Clopper–Pearson lower bounds, alpha=.05/3 per size. These separately validated binomial bounds are distinct from the undercovered bootstrap intervals. No upper bound was archived or invented.',
+        '24 independent supplied-chain realizations per size, three sizes; each realization passes the joint archived chain-recovery criterion or fails as one unit.',
+        'Known one-dimensional nearest-neighbor interactions with hidden labels. This is a positive control with supplied locality, not a background-free model.',
+        'All three chain_success objects from summary.json, retaining every field and the copied cell labels. success_fraction is the displayed successes/attempted ratio; no uncertainty is recomputed.')
+    path=f'{ARCHIVE}quantum-information-v1/calibration.json'
+    calibration=read_json(path)
+    calibration_rows=[dict(method='normal_percentile_bootstrap',n=None,p=None,
+        coverage=calibration['normal_coverage'],coverage_mc_se=calibration['normal_coverage_mc_se'],
+        trials=calibration['normal_trials'],nominal_coverage=.95)]
+    calibration_rows += [dict(method='exact_binomial',n=entry['n'],p=entry['p'],coverage=entry['coverage'],
+        coverage_mc_se=None,trials=None,nominal_coverage=1-.05/3) for entry in calibration['binomial_exact_coverage']]
+    add('quantum-calibration',6,'Uncertainty calibration · the retained bootstrap failure',path,calibration_rows,
+        {'x':'method','y':'coverage','series':'method','label':'Coverage in independent calibration','unit':'fraction of known parameters covered'},
+        {'method':'normal_percentile_bootstrap'},
+        'The nominal 95% percentile bootstrap covered 365 of 400 independent normal-mean calibration cases: 91.25%. Exact one-sided binomial coverage was enumerated separately.',
+        'Normal coverage has the archived Monte Carlo standard error; binomial coverage is exact enumeration up to floating-point rounding, not a finite Monte Carlo estimate. Values marginally above 1 from source rounding are preserved.',
+        '400 independent normal-mean coverage trials; fifteen exact binomial (n,p) calibration cells. These are numerical calibration cases, not physical spacetime samples.',
+        'Calibration is independent of scientific state streams and did not tune the thresholds. Exact-binomial nominal per-cell coverage is 1−.05/3; normal-bootstrap nominal coverage is .95.',
+        'One normal-coverage row and all fifteen binomial_exact_coverage rows. Missing n,p,standard errors or trial counts remain null; nominal coverage is the registered analytical level, not a fitted estimate.')
+
+    raw_path=f'{ARCHIVE}dynamical-quantum-locality-v1/raw.json.gz'
+    source(raw_path)
+    dynamics=json.loads(gzip.decompress((ROOT/raw_path).read_bytes()))
+    parameter_cells={}
+    for row in dynamics:
+        key=(row['N'],row['cell']);params={name:row['parameters'][name] for name in ('mu','Gamma')}
+        if key in parameter_cells:assert parameter_cells[key]==params
+        parameter_cells[key]=params
+    def parameters_for(row):return parameter_cells[row['N'],row['cell']]
+    path=f'{ARCHIVE}dynamical-quantum-locality-v1/summary.json'
+    decision=read_json(path);primary=[]
+    for cell in decision['cells']:
+        primary.append({**{key:cell[key] for key in ('N','cell','attempted','valid','successes','assessment','cohort_complete')},
+            **parameters_for(cell),**cell['component_successes'],
+            'lower':cell['cp_family_bounds'][0],'upper':cell['cp_family_bounds'][1],
+            'go_lower':cell['cp_go_bounds'][0],'go_upper':cell['cp_go_bounds'][1],
+            'degree_null_successes':cell['degree_null_successes'],
+            'degree_go_lower':cell['degree_null_go_bounds'][0],'degree_go_upper':cell['degree_null_go_bounds'][1],
+            'success_fraction':cell['successes']/cell['attempted'] if cell['attempted'] else None,
+            'target_joint_probability':decision['target_joint_probability'],'family_size':decision['family_size'],
+            'alpha':decision['alpha'],'decision':decision['decision']})
+    add('dynamical-primary',7,'Dynamical locality · registered joint decision',path,primary,
+        {'x':'cell','y':'success_fraction','low':'lower','high':'upper','series':'N','reference':.8,'referenceLabel':'Required joint success probability0.8','label':'Joint C/L/T/D success','unit':'probability per independent exchangeable preparation'},
+        {'N':5},
+        'Every one of the 12 size/parameter cells has zero joint successes out of 12 preparations. The finite unconditioned labeled-locality screen is NO-GO; geometry and a continuum remain unresolved.',
+        'Exact two-sided Clopper–Pearson bounds with total familywise alpha=.05 across 12 cells. The primary upper bound is .40218992470918974. Stricter GO and degree-null bounds are separate columns. Component counts are descriptive, without invented component intervals.',
+        '12 independent E preparations per size/parameter cell, three batches of four. Source-target pairs, delays, perturbations and Born graphs stay inside that one preparation unit. Deterministic symmetric preparations do not enter these binomial counts.',
+        'C: connected Born mass; L: concentrated nonzero response; T: ensemble/perturbation stability; D: improvement over initially frozen links. These practical necessary conditions are not a universal definition of locality or a spacetime classifier.',
+        'All 12 summary.json cells, including component counts and both exact interval families. mu/Gamma join the hash-pinned raw archive by(N,cell). success_fraction is successes/attempted; no confidence fit or decision is recomputed.')
+    path=f'{ARCHIVE}dynamical-quantum-locality-v1/structure.csv'
+    structural=[{**row,**parameters_for(row)} for row in read_csv(path)]
+    add('dynamical-structure',7,'Quantum-link evolution · exact Born structure',path,structural,
+        {'x':'age','y':'connected_probability','series':'preparation','label':'Born probability of a connected graph','unit':'exact graph-measurement probability'},
+        {'N':5,'cell':0,'preparation':'Splus'},
+        'One-time Born graph laws under the full evolving-link Hamiltonian. Splus and Sempty are symmetric quantum states; E supplies realization-level asymmetry. Independent graph draws at different ages are not an edge trajectory.',
+        'Exact enumeration of all 64 or 1,024 graphs per state; no graph-sampling confidence interval. E rows are separate independent preparations, not an aggregate mean. Numerical checks bound computational error; no continuum uncertainty estimate is claimed.',
+        '168 preparation records: 144 stochastic E units and 24 specified symmetric states, each observed at six ages. Times and graph measurements within a preparation are dependent.',
+        'N=4/5 matter qubits plus quantum links; external simulation time. Graph distance, connectivity and clustering are combinatorial observables, not physical geometry. TV compares exact density, marginal-product, count and labeled-degree null laws.',
+        'All 1,008 rows and all columns of structure.csv, preserving batch/replicate identity. mu/Gamma join the pinned raw archive by(N,cell); no trajectories or confidence intervals are synthesized.')
+    response_rows=[]
+    for row in dynamics:
+        assert row['status']=='ok'
+        for detail in row['gate']['response_details']:
+            response_rows.append({**{key:row[key] for key in ('N','cell','preparation','batch','replicate')},
+                **parameters_for(row),**detail,**{key:row['gate'][key] for key in ('C','L','T','D','joint')}})
+    add('dynamical-response',7,'Actual quantum response · evolving versus frozen links',raw_path,response_rows,
+        {'x':'delay','y':'F','series':'preparation','label':'Full quantum top-two response capture F','unit':'fraction of off-diagonal target response'},
+        {'N':5,'cell':0,'preparation':'Splus'},
+        'Actual Pauli-Y signalling probes after age2 under the full quantum law, with paired Gamma+5% and initially frozen-link controls. These are distinct from the fresh-matter frozen-graph conditional summaries.',
+        'Exact finite-state response calculations per preparation, not confidence intervals. E has 12 independent units per cell; symmetric controls one state each. F and gain are descriptive realization values; exact joint decision bounds are in dynamical-primary.',
+        '168 complete preparations, two registered response delays each. Sources, targets, perturbations and times are dependent within each preparation. Locality capture excludes the source diagonal and preserves fractional ties.',
+        'Target trace distance measures operational distinguishability, not pre-existing correlation. A source row with no response gives undefined F, never perfect locality. Mean E summaries in the interface are descriptive arithmetic averages only.',
+        'All 336 gate.response_details objects from the pinned raw archive, plus exact cell labels and C/L/T/D/joint flags. Full states and individual source-target arrays remain in the source; none are copied into the app.')
+    path=f'{ARCHIVE}dynamical-locality-conditioned-response.json'
+    conditioned=read_json(path);conditional_rows=[]
+    for row in conditioned['aggregates']:
+        flat={**{key:row[key] for key in ('N','cell','preparation','law','delay','preparation_units','pooled_graph_conditioned_F_given_valid')},**parameters_for(row)}
+        for metric,estimate in row['metrics'].items():
+            flat.update({f'{metric}_{key}':value for key,value in estimate.items()})
+        conditional_rows.append(flat)
+    add('dynamical-conditioned',7,'Conditional graphs versus unobserved quantum mixtures',path,conditional_rows,
+        {'x':'cell','y':'F_of_unobserved_mixture_response_mean','series':'law','label':'Unobserved frozen-mixture response capture','unit':'fraction of off-diagonal target response'},
+        {'N':5,'preparation':'E','delay':.25},
+        'Secondary descriptive controls: reset matter to a fresh product and freeze each graph. Mean graph-conditioned F, F of averaged conditional responses, and F of the unobserved mixture are different quantities. High conditional capture can coexist with tiny valid or connected graph mass.',
+        'No confidence intervals or new hypothesis test. Copied means, SDs and ranges describe independent E preparations; deterministic Splus/Sempty use one specified state and null SD. Defined and undefined unit counts and all graph-validity masses are retained.',
+        '216 archived aggregate rows over 168 preparations: E uses 12 independent units per cell; Splus/Sempty one. Born, density and degree laws are exact weighted graph controls on the same finite catalogues, not extra independent physical evidence.',
+        'An accessible graph record and a frozen Hamiltonian change the operational protocol. Undefined graph-conditioned F mass is reported rather than discarded. No connectivity postselection is used. These controls do not change the registered unconditioned NO-GO.',
+        'All 216 existing aggregates, all ten metric objects flattened into scalar suffix columns, and the separate pooled conditional ratio. No per-preparation means are newly pooled, no intervals are invented, and the 1,008 detailed secondary unit rows remain in the linked source.')
     return result
 
 
 def validate(datasets):
     ids=[d['id'] for d in datasets]
     assert len(ids)==len(set(ids))
-    assert set(d['experiment'] for d in datasets)=={1,2,3,4,5}
+    assert set(d['experiment'] for d in datasets)=={1,2,3,4,5,6,7}
     for data in datasets:
         assert data['sourceUrl']==BASE+data['sourcePath']
         assert data['sha256']==source(data['sourcePath'])['sha256']
@@ -191,7 +329,8 @@ def generated_files():
     files={OUTPUT/f"{d['id']}.json":serialize(pack(d)) for d in datasets}
     # Input bytes are checked by build()/validate(). Documentary links point to
     # the immutable reviewed commit, even when the current research log evolves.
-    # Never sweep future experiment documents into this first-five snapshot.
+    # This is the explicitly pinned seven-experiment research snapshot, not a
+    # claim about the moving main branch or future documentary changes.
     sources = [dict(path=path, sha256=digest, url=BASE + path)
                for path, digest in sorted(SOURCE_LOCK['sha256'].items())]
     provenance=dict(schemaVersion=1,sourceCommit=COMMIT,repository='https://github.com/raghammer1/causal-spacetime-lab',transformation='python3 apps/research-atlas/scripts/generate_data.py',sources=sources)

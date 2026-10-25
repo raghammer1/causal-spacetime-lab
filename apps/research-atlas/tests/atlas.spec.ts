@@ -6,6 +6,8 @@ const routes = [
   ['/', /What if/], ['/journey', /A journey/], ['/experiment/1', /Can causal relationships reveal time/],
   ['/experiment/2', /Can causal relationships reveal dimensions/], ['/experiment/3', /Can fake universes/],
   ['/experiment/4', /Does local structure/], ['/experiment/5', /Can geometry emerge/],
+  ['/experiment/6', /Can quantum information reveal space/], ['/experiment/7', /Can changing quantum links create locality/],
+  ['/synthesis', /A question explored/],
   ['/evidence', /actually disprove/], ['/data', /Explore the evidence/], ['/learn', /Build your intuition/], ['/sources', /Trace every claim/],
 ] as const;
 async function goto(page: Page, path: string) {
@@ -38,6 +40,7 @@ for (const [route, heading] of routes) {
     expect(accessibility.violations, JSON.stringify(accessibility.violations.map(v => ({ id: v.id, help: v.help, nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })), null, 2)).toEqual([]);
     expect(errors).toEqual([]);
     if (route === '/') await screenshot(page, `${testInfo.project.name}-home`);
+    if (['/experiment/6', '/experiment/7', '/synthesis'].includes(route)) await screenshot(page, `${testInfo.project.name}-${route.split('/').filter(Boolean).join('-')}`);
     if (testInfo.project.name === 'desktop' && route === '/evidence') await screenshot(page, 'desktop-evidence');
     if (testInfo.project.name === 'desktop' && route === '/experiment/5') {
       for (let i = 1; i < 24; i++) await page.getByRole('button', { name: '+ One event' }).click();
@@ -58,13 +61,14 @@ test('complete narrative navigation and materially different explanation levels'
   await page.getByRole('button', { name: 'researcher', exact: true }).click();
   await expect(page.getByTestId('level-explanation')).not.toHaveText(original);
   await expect(page.locator('.technical-section details').first()).toHaveAttribute('open', '');
-  for (const n of [2, 3, 4, 5]) {
-    await page.getByRole('navigation', { name: 'Five experiments' }).getByRole('link').nth(n - 1).click();
+  for (const n of [2, 3, 4, 5, 6, 7]) {
+    await page.getByRole('navigation', { name: 'Seven experiments' }).getByRole('link').nth(n - 1).click();
     await expect(page).toHaveURL(new RegExp(`#/experiment/${n}$`));
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   }
-  await page.locator('.next-experiment').getByRole('link', { name: 'The evidence map' }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('actually disprove');
+  await page.locator('.next-experiment').getByRole('link').click();
+  await expect(page).toHaveURL(/#\/synthesis/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('programme complete');
   if (testInfo.project.name === 'mobile') {
     await page.getByRole('button', { name: 'Open navigation' }).click();
     await expect(page.getByRole('dialog')).toBeVisible();
@@ -159,7 +163,7 @@ test('evidence scope, archived source links and concept navigation remain explic
   await goto(page, '/sources');
   const sources = await page.locator('main a[href*="github.com/raghammer1/causal-spacetime-lab/blob/"]').evaluateAll(nodes => nodes.map(n => (n as HTMLAnchorElement).href));
   expect(sources.length).toBeGreaterThan(25);
-  expect(sources.every(url => /\/blob\/9bc5984c656271c247354e0079fd900702642064\//.test(url))).toBeTruthy();
+  expect(sources.every(url => /\/blob\/4e1a667ad2d590ee365a395021f0c9772e63b8d1\//.test(url))).toBeTruthy();
   await goto(page, '/learn');
   await page.getByRole('button', { name: /Induced 2\+2/ }).click();
   await page.getByLabel('Use 3+1 instead of 2+2').check();
@@ -196,7 +200,7 @@ test('keyboard and reduced-motion journeys have usable focus and no auto-start',
 test('every archived dataset loads with pinned provenance and a usable data view', async ({ page }) => {
   await goto(page, '/data');
   let visited = 0;
-  for (const experiment of ['1', '2', '3', '4', '5']) {
+  for (const experiment of ['1', '2', '3', '4', '5', '6', '7']) {
     await page.getByRole('combobox', { name: 'Experiment', exact: true }).selectOption(experiment);
     const selector = page.getByRole('combobox', { name: 'Archived dataset', exact: true });
     const choices = await selector.locator('option').evaluateAll(nodes => nodes.map(n => ({ value: (n as HTMLOptionElement).value, title: n.textContent || '' })));
@@ -204,7 +208,7 @@ test('every archived dataset loads with pinned provenance and a usable data view
       await selector.selectOption(choice.value);
       const panel = page.getByRole('region', { name: choice.title, exact: true });
       await expect(panel).toBeVisible();
-      await expect(panel.getByRole('link', { name: 'Exact source' })).toHaveAttribute('href', /\/blob\/9bc5984c656271c247354e0079fd900702642064\//);
+      await expect(panel.getByRole('link', { name: 'Exact source' })).toHaveAttribute('href', /\/blob\/4e1a667ad2d590ee365a395021f0c9772e63b8d1\//);
       await expect(panel.locator('.record-count')).toContainText(/\d[\d,]* \/ \d[\d,]* records/);
       await panel.getByRole('button', { name: 'Numerical table', exact: true }).click();
       await expect(panel.getByRole('table')).toBeVisible();
@@ -212,5 +216,61 @@ test('every archived dataset loads with pinned provenance and a usable data view
       visited++;
     }
   }
-  expect(visited).toBeGreaterThanOrEqual(13);
+  expect(visited).toBeGreaterThanOrEqual(19);
+});
+
+
+test('programme closure is visible and distinguishes failed tests from open physics', async ({ page }) => {
+  await goto(page, '/');
+  await expect(page.getByText('RESEARCH PROGRAMME CLOSED', { exact: false }).first()).toBeVisible();
+  await expect(page.locator('.chapter-row')).toHaveCount(7);
+  await page.getByRole('link', { name: 'Read the final conclusion', exact: true }).click();
+  await expect(page).toHaveURL(/#\/synthesis/);
+  await expect(page.getByRole('heading', { name: /Useful research/ })).toBeVisible();
+  await expect(page.getByText('No Experiment 8 is planned.', { exact: false })).toBeVisible();
+  await page.getByRole('button', { name: 'What failed', exact: true }).click();
+  await expect(page.locator('.synthesis-evidence')).toContainText('zero joint successes out of 12');
+  await expect(page.locator('.synthesis-evidence')).toContainText('0.402190');
+  await page.getByRole('button', { name: 'What remains open', exact: true }).click();
+  await expect(page.locator('.synthesis-evidence')).toContainText('A controlled continuum limit');
+  await expect(page.locator('.synthesis-evidence')).toContainText('No experiment derived Einstein dynamics');
+  await noOverflow(page);
+});
+
+test('quantum evidence controls preserve supplied locality and conditioning distinctions', async ({ page }) => {
+  await goto(page, '/experiment/6');
+  const quantum = page.getByRole('region', { name: 'Recovering a pattern is not creating space.' });
+  await expect(quantum).toContainText('ARCHIVED EVIDENCE');
+  await expect(quantum.getByRole('meter', { name: 'Recovered supplied bonds' })).toHaveAttribute('value', '1');
+  await page.getByLabel('Quantum interaction model').selectOption('B');
+  await page.getByLabel('Quantum system size').selectOption('6');
+  await quantum.getByRole('button', { name: 'What do the null controls change?' }).click();
+  await expect(quantum.getByRole('table')).toContainText('Physical phase scramble');
+  await expect(quantum).toContainText('91.25%');
+  await page.getByLabel('Quantum interaction model').selectOption('A');
+  await quantum.getByRole('button', { name: 'What was recovered?' }).click();
+  await expect(quantum).toContainText('Equal information leaves no labeled neighborhood');
+  await goto(page, '/experiment/7');
+  const dynamical = page.getByRole('region', { name: 'Which condition fails when links can change?' });
+  await expect(dynamical).toContainText('0 / 12');
+  await expect(dynamical).toContainText('40.22%');
+  await page.getByLabel('Dynamical parameter setting').selectOption('2');
+  await expect(dynamical.getByRole('button', { name: /^C Connected/ })).toContainText('2 / 12');
+  await dynamical.getByRole('button', { name: /^T Stable/ }).click();
+  await expect(dynamical).toContainText('Both late graph-law changes');
+  await page.getByLabel('Dynamical parameter setting').selectOption('0');
+  await page.getByLabel('Dynamical response preparation').selectOption('Sempty');
+  await expect(dynamical).toContainText('0.39%');
+  await expect(dynamical.getByRole('meter', { name: 'Graph-adapted F, conditional on being defined' })).toHaveAttribute('value', /0\.998/);
+  expect(Number(await dynamical.getByRole('meter', { name: 'No graph record: F of the mixed-state response' }).getAttribute('value'))).toBeCloseTo(0.5, 10);
+  await noOverflow(page);
+});
+
+test('tablet layout keeps the final navigation and evidence within the viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  for (const route of ['/', '/experiment/6', '/experiment/7', '/synthesis']) {
+    await goto(page, route);
+    await noOverflow(page);
+    await expect(page.getByRole('button', { name: 'Open navigation' })).toBeVisible();
+  }
 });

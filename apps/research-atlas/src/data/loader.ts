@@ -15,6 +15,13 @@ const imports: Record<string, () => Promise<{ default: PackedDataset }>> = {
   'growth-global': () => import('./generated/growth-global.json'),
   'growth-primary': () => import('./generated/growth-primary.json'),
   'growth-conditional': () => import('./generated/growth-conditional.json'),
+  'quantum-summary': () => import('./generated/quantum-summary.json'),
+  'quantum-chain': () => import('./generated/quantum-chain.json'),
+  'quantum-calibration': () => import('./generated/quantum-calibration.json'),
+  'dynamical-primary': () => import('./generated/dynamical-primary.json'),
+  'dynamical-structure': () => import('./generated/dynamical-structure.json'),
+  'dynamical-response': () => import('./generated/dynamical-response.json'),
+  'dynamical-conditioned': () => import('./generated/dynamical-conditioned.json'),
 };
 const cache = new Map<string, Promise<Dataset>>();
 

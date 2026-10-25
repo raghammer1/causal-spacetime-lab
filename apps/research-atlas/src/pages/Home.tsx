@@ -23,6 +23,8 @@ const chapters = [
     "Grow without geometry",
     "A classical route reaches a mathematical limit.",
   ],
+  ["06", "Read quantum relationships", "Known interactions can be recovered without supplied coordinates."],
+  ["07", "Test dynamical locality", "Changing quantum links fail the registered locality benchmark."],
 ];
 export default function Home() {
   const [micro, setMicro] = useState(false);
@@ -44,8 +46,8 @@ export default function Home() {
             <em>like water?</em>
           </h1>
           <p className="hero-subtitle">
-            Exploring whether space, time and geometry emerge from something
-            deeper.
+            Seven completed experiments into causal order, quantum information
+            and the limits of emergent geometry.
           </p>
           <p className="hero-description">
             Water looks continuous. Look closer, and a different world appears.
@@ -53,17 +55,17 @@ export default function Home() {
             underneath?
           </p>
           <div className="hero-actions">
-            <Link className="button primary" to="/journey">
-              Follow the research <ArrowRight size={17} />
+            <Link className="button primary" to="/synthesis">
+              Read the final conclusion <ArrowRight size={17} />
             </Link>
-            <Link className="text-link" to="/experiment/1">
-              Enter the lab <ArrowUpRight size={15} />
+            <Link className="text-link" to="/journey">
+              Follow the research <ArrowUpRight size={15} />
             </Link>
           </div>
           <div className="hero-footnote">
-            <span>05 EXPERIMENTS</span>
+            <span>07 EXPERIMENTS</span>
             <span>OPEN DATA</span>
-            <span>ONE UNRESOLVED QUESTION</span>
+            <span>PROGRAMME CLOSED</span>
           </div>
         </div>
         <div className="hero-visual">
@@ -116,20 +118,21 @@ export default function Home() {
       </section>
       <section className="research-status container">
         <div className="status-label">
-          <span className="status-dot amber-dot" /> RESEARCH STATUS
+          <span className="status-dot amber-dot" /> FINAL CONCLUSION · B
         </div>
         <p>
-          Our experiments have <strong>not demonstrated</strong> that physical
-          spacetime is emergent.
+          Useful mathematics. <strong>Insufficient evidence to pursue the
+          physical hypothesis through more simulations.</strong> This programme
+          is complete; its evidence remains open.
         </p>
-        <Link to="/evidence">
-          What did we establish? <ArrowUpRight size={17} />
+        <Link to="/synthesis">
+          Why we stopped <ArrowUpRight size={17} />
         </Link>
       </section>
       <section className="section container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">A QUESTION THAT BECAME FIVE EXPERIMENTS</p>
+            <p className="eyebrow">A QUESTION THAT BECAME SEVEN EXPERIMENTS</p>
             <h2>
               Follow the evidence.
               <br />
@@ -138,8 +141,8 @@ export default function Home() {
           </div>
           <p>
             First we reconstructed time and dimension. Then we challenged our
-            own methods. Finally, we asked whether geometry could arise without
-            being supplied.
+            own methods. Classical growth, fixed quantum interactions and
+            evolving quantum links each tested a more demanding claim.
           </p>
         </div>
         <div className="chapter-list">
@@ -283,18 +286,20 @@ export default function Home() {
         </div>
       </section>
       <section className="container closing-question">
-        <p className="eyebrow">THE MOST IMPORTANT DISTINCTION</p>
+        <p className="eyebrow">THE RESEARCH ENDS HERE</p>
         <h2>
-          One route closed.
+          A programme complete.
           <br />
           <em>The larger question is open.</em>
         </h2>
         <p>
-          The investigated classical growth models failed our target. That does
-          not rule out every possible mechanism for emergent spacetime.
+          The final quantum-link model failed its registered finite locality
+          benchmark. The seven studies leave useful mathematics and reproducible
+          evidence, but no demonstration of physical spacetime or gravity.
+          No further simulations are planned.
         </p>
-        <Link className="button" to="/evidence">
-          Explore the falsification map <ArrowRight size={17} />
+        <Link className="button" to="/synthesis">
+          Read the seven-experiment synthesis <ArrowRight size={17} />
         </Link>
         <ArrowDown className="closing-arrow" size={28} />
       </section>

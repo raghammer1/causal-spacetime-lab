@@ -38,8 +38,8 @@ export default function Evidence() {
           Classical route rejected<small>Experiment 5</small>
         </span>
         <ArrowRight />
-        <span className="open-question">
-          Emergence remains open<small>Beyond these experiments</small>
+        <span>
+          Quantum tests fail advancement<small>Experiments 6–7</small>
         </span>
       </div>
       <div className="evidence-workspace">
@@ -102,18 +102,20 @@ export default function Evidence() {
         </article>
       </div>
       <div className="scope-statement">
-        <p className="eyebrow">ONE ROUTE ≠ EVERY POSSIBLE THEORY</p>
+        <p className="eyebrow">PROGRAMME CLOSED / CLAIMS REMAIN SCOPED</p>
         <h2>
-          A falsified mechanism.
+          Specific tests failed.
           <br />
           <em>An unresolved physical question.</em>
         </h2>
         <p>
           The broad hypothesis of emergent spacetime has not been disproved.
           These studies supply numerical demonstrations, exact limitations on
-          selected statistics, and a model-specific no-go consistent with known
-          mathematics.
+          selected statistics, a classical growth obstruction and a failed finite
+          quantum-locality benchmark. They provide insufficient evidence to
+          pursue the physical hypothesis through further simulations.
         </p>
+        <Link className="text-link" to="/synthesis">Read the final conclusion <ArrowRight size={16} /></Link>
       </div>
     </div>
   );
