@@ -20,7 +20,15 @@ normalization, or reversed high/low-density bias trend is a concrete adverse
 result. Inconclusive intervals remain inconclusive. We do not fit a universal
 exponent or invent a finite-density correction from this first sweep.
 
-## A. Dimension-sensitive order statistics — next, not implemented
+## A. Dimension-sensitive order statistics — initial study implemented
+
+[Experiment 2](DIMENSION_RECONSTRUCTION_RESULTS.md) implements independent flat
+d=2,3,4 generators, verified Myrheim–Meyer inversion and joint order statistics.
+At N=256 all 600 genuine holdouts received their known dimension labels, while
+all 1,800 matched artificial orders also received their target labels. Joint
+observables reject those easy matched controls but accept 49/200 random-DAG
+controls at N=64. The following requirements guide stronger follow-up work;
+they are not all settled by that initial result.
 
 **Question:** Can several order observables discriminate known continuum
 dimensions from adversarial non-manifoldlike orders?
@@ -30,8 +38,8 @@ Derive and test the Myrheim–Meyer relation with an explicit convention:
 `Gamma(d+1)*Gamma(d/2)/(2*Gamma(3*d/2))` in a flat Alexandrov interval.
 For `R/N²`, the corresponding large-N expression is half this value. The
 derivation and source equations are recorded in [THEORY.md](THEORY.md).
-First validate independent generators in dimensions 2, 3 and 4; numerical
-inversion requires careful handling of finite samples and endpoint statistics.
+Independent generators and inversion are now validated in dimensions 2, 3 and 4;
+follow-up work must propagate calibration uncertainty and test harder adversaries.
 Do not substitute a heuristic based on one pair fraction.
 
 **Controls:** total orders, antichains, layered orders, and non-manifoldlike
@@ -43,6 +51,10 @@ than pretending correlated pairs are independent Bernoulli observations.
 strong size drift, or inability to distinguish matched-statistic controls rejects
 the estimator or the claim that these observables suffice. A plausible numerical
 dimension alone does not establish continuum geometry.
+
+The first study's selected features are also exactly equal for nonisomorphic V
+and dual orders. Explore additional observables and ablations without interpreting
+a successful finite feature list as a complete geometry test.
 
 ## B. Background-free growth — planned after observables are validated
 

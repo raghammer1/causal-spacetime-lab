@@ -1,0 +1,52 @@
+{
+  "config": {
+    "benchmark_repeats": 1,
+    "bootstrap": 100,
+    "calibration_repeats": 10,
+    "counts": [
+      64,
+      256
+    ],
+    "dimensions": [
+      2,
+      3,
+      4
+    ],
+    "duration": 1.0,
+    "max_count": 512,
+    "repeats": 3,
+    "seed": 20261024
+  },
+  "counts": {
+    "calibration": 60,
+    "controls": 34,
+    "primary": 18,
+    "raw": 52
+  },
+  "decision": "Proceed with unchanged preregistered grid: projected runtime below ten minutes and observed RSS below one GiB",
+  "git_commit": "b9b548862dc1266971168c2acb8fccdcc175ebd4",
+  "output_wall_seconds": 1.2839286660018843,
+  "process_peak_rss_after_outputs_bytes": 141377536,
+  "projection_caveat": "Linear extrapolation by order count only; bootstrap and dimension/count mix differ",
+  "protocol_changes": [],
+  "protocol_sha256": "dfddc11a661df82aba12ffdf6af506f765095bd52b891e63f44a252195ce5f3d",
+  "purpose": "Resource/schema pilot only; scientific outcomes not used to select parameters or features",
+  "reproduction_command": "python -m causal_lab.dimension_study --dimensions 2 3 4 --counts 64 256 --repeats 3 --calibration-repeats 10 --seed 20261024 --bootstrap 100 --duration 1.0 --benchmark-repeats 1 --max-count 512 --out results/dimension-reconstruction-v1",
+  "rough_full_runtime_seconds": 60.04159938222386,
+  "scientific_digest_for_reproduction": "bb9ba5ba36e8504ece675ab0a407988e5e36ac2f9627511d1db6f580b11c5d72",
+  "source_sha256": {
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "src/causal_lab/dimension_study.py": "9d2f622c3981361d34787d1779d806f7f13d53cb5369cf56a2812272382c5edf",
+    "src/causal_lab/order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "source_version_note": "The original pre-primary pilot is retained. One trailing space in dimension_study.py was subsequently removed; the final primary repeat records the exact published source hashes. No scientific settings or results changed.",
+  "study_wall_seconds": 1.1785242079931777,
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "package": "0.1.0",
+    "python": "3.14.4"
+  }
+}

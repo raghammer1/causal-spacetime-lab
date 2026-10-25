@@ -1,0 +1,103 @@
+{
+  "allocation_scope": "Separate tracemalloc passes on same deterministic samples; peak newly tracked allocations excludes retained inputs; not RSS and may miss native allocations",
+  "artifact_sha256": {
+    "adversaries.png": "053b13bf9040a7a67e07f40d99cf84e448fed1735286f8cb153f53bde7494e25",
+    "bias_vs_count.png": "78dd0fe8953c00e30c9ceb2f26c7901932098c1d2917eb9e2c86092e1401a450",
+    "calibration.csv": "1b74ceb93494c6bbbbe8a4d188d4dcf4d9b899cb5a8b82eeadaa2a0d969f3aaf",
+    "calibration_model.json": "64b0561e5995df9c8a245babe96742046f908ff08aecb9e5901873951650ad1a",
+    "confusion.csv": "fd3670d66818e01fe1853d059621148c26672d3e511fefb8ae61a4b7d4def91c",
+    "confusion.json": "3440cb06764c72a470ad0b658e1b7427956eac239e8425829480a5c549730cfe",
+    "confusion.png": "2c24386f7b6a8bafa3b6eafb54cea9d5ced0615fb7fda0529e05d5dbf9745267",
+    "diagnostics.json": "f0ef0ed7c8d44c67786426f12f572efb991d3861947f4a600edcae3cb3f0679f",
+    "dimension_recovery.png": "8c3b4c76c1f68f5e3f2828bf899d49654d265857440f2461eecedbb267d655d2",
+    "interval_histograms.csv.gz": "122aae1324cbd2b024c690264e6efd65590d36781380ea78804654ad29c8e488",
+    "ordering_fraction.png": "058d511c31a917953d47a07a8b25af6e8d28474cd62bc78bfc03e80aa540ef6f",
+    "raw.csv": "68984d85c941d184791a460c2d7d7fe9b58574c76e955e4ce7206c8235a8eda0",
+    "summary.csv": "ccdd1d774594299eec5a6ea91a99cfdd0a33ae1b94068586f4b8723bfd7be4fb",
+    "summary.json": "1b9b070dfa0ed832cd3dfed1feb9708a8f9698d0bd325af54590292511c9b763"
+  },
+  "bootstrap": {
+    "confidence": 0.95,
+    "coverage": "pointwise",
+    "method": "percentile",
+    "resamples": 2000,
+    "sampling_unit": "whole independent order"
+  },
+  "config": {
+    "benchmark_repeats": 3,
+    "bootstrap": 2000,
+    "calibration_repeats": 100,
+    "counts": [
+      64,
+      128,
+      256
+    ],
+    "dimensions": [
+      2,
+      3,
+      4
+    ],
+    "duration": 1.0,
+    "max_count": 512,
+    "repeats": 200,
+    "seed": 20261025
+  },
+  "detector": {
+    "features": [
+      "ordering_fraction",
+      "chain_fraction",
+      "link_fraction",
+      "interval_mean_fraction",
+      "interval_ge4_fraction"
+    ],
+    "scope": "exploratory discrimination among calibrated families, not manifoldlikeness proof",
+    "score": "minimum RMS standardized distance to fitted known-dimension templates",
+    "threshold": "95th percentile of separate threshold-calibration scores"
+  },
+  "estimator": {
+    "classification": "nearest integer label 2/3/4 for estimates in [1.5,4.5], lower label breaks exact ties, otherwise unclassified",
+    "domain": [
+      1,
+      10
+    ],
+    "undefined_or_outside_domain": "None and explicit status, never clamped"
+  },
+  "git_commit": "b9b548862dc1266971168c2acb8fccdcc175ebd4",
+  "git_worktree_dirty": true,
+  "nondeterministic_artifacts": [
+    "benchmarks.csv",
+    "resources.png",
+    "metadata.json"
+  ],
+  "output_wall_seconds": 1.9505236250115559,
+  "platform": {
+    "machine": "arm64",
+    "release": "25.5.0",
+    "system": "Darwin"
+  },
+  "process_peak_rss_after_outputs_bytes": 159219712,
+  "process_peak_rss_bytes": 88326144,
+  "protocol_sha256": "dfddc11a661df82aba12ffdf6af506f765095bd52b891e63f44a252195ce5f3d",
+  "reproduction_command": "python -m causal_lab.dimension_study --dimensions 2 3 4 --counts 64 128 256 --repeats 200 --calibration-repeats 100 --seed 20261025 --bootstrap 2000 --duration 1.0 --benchmark-repeats 3 --max-count 512 --out results/dimension-reconstruction-v1",
+  "rng": "Generator(PCG64(int(SHA256(identity).hexdigest(),16)))",
+  "rss_scope": "Process lifetime including imports, calibration, holdouts, bootstrap and benchmarks, before output plotting; Darwin bytes or Linux KiB converted to bytes",
+  "schema_version": 1,
+  "scientific_digest": "296324854c7d36a103994c64e3a50b2870b3d1cbe269cd58ca3eac18ce161036",
+  "scientific_status": "Reconstruction inside a prescribed flat spacetime and adversarial order tests; no dynamical emergence or observational evidence about physical spacetime",
+  "seed_identity": "ASCII dimension-v1|master_seed|dimension_or_zero_for_untargeted_control|count|repeat|float(duration).hex()|purpose; independent purposes calibration, primary, matched_bipartite, random_dag, layered, benchmark, summary/contrast",
+  "source_sha256": {
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "src/causal_lab/dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+    "src/causal_lab/order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "study_wall_seconds": 27.357983958994737,
+  "timing_scope": "perf_counter untraced calls; RNG setup excluded from generator; matrix construction separate; order-only analysis includes validation, MM inversion and all interval/chain features",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "package": "0.1.0",
+    "python": "3.14.4"
+  }
+}

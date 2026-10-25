@@ -1,0 +1,416 @@
+{
+  "adversary_parameters": [
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5079365079365079,
+      "count": 64,
+      "edge_probability": 0.9780371093750001,
+      "raw_probability": 0.9780371093750001,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 2,
+      "target_mean_fraction": 0.496780753968254
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5079365079365079,
+      "count": 64,
+      "edge_probability": 0.45939453125,
+      "raw_probability": 0.45939453125,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 3,
+      "target_mean_fraction": 0.23334325396825395
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5079365079365079,
+      "count": 64,
+      "edge_probability": 0.20505859375000002,
+      "raw_probability": 0.20505859375000002,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 4,
+      "target_mean_fraction": 0.10415674603174603
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5039370078740157,
+      "count": 128,
+      "edge_probability": 0.99909912109375,
+      "raw_probability": 0.99909912109375,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 2,
+      "target_mean_fraction": 0.5034830216535433
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5039370078740157,
+      "count": 128,
+      "edge_probability": 0.45261962890625,
+      "raw_probability": 0.45261962890625,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 3,
+      "target_mean_fraction": 0.228091781496063
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5039370078740157,
+      "count": 128,
+      "edge_probability": 0.19836425781250006,
+      "raw_probability": 0.19836425781250006,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 4,
+      "target_mean_fraction": 0.09996309055118113
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5019607843137255,
+      "count": 256,
+      "edge_probability": 0.9943347167968749,
+      "raw_probability": 0.9943347167968749,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 2,
+      "target_mean_fraction": 0.49911703431372545
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5019607843137255,
+      "count": 256,
+      "edge_probability": 0.45373718261718754,
+      "raw_probability": 0.45373718261718754,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 3,
+      "target_mean_fraction": 0.22775827205882354
+    },
+    {
+      "calibration_count": 100,
+      "capacity_fraction": 0.5019607843137255,
+      "count": 256,
+      "edge_probability": 0.2036187744140625,
+      "raw_probability": 0.2036187744140625,
+      "saturated": false,
+      "saturation_reason": null,
+      "target_dimension": 4,
+      "target_mean_fraction": 0.10220863970588236
+    }
+  ],
+  "holdout_used_for_calibration": false,
+  "models": {
+    "128": {
+      "count": 128,
+      "defined_joint_threshold_count": 150,
+      "defined_r_threshold_count": 150,
+      "excluded_undefined_joint_threshold_count": 0,
+      "features": [
+        "ordering_fraction",
+        "chain_fraction",
+        "link_fraction",
+        "interval_mean_fraction",
+        "interval_ge4_fraction"
+      ],
+      "fit_repeats_per_dimension": 50,
+      "joint_threshold": 1.7413880229286949,
+      "r_threshold": 1.769869184202428,
+      "sd_floor": 1e-09,
+      "templates": [
+        {
+          "centroid": [
+            0.5046456692913385,
+            0.15109375,
+            0.10748996465052967,
+            0.11137091123880617,
+            0.691749319029164
+          ],
+          "defined_fit_count": 50,
+          "dimension": 2,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.02735794182336539,
+            0.014258658810848358,
+            0.007369183975541078,
+            0.007976989885253418,
+            0.016889410359509544
+          ],
+          "scale": [
+            0.02735794182336539,
+            0.014258658810848358,
+            0.007369183975541078,
+            0.007976989885253418,
+            0.016889410359509544
+          ]
+        },
+        {
+          "centroid": [
+            0.22953001968503936,
+            0.06609375,
+            0.3630544997686991,
+            0.03311401167033992,
+            0.3249586405029874
+          ],
+          "defined_fit_count": 50,
+          "dimension": 3,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.024517907912421512,
+            0.006547830421371709,
+            0.030930687824756466,
+            0.005179112025516933,
+            0.03542213250060279
+          ],
+          "scale": [
+            0.024517907912421512,
+            0.006547830421371709,
+            0.030930687824756466,
+            0.005179112025516933,
+            0.03542213250060279
+          ]
+        },
+        {
+          "centroid": [
+            0.09924704724409446,
+            0.0421875,
+            0.6529271590660616,
+            0.009458106749725869,
+            0.09927005124643604
+          ],
+          "defined_fit_count": 50,
+          "dimension": 4,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.018293281200529376,
+            0.005905694890769175,
+            0.048344318848814724,
+            0.0025612568799393835,
+            0.029783037262679474
+          ],
+          "scale": [
+            0.018293281200529376,
+            0.005905694890769175,
+            0.048344318848814724,
+            0.0025612568799393835,
+            0.029783037262679474
+          ]
+        }
+      ],
+      "threshold_count": 150,
+      "threshold_quantile": 0.95,
+      "threshold_repeats_per_dimension": 50
+    },
+    "256": {
+      "count": 256,
+      "defined_joint_threshold_count": 150,
+      "defined_r_threshold_count": 150,
+      "excluded_undefined_joint_threshold_count": 0,
+      "features": [
+        "ordering_fraction",
+        "chain_fraction",
+        "link_fraction",
+        "interval_mean_fraction",
+        "interval_ge4_fraction"
+      ],
+      "fit_repeats_per_dimension": 50,
+      "joint_threshold": 1.8909772041612094,
+      "r_threshold": 1.874539518515428,
+      "sd_floor": 1e-09,
+      "templates": [
+        {
+          "centroid": [
+            0.49963357843137274,
+            0.11,
+            0.06513347883372296,
+            0.11084972946914855,
+            0.8048720788115993
+          ],
+          "defined_fit_count": 50,
+          "dimension": 2,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.02153863541249876,
+            0.0073338717214047585,
+            0.003392602448484451,
+            0.006494664527709833,
+            0.007727371708890481
+          ],
+          "scale": [
+            0.02153863541249876,
+            0.0073338717214047585,
+            0.003392602448484451,
+            0.006494664527709833,
+            0.007727371708890481
+          ]
+        },
+        {
+          "centroid": [
+            0.2290337009803921,
+            0.043671875,
+            0.26426845097873514,
+            0.03341073084869649,
+            0.46533769320898705
+          ],
+          "defined_fit_count": 50,
+          "dimension": 3,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.01919991449751294,
+            0.003999991280682462,
+            0.015220093756421292,
+            0.003907424103178248,
+            0.023051562592367358
+          ],
+          "scale": [
+            0.01919991449751294,
+            0.003999991280682462,
+            0.015220093756421292,
+            0.003907424103178248,
+            0.023051562592367358
+          ]
+        },
+        {
+          "centroid": [
+            0.10280269607843134,
+            0.025625,
+            0.5410842410268506,
+            0.009572788061510039,
+            0.18590302058863906
+          ],
+          "defined_fit_count": 50,
+          "dimension": 4,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.012334322170463739,
+            0.0027519705370397224,
+            0.03315551978445614,
+            0.0020016443103778835,
+            0.030130710053833963
+          ],
+          "scale": [
+            0.012334322170463739,
+            0.0027519705370397224,
+            0.03315551978445614,
+            0.0020016443103778835,
+            0.030130710053833963
+          ]
+        }
+      ],
+      "threshold_count": 150,
+      "threshold_quantile": 0.95,
+      "threshold_repeats_per_dimension": 50
+    },
+    "64": {
+      "count": 64,
+      "defined_joint_threshold_count": 150,
+      "defined_r_threshold_count": 150,
+      "excluded_undefined_joint_threshold_count": 0,
+      "features": [
+        "ordering_fraction",
+        "chain_fraction",
+        "link_fraction",
+        "interval_mean_fraction",
+        "interval_ge4_fraction"
+      ],
+      "fit_repeats_per_dimension": 50,
+      "joint_threshold": 1.6942293968219286,
+      "r_threshold": 1.8224914136711767,
+      "sd_floor": 1e-09,
+      "templates": [
+        {
+          "centroid": [
+            0.4894841269841271,
+            0.201875,
+            0.18328675259545854,
+            0.10763636267076737,
+            0.5217219313766419
+          ],
+          "defined_fit_count": 50,
+          "dimension": 2,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.04287851788223288,
+            0.025023904387931287,
+            0.021599714618971352,
+            0.013008403818350766,
+            0.03493398308851699
+          ],
+          "scale": [
+            0.04287851788223288,
+            0.025023904387931287,
+            0.021599714618971352,
+            0.013008403818350766,
+            0.03493398308851699
+          ]
+        },
+        {
+          "centroid": [
+            0.23449404761904763,
+            0.099375,
+            0.47700974622940834,
+            0.03335555083740238,
+            0.19074845122828527
+          ],
+          "defined_fit_count": 50,
+          "dimension": 3,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.03674611007423011,
+            0.013303271808706555,
+            0.04759019210659048,
+            0.008492632352199108,
+            0.04924422878595477
+          ],
+          "scale": [
+            0.03674611007423011,
+            0.013303271808706555,
+            0.04759019210659048,
+            0.008492632352199108,
+            0.04924422878595477
+          ]
+        },
+        {
+          "centroid": [
+            0.10576388888888891,
+            0.066875,
+            0.7552643779283053,
+            0.00884244190745754,
+            0.04125444204797899
+          ],
+          "defined_fit_count": 50,
+          "dimension": 4,
+          "excluded_undefined_fit_count": 0,
+          "fit_count": 50,
+          "raw_sd": [
+            0.02901805873887207,
+            0.010002391295717889,
+            0.07184443552781088,
+            0.003639181770500626,
+            0.024300173600431626
+          ],
+          "scale": [
+            0.02901805873887207,
+            0.010002391295717889,
+            0.07184443552781088,
+            0.003639181770500626,
+            0.024300173600431626
+          ]
+        }
+      ],
+      "threshold_count": 150,
+      "threshold_quantile": 0.95,
+      "threshold_repeats_per_dimension": 50
+    }
+  },
+  "split": "first half fit centroids/scales; second half calibrates 95th-percentile thresholds; all calibration rows fit bipartite probability"
+}

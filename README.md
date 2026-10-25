@@ -35,7 +35,7 @@ artifacts are versioned under `docs/`; local runtime output remains ignored.
 
 ## Finite-density study
 
-On `experiment/finite-density-scaling-v1`, run the preregistered study:
+Experiment 1 is merged into `main`. Run its preregistered study with:
 
 ```bash
 python -m causal_lab.scaling --seed 20261025 --repeats 200 --bootstrap 2000 --out results/finite-density-scaling-v1
@@ -60,11 +60,38 @@ changing grid traversal or bootstrap count does not change them. Reproduction
 metadata records versions, source hashes and a scientific-data digest. Timings
 and memory observations vary across runs and machines.
 
+## Experiment 2: reconstruct spacetime dimension
+
+The `experiment/dimension-reconstruction-v1` branch adds independent flat-space
+generators for spacetime dimensions 2, 3 and 4, and a Myrheim–Meyer estimator
+that receives only the causal-order matrix. The [mathematical derivation](docs/DIMENSION_THEORY.md)
+verifies the volume measure and ordering-fraction normalization. The
+[protocol](docs/DIMENSION_RECONSTRUCTION_PROTOCOL.md) fixes calibration, untouched
+holdout controls, uncertainty and failure criteria before primary results.
+
+```bash
+python -m causal_lab.dimension_study --seed 20261025 --counts 64 128 256 --repeats 200 --calibration-repeats 100 --bootstrap 2000 --out results/dimension-reconstruction-v1
+```
+
+This runs 1,800 primary spacetime samples, 900 separate calibration samples and
+3,006 controls. A small smoke run is:
+
+```bash
+python -m causal_lab.dimension_study --dimensions 2 3 --counts 16 --repeats 3 --calibration-repeats 10 --bootstrap 100 --benchmark-repeats 1 --out results/dimension-smoke
+```
+
+The [results report](docs/DIMENSION_RECONSTRUCTION_RESULTS.md) links raw data,
+summaries, six figures, runtime measurements and limitations. Artificial orders
+are tested against both the single fraction and an exploratory combination of
+chain and interval observables. No finite collection of these statistics proves
+that a causal order is manifold-like. No black-hole model is included.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.
 - `longest_chain_order` uses only a Boolean partial order; `longest_chain_fast` uses *known* generating coordinates for efficiency. Do not conflate them.
-- Pair comparability is a coarse sanity-check statistic, not proof of dimension or geometry.
+- Pair comparability supports a dimension estimate under stated flat-interval
+  assumptions; an arbitrary order can imitate it. It does not prove geometry.
 - A discrete causal graph is not automatically physical spacetime; additional tests include locality, effective dimension, dynamics, Lorentz invariance, stability and ultimately agreement with GR.
 - Simulating horizon-like behaviour is not experimental observation of a black hole.
 

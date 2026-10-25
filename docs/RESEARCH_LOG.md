@@ -43,3 +43,39 @@ costs, source hashes, reproduction commands and all interpretation boundaries.
 **Next:** Validate several dimension-sensitive observables against adversarial
 orders before planning background-free growth experiments. No growth law,
 curved-background model or gravitational dynamics was implemented in this study.
+
+## 2026-10-25 — Dimension reconstruction v1
+
+**Preparation:** fetched merged Experiment 1 at `7bfac9e`, verified its 81 tests
+and archived checksums, and branched from that baseline. Committed the
+[protocol](DIMENSION_RECONSTRUCTION_PROTOCOL.md) at `b9b5488` before the resource
+pilot or main/calibration runs. The pilot supported the unchanged workload.
+
+**Executed:** 1,800 fixed-N spacetime holdouts in d=2,3,4 at N=64,128,256;
+900 independent calibration orders; 3,006 controls. All estimation and
+observable analysis uses only strict order matrices. Primary seed 20261025,
+2,000 whole-order bootstrap resamples; a complete repeat reproduced scientific
+tables, models, diagnostics and compressed histograms exactly.
+
+**Observed:** N=256 yielded 200/200 correct labels per dimension. N=128 was the
+smallest tested count supporting the 90% accuracy target for all three classes.
+d=4,N=64 remained inconclusive by that criterion despite observed accuracy 92.5%.
+Bias intervals lay inside ±0.10, but one mean-dimension interval excluded the
+known value and sample bias was not strictly monotonic across N.
+
+**Falsification and limits:** all 1,800 calibrated two-layer controls fooled the
+single dimension label and r-only detector. Joint features rejected them, yet
+accepted 49/200 random-DAG controls at N=64, including 36 previously rejected by
+r alone. Exact V/dual examples share all selected summaries. These are retained
+limitations; no thresholds were retuned on holdout outcomes. Detector uncertainty
+conditions on the frozen calibration and is not universal geometry evidence.
+
+**Verification:** 253 tests pass; six plots and all raw/summary/calibration
+relationships were independently reviewed. Final archived computation took 27.36 s and output
+generation 1.95 s, with 151.8 MiB process peak RSS on the recorded platform.
+See the [results report](DIMENSION_RECONSTRUCTION_RESULTS.md) for all uncertainty,
+artifacts, source/protocol hashes and reproduction commands.
+
+**Next:** harder held-out adversaries and calibration uncertainty, then a specified
+background-free growth experiment; independently verified curvature benchmarks
+remain a separate prerequisite before gravitational or black-hole modeling.
