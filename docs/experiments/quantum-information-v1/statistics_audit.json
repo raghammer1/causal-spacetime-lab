@@ -1,0 +1,229 @@
+{
+  "absolute_tolerance": 2e-12,
+  "audit": "independent quantum statistics reconstruction",
+  "chain_decisions": [
+    {
+      "count": 24,
+      "exact_lower": 0.8431607171566664,
+      "mean_auc_lower": 1.0,
+      "n": 6,
+      "passed": true,
+      "successes": 24
+    },
+    {
+      "count": 24,
+      "exact_lower": 0.8431607171566664,
+      "mean_auc_lower": 1.0,
+      "n": 8,
+      "passed": true,
+      "successes": 24
+    },
+    {
+      "count": 24,
+      "exact_lower": 0.8431607171566664,
+      "mean_auc_lower": 1.0,
+      "n": 10,
+      "passed": true,
+      "successes": 24
+    }
+  ],
+  "checks": {
+    "all_undefined_metrics": 141,
+    "batch_grid": 19630,
+    "batch_mean": 48977,
+    "binomial_alpha": 3,
+    "binomial_lower": 3,
+    "chain_success_fields": 18,
+    "cohort_denominators": 423,
+    "conditional_null_count": 441,
+    "conditional_null_mean": 1764,
+    "cut_mean": 7272,
+    "independent_units": 141,
+    "metadata_row_count": 1,
+    "metric_flags": 78520,
+    "metric_grid": 141,
+    "phase_pair_exists": 576,
+    "phase_paired_effect": 576,
+    "raw_edge_auc": 630,
+    "registered_ground_batch_grid": 18,
+    "registered_ground_count": 18,
+    "shuffle_paired_effect": 441,
+    "source_clean": 1,
+    "source_complete": 1,
+    "source_phase": 1,
+    "summary_alpha_lower": 19630,
+    "summary_cell_grid": 1,
+    "summary_ci95": 19590,
+    "summary_lower": 19630,
+    "summary_mean": 19630,
+    "summary_sd": 19630,
+    "summary_unique_cells": 1,
+    "unavailable_interval": 9835,
+    "undefined_count": 19630,
+    "unique_raw_sample": 1818
+  },
+  "elapsed_seconds": 18.525528166006552,
+  "failure_count": 0,
+  "failures": [],
+  "ground_cohorts": [
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 0.5,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 1.0,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 2.0,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 0.5,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 1.0,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 2.0,
+      "n": 6,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 0.5,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 1.0,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 2.0,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 0.5,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 1.0,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 2.0,
+      "n": 8,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 0.5,
+      "n": 10,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 1.0,
+      "n": 10,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "chain",
+      "h": 2.0,
+      "n": 10,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 0.5,
+      "n": 10,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 1.0,
+      "n": 10,
+      "valid": 24
+    },
+    {
+      "attempted": 24,
+      "family": "B",
+      "h": 2.0,
+      "n": 10,
+      "valid": 24
+    }
+  ],
+  "limitations": [
+    "No quantum state, eigensolver, geometry or scientific model is recomputed here.",
+    "Bootstrap reconstruction verifies arithmetic, not nominal coverage.",
+    "Independent calibration retained 365/400=91.25% normal-mean coverage at nominal 95%.",
+    "The .05/6 bootstrap allocation is not a rigorous simultaneous-coverage guarantee."
+  ],
+  "maximum_absolute_errors": {
+    "batch_mean": 3.552713678800501e-15,
+    "binomial_alpha": 0.0,
+    "binomial_lower": 1.1102230246251565e-16,
+    "conditional_null_mean": 2.6645352591003757e-15,
+    "cut_mean": 1.7763568394002505e-15,
+    "phase_paired_effect": 0.0,
+    "raw_edge_auc": 0.0,
+    "shuffle_paired_effect": 1.6653345369377348e-16,
+    "summary_alpha_lower": 0.0,
+    "summary_ci95": 7.105427357601002e-15,
+    "summary_lower": 7.105427357601002e-15,
+    "summary_mean": 3.552713678800501e-15,
+    "summary_sd": 4.440892098500626e-16
+  },
+  "raw_rows": 1818,
+  "resamples": 3999,
+  "source_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+  "source_files_sha256": {
+    "manifest.json": "b7597c516915458e84c18ec46ffd4c3df5d4b38cea5cd705c349fda012c471fb",
+    "metadata.json": "199f1fa825dac0de14a42868ecdb48abfb2c6eed6db80dae103c1d34f4ebe44c",
+    "raw.jsonl.gz": "32e61ff515a00eea936414670a9c913fb84b29af9d301c7ceb842ad6264c3e09",
+    "summary.json": "9d66d8f9a958b3e2bae2432b595cd5cde335b513caf09d2941413a79955b58f3"
+  },
+  "summary_cells": 141,
+  "summary_metrics": 19630,
+  "total_checks": 289132
+}

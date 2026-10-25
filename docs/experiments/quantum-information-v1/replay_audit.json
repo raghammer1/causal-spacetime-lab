@@ -1,0 +1,117 @@
+{
+  "environment": "isolated detached worktree; same dependency environment; single BLAS thread; explicit PYTHONPATH verified by source hashes",
+  "files": {
+    "correlation_representations.png": {
+      "primary_sha256": "6878622510311e588b7610733ee383e7dcd03b4250bba1491f42baccf0fd9a73",
+      "repeat_sha256": "6878622510311e588b7610733ee383e7dcd03b4250bba1491f42baccf0fd9a73",
+      "same_bytes": true
+    },
+    "coupling_scatter.png": {
+      "primary_sha256": "c7e261bc0e0a1799e6bcb1d20b55001fd4a345fa74b467c5359f2fa8be9d637e",
+      "repeat_sha256": "c7e261bc0e0a1799e6bcb1d20b55001fd4a345fa74b467c5359f2fa8be9d637e",
+      "same_bytes": true
+    },
+    "family_diagnostics.png": {
+      "primary_sha256": "3820a4d790807da3ccc1ec175bac4813740ddcbb530946e36c0e9919432a603e",
+      "repeat_sha256": "3820a4d790807da3ccc1ec175bac4813740ddcbb530946e36c0e9919432a603e",
+      "same_bytes": true
+    },
+    "metadata.json": {
+      "primary_sha256": "199f1fa825dac0de14a42868ecdb48abfb2c6eed6db80dae103c1d34f4ebe44c",
+      "repeat_sha256": "9dc17c40a2565eb99982a1e5a447b5bee74ce472986c51c196cf8d41709c52a1",
+      "same_bytes": false
+    },
+    "null_contrasts.png": {
+      "primary_sha256": "31746a05665a25d0dd23060ab231143e7801d30fb055a73d6a62ba8f4b48889c",
+      "repeat_sha256": "31746a05665a25d0dd23060ab231143e7801d30fb055a73d6a62ba8f4b48889c",
+      "same_bytes": true
+    },
+    "preparation_dependence.png": {
+      "primary_sha256": "2e35bf5c1b1a99c14ed4319552f06d18b4226cc1fc87d5e97d5e47ff0762aba0",
+      "repeat_sha256": "2e35bf5c1b1a99c14ed4319552f06d18b4226cc1fc87d5e97d5e47ff0762aba0",
+      "same_bytes": true
+    },
+    "raw.jsonl.gz": {
+      "primary_sha256": "32e61ff515a00eea936414670a9c913fb84b29af9d301c7ceb842ad6264c3e09",
+      "repeat_sha256": "32e61ff515a00eea936414670a9c913fb84b29af9d301c7ceb842ad6264c3e09",
+      "same_bytes": true
+    },
+    "robustness_and_couplings.png": {
+      "primary_sha256": "ab555eabaf22348a6a2f025e0231bd4ddaa3da8998c0921802293ce3a7891517",
+      "repeat_sha256": "ab555eabaf22348a6a2f025e0231bd4ddaa3da8998c0921802293ce3a7891517",
+      "same_bytes": true
+    },
+    "summary.csv": {
+      "primary_sha256": "8ffe454a8005034b1263a050933ded6a90ba322725867c2bbe652fdb11697605",
+      "repeat_sha256": "8ffe454a8005034b1263a050933ded6a90ba322725867c2bbe652fdb11697605",
+      "same_bytes": true
+    },
+    "summary.json": {
+      "primary_sha256": "9d66d8f9a958b3e2bae2432b595cd5cde335b513caf09d2941413a79955b58f3",
+      "repeat_sha256": "9d66d8f9a958b3e2bae2432b595cd5cde335b513caf09d2941413a79955b58f3",
+      "same_bytes": true
+    }
+  },
+  "generating_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+  "repeat_metadata": {
+    "baseline_commit": "9bc5984c656271c247354e0079fd900702642064",
+    "complete": true,
+    "elapsed_seconds": 56.919852457998786,
+    "failed": 0,
+    "peak_rss_bytes": 398295040,
+    "phase": "primary",
+    "platform": {
+      "machine": "arm64",
+      "system": "Darwin"
+    },
+    "postprocessing_seconds": 29.12709545798134,
+    "protocol_commit": "ee9ece7",
+    "repeats": 8,
+    "resource_caps_satisfied": true,
+    "seeds": {
+      "audit": [
+        61501
+      ],
+      "bootstrap": [
+        61401
+      ],
+      "calibration": [
+        61003
+      ],
+      "pilot": [
+        61002
+      ],
+      "primary": [
+        61101,
+        61201,
+        61301
+      ],
+      "smoke": [
+        61001
+      ]
+    },
+    "source_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+    "source_hashes": {
+      "src/causal_lab/quantum.py": "6a80e2e306acb9bded9c1f702b373f33c4316d8fa3b7f33bd6ca46f5151b9fc5",
+      "src/causal_lab/quantum_artifacts.py": "178e24103d874dde75247c56eedf5078e43c9589b4e3be3e121e6fc3f484fc0a",
+      "src/causal_lab/quantum_geometry.py": "f61e975d051cd1fc52953beb985859bf79050036c8669ddf20911324cad5703b",
+      "src/causal_lab/quantum_measurements.py": "31cc4398a77357f18b5ea7ecd8cfb3822b5d1c4cb579189e40c8c93b17443824",
+      "src/causal_lab/quantum_random.py": "3bc3879b44b8bd821e3329a06c8ddd731a941a5ac0df25c9aec008f8773d1c29",
+      "src/causal_lab/quantum_statistics.py": "9dc536ff791b99a512de447dec47d63e6735d1102547842cf06db0500d21fe45",
+      "src/causal_lab/quantum_study.py": "c61f4cc52dab4bb830cd98abaaa96560e0e10b16263ed47be3a184a716328860"
+    },
+    "states": 1818,
+    "total_seconds": 86.04694791598013,
+    "tracked_dirty": false,
+    "untracked_scientific_files": "",
+    "versions": {
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "python": "3.14.4",
+      "scipy": "1.18.1"
+    }
+  },
+  "same_scientific_digest": true,
+  "scientific_digest_primary": "016d5fbef1c4418779b61ffc578abad2162ccb1503e8bb10b06e0842d2fea55d",
+  "scientific_digest_repeat": "016d5fbef1c4418779b61ffc578abad2162ccb1503e8bb10b06e0842d2fea55d"
+}

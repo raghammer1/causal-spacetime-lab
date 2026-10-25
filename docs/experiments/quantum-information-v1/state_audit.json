@@ -1,0 +1,52 @@
+{
+  "all_scheduled_states_ok": true,
+  "audit_numpy_version": "2.5.4",
+  "audit_source_sha256": "141872d20740395bdc35705bec97bee9f13752318a673db30e651186d7e84e69",
+  "counts": {
+    "artifact_hashes": 10,
+    "coupling_perturbations": 432,
+    "cut_svd_entropies": 21816,
+    "expected_records": 1818,
+    "ground_hamiltonian_actions": 873,
+    "numerical_comparisons": 212946,
+    "pair_reductions": 53328,
+    "phase_sources": 648,
+    "raw_records": 1818,
+    "shared_phase_pairs": 432,
+    "single_entropies": 14544,
+    "states_audited": 1818
+  },
+  "failures": [],
+  "generating_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+  "max_absolute_errors": {
+    "connected_zz": 4.9960036108132044e-15,
+    "coupling_diagonal": 0.0,
+    "coupling_perturbation": 0.0,
+    "coupling_symmetry": 0.0,
+    "cut_defect": 5.804245972740318e-13,
+    "cut_entropy": 5.0459636469213365e-14,
+    "cut_normalized_defect": 1.8786638911194586e-12,
+    "cut_pair_prediction": 5.639932965095795e-13,
+    "ground_energy": 4.263256414560601e-14,
+    "ground_scaled_residual": 3.565936056601828e-13,
+    "log_negativity": 5.3734794391857577e-14,
+    "mi": 6.605826996519681e-14,
+    "negativity": 2.0809742817817778e-14,
+    "pair_entropy": 5.639077585442307e-14,
+    "pair_negative_eigenvalue": 4.950344560823421e-16,
+    "pair_trace": 4.107825191113079e-14,
+    "phase_connected_zz": 2.220446049250313e-16,
+    "phase_couplings": 0.0,
+    "phase_probabilities": 1.1102230246251565e-16,
+    "shared_phase_vector": 3.1031676915590914e-17,
+    "single_entropy": 5.0459636469213365e-14,
+    "state_norm": 4.0967229608668276e-14
+  },
+  "passed": true,
+  "raw_sha256": "32e61ff515a00eea936414670a9c913fb84b29af9d301c7ceb842ad6264c3e09",
+  "scope": "Independent raw-state arithmetic and schedule audit; no geometric or confidence-coverage claim.",
+  "statuses": {
+    "ok": 1818
+  },
+  "tolerance": 1e-09
+}

@@ -1,0 +1,10 @@
+{
+  "generating_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+  "local_test_count": 1001,
+  "scientific_generator_unchanged": true,
+  "source_hashes": {
+    "scripts/audit_quantum_geometry.py": "e952b860be6b741c6a9b5cd91df5a66b3ee87b58f35ec81f6c26e8a2ab3e1883",
+    "scripts/audit_quantum_statistics.py": "59052f1a266e41a10d27fb2ad5aff113d3b8125b05eb2260cac36fa1a0839395",
+    "src/causal_lab/quantum_audit.py": "141872d20740395bdc35705bec97bee9f13752318a673db30e651186d7e84e69"
+  }
+}

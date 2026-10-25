@@ -1,0 +1,58 @@
+{
+  "baseline_commit": "9bc5984c656271c247354e0079fd900702642064",
+  "complete": true,
+  "elapsed_seconds": 59.68395274999784,
+  "failed": 0,
+  "peak_rss_bytes": 430899200,
+  "phase": "primary",
+  "platform": {
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "postprocessing_seconds": 28.53246924999985,
+  "protocol_commit": "ee9ece7",
+  "repeats": 8,
+  "resource_caps_satisfied": true,
+  "seeds": {
+    "audit": [
+      61501
+    ],
+    "bootstrap": [
+      61401
+    ],
+    "calibration": [
+      61003
+    ],
+    "pilot": [
+      61002
+    ],
+    "primary": [
+      61101,
+      61201,
+      61301
+    ],
+    "smoke": [
+      61001
+    ]
+  },
+  "source_commit": "6dd659865973261ca4f2437d02f1f6bf4d088f69",
+  "source_hashes": {
+    "src/causal_lab/quantum.py": "6a80e2e306acb9bded9c1f702b373f33c4316d8fa3b7f33bd6ca46f5151b9fc5",
+    "src/causal_lab/quantum_artifacts.py": "178e24103d874dde75247c56eedf5078e43c9589b4e3be3e121e6fc3f484fc0a",
+    "src/causal_lab/quantum_geometry.py": "f61e975d051cd1fc52953beb985859bf79050036c8669ddf20911324cad5703b",
+    "src/causal_lab/quantum_measurements.py": "31cc4398a77357f18b5ea7ecd8cfb3822b5d1c4cb579189e40c8c93b17443824",
+    "src/causal_lab/quantum_random.py": "3bc3879b44b8bd821e3329a06c8ddd731a941a5ac0df25c9aec008f8773d1c29",
+    "src/causal_lab/quantum_statistics.py": "9dc536ff791b99a512de447dec47d63e6735d1102547842cf06db0500d21fe45",
+    "src/causal_lab/quantum_study.py": "c61f4cc52dab4bb830cd98abaaa96560e0e10b16263ed47be3a184a716328860"
+  },
+  "states": 1818,
+  "total_seconds": 88.21642199999769,
+  "tracked_dirty": false,
+  "untracked_scientific_files": "",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "python": "3.14.4",
+    "scipy": "1.18.1"
+  }
+}
