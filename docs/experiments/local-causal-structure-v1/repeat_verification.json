@@ -1,0 +1,33 @@
+{
+  "artifact_byte_equality": {
+    "conditional.csv": true,
+    "conditional_laws.png": true,
+    "dimension_reconstruction.png": true,
+    "exact_pair_scaling.png": true,
+    "exact_structural_witness.png": true,
+    "fiber_search.png": true,
+    "global.csv": true,
+    "global_two_plus_two.png": true,
+    "interval_joint_structure.png": true,
+    "pairs.csv": true,
+    "pairs.jsonl.gz": true,
+    "raw_orders.jsonl.gz": true,
+    "references.json.gz": true,
+    "searches.csv": true,
+    "searches.jsonl.gz": true,
+    "structural_correlations.png": true,
+    "summary.json": true
+  },
+  "both_source_trees_clean": true,
+  "metadata_excluded_from_byte_comparison": "timings necessarily differ; source and scientific provenance checked",
+  "output_timing_method": "filesystem first raw-file birth to manifest modification, not monotonic stage timer",
+  "primary_compute_seconds": 705.8176606250054,
+  "primary_output_creation_seconds_approx": 48.788185596466064,
+  "repeat_compute_seconds": 716.5480415420025,
+  "repeat_conservative_peak_rss_bytes": 2381774848,
+  "repeat_output_creation_seconds_approx": 47.90716552734375,
+  "scientific_sha256": "f8e8ac15ac466c05cc662e93b2d394ef7750cdc669e5244b1740cece248e880d",
+  "scope": "complete stochastic scientific replay on the same recorded platform and software versions, including bootstrap summaries",
+  "source_commit": "96234c586ab983c7a8b4ffc11ddd12b278d4ea70",
+  "status": "passed"
+}

@@ -67,13 +67,12 @@ advancement benchmark. Complex models improve selected contrasts, but no primary
 contrast meets the complete genuine-retention guard; the prespecified 97.5%
 sensitivity target supports some local gains over the two-feature baseline.
 
-**Next experiment:** preregister richer structural diagnostics and stronger
-adversaries before claiming geometry validation. Candidate diagnostics include
-induced 2+2 motifs, internal interval order types and overlaps, and joint rather
-than only marginal feature information. Scale search budgets with N; separate
-finite-budget failure from an information-theoretic limit. Increase independent
-calibration fits and handle discrete score ties before claiming exactly matched
-acceptance rates. Reserve fresh generator families and untouched test streams.
+**Follow-up implemented in A3:** induced 2+2 motifs, internal interval order
+types, overlaps and joint structure, with exact-statistic adversaries and search
+budgets scaled with N. It separates finite-search failure from mathematical
+information loss and retains independent reference fits and an unseen family.
+Three fits still provide limited calibration-uncertainty evidence. The follow-up
+does not train a new detector or claim matched classifier acceptance rates.
 
 **Exact boundary:** a rank-two abstract sampler has the same order distribution
 as a d=2 flat diamond, so no order-only statistic can distinguish their provenance.
@@ -83,17 +82,51 @@ Validation must define the target sampling law, not equate rejection with absenc
 of geometry or coordinate-free generation with emergence.
 
 **Stopping criterion:** retain the no-go for interpreting a growth experiment as
-validated emergent geometry until a new protocol survives its declared stronger
-tests. Exploratory growth remains possible as a mathematical model with explicit
-failed controls; it must not treat these classifiers as spacetime certificates.
+validated emergent geometry. Passing conditional local-law tests does not resolve
+embedding and continuum-limit requirements. Exploratory growth remains possible
+as a mathematical model with explicit failed controls; it must not treat these
+comparisons as spacetime certificates.
 
-## B. Background-free growth — exploratory only after Experiment 3 failures
+## A3. Local causal structure — useful information, incomplete reconstruction
+
+[Experiment 4](LOCAL_CAUSAL_STRUCTURE_RESULTS.md) replaces classifier escalation
+with exact identities and conditional interval laws. The new observables
+distinguish old-summary collisions, yet a post-registration exact example and
+counting argument also establish collisions of the entire measured structural
+vector on unrestricted orders. The rank-two/d2 provenance ambiguity persists
+even when the full order is known.
+
+All 42 primary diamond/slab comparisons satisfy their registered practical
+equivalence margins. Local dimension estimates recover the generating dimension
+in convex slabs despite large global-estimator boundary bias. Small-N d4 slabs
+lack enough intervals; boxes can be practically compatible while retaining a
+detectable dimension bias. The unseen rank-three construction remains partially
+inconclusive against d3. All N256 switched ensembles meet the local-law margins,
+even though all 96 d4 searches change a measured isomorphism invariant.
+
+**Decision:** the structural findings improve understanding, but do not validate
+geometric embeddability or a controlled continuum limit. Stop optimizing a
+classifier leaderboard. The next geometric study should specify one convergence
+target and test consistency from single growing orders, a mesoscopic scale
+window, density variation and curvature/boundary bias with independent controls.
+Embedding existence, approximate uniqueness, concentration/tightness and
+universality remain separate mathematical requirements; see the
+[continuum guide](LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md).
+
+**Stopping criterion:** if added statistics only recognize familiar samplers,
+end that line of optimization. Background-free causal dynamics may proceed as
+an exploratory mathematical program with fresh falsification criteria, while
+retaining the unresolved reconstruction limits and negative controls below.
+Neither a finite feature match nor a failed search is a spacetime certificate.
+
+## B. Background-free growth — exploratory, with reconstruction limits retained
 
 **Question:** Can an explicitly specified rule on abstract orders produce stable
 continuum-like statistics without supplied positions or metric?
 
-Before using growth results as geometric evidence, resolve the diagnostic gaps
-above. For an explicitly exploratory model, start with the transition rules in
+Before using growth results as geometric evidence, specify and validate the
+continuum assumptions and convergence requirements above. For an explicitly
+exploratory model, start with the transition rules in
 [Rideout and Sorkin (2000)](https://arxiv.org/abs/gr-qc/9904062), including
 transitive percolation as a control. Specify allowed transitions, probabilities,
 transitive closure and relabeling invariance before running anything. Retain

@@ -124,6 +124,47 @@ Verify the curated full archive with `python scripts/audit_adversarial.py`.
 also reconstructs nine seeded search cases. These audits deliberately require the
 registered full grid; they write their reports to ignored `results/` files.
 
+## Experiment 4: local causal structure and geometric identifiability
+
+Local structure contains information that the earlier global summaries lose.
+Exact counterexamples establish this without training another classifier.
+For uniform sampling in a causally convex flat region, conditioning on an open
+interval's event count gives an internal order law independent of the outer
+boundary. We derive this law and test diamonds, central time slabs and spatial
+boxes in dimensions 2, 3 and 4.
+
+All 42 registered N=256 diamond/slab comparisons meet their finite equivalence
+margins. In d4 slabs, the global dimension estimate is 4.581 while the local
+estimate is 3.995 [3.948,4.040]. This is reconstruction under stated sampling
+assumptions, not a certificate of geometric embeddability. Rank-two/diamond law
+equivalence remains exact; boxes retain clipping bias; the unseen rank-three
+construction is still close enough to d3 to leave several comparisons inconclusive.
+
+The study records 31,392 parent/checkpoint orders, 3,600 exact matched pairs and
+864 exact-statistic searches with budgets increasing as N². It preserves every
+failed search, exact degeneracy, missing interval and uncertainty estimate.
+The [results and complete derivations](docs/LOCAL_CAUSAL_STRUCTURE_RESULTS.md)
+include eight figures, independent audits, full replay evidence and limitations.
+The [protocol](docs/LOCAL_CAUSAL_STRUCTURE_PROTOCOL.md) and
+[workload selection](docs/LOCAL_CAUSAL_STRUCTURE_WORKLOAD.md) preceded primary data.
+
+```bash
+python -m causal_lab.local_structure_study --workers 3 --output results/local-causal-structure-v1
+python scripts/audit_local_structure.py results/local-causal-structure-v1
+python scripts/replay_local_structure.py results/local-causal-structure-v1 --output results/local-replay.json
+```
+
+The full computation takes about 12 minutes on the recorded machine, plus output
+creation. A small CLI run is also included in CI:
+
+```bash
+python -m causal_lab.local_structure_study --smoke --workers 1 --output results/local-structure-smoke
+```
+
+The [continuum requirements](docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md) separate
+full causal-order reconstruction, volume/density assumptions, convergence and
+dynamics. Further classifier optimization is not the next research objective.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.
