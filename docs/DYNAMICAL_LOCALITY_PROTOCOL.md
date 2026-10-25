@@ -296,3 +296,30 @@ the complete timing pilot from committed source before selecting R and freezing
 primary execution. This spends more computation; it does not relax a scientific
 advancement rule. The original rejected projections and this amendment remain
 visible in history and the final report.
+
+## Resource-only amendment A2, before primary generation
+
+The third complete pilot also failed the amended planning inequality, with variable
+shared-host timing. Retain [attempt3](experiments/dynamical-locality-pilot-attempt3.json).
+No primary data have been generated. Set the FINAL conservative planning allowance
+to40 minutes (2400 seconds), still below the unchanged45-minute hard primary and
+separate replay caps. Retain every scientific rule and the2GiB/single-thread limits.
+
+Do not select a favorable timing run. Use the maximum bundle time for each
+mandatory size across ALL THREE completed pilots, the maximum measured fixed cost
+for each size, and the maximum separately recorded postprocessing cost. All three
+pilots include all18 size-specific parameter/preparation cases; use their maxima
+without deleting slow cases. The first pilot did not save its separate final
+postprocessing duration; the two later pilots include the same final postprocessing
+workload and supply that measured term. The core algorithm at freeze is the tested
+frozen-sector implementation; retaining the slower old algorithm's timing is
+conservative. Audit unchanged scientific functions and record all source hashes.
+Choose the largest R in12/8/4 meeting the same factor2 projection at2400 seconds.
+
+Repeat the N6 censored timing lower-bound check at2400/(2*84)+.05 seconds under the
+current algorithm. A timeout rejects N6; a completed fast bound is insufficient to
+admit it without the original complete six-cell pilot. If mandatory R4 still does
+not fit, or the N6 early test needs unresolved further feasibility evidence, retain
+infeasibility/exclude the optional size; no further resource escalation is planned.
+This reuses complete timing evidence, not scientific outcomes. Commit the final
+feasibility record and source before primary execution.

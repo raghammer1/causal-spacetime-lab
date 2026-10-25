@@ -30,7 +30,7 @@ CELLS=tuple((mu,gamma) for mu in (2.,.1,-2.) for gamma in (.25,1.))
 STREAMS={'smoke':1,'calibration':2,'pilot':3,'primary':4,'audit':5}
 PROTOCOL_COMMIT='5b71924'
 BASELINE_COMMIT='73baea299fb07d608bade8364d6cf66443e23166'
-PLANNING_BUDGET_SECONDS=1800.  # Resource-only amendment A1 before primary data.
+PLANNING_BUDGET_SECONDS=2400.  # Resource-only amendment A2 before primary data.
 
 
 def plain(x):

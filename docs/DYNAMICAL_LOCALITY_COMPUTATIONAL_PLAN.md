@@ -84,3 +84,13 @@ execution, protocol amendment A1 increases the planning allowance to1800 seconds
 all scientific settings and the original hard runtime/memory limits remain intact.
 A third full timing pilot, not outcome-based parameter selection, determines the
 final complete workload. Its N6 lower-bound cutoff is1800/(2*84)+.05 seconds.
+
+## Final resource-only amendment A2
+
+Pilot3 retained all cases but exceeded A1's target under variable shared-host
+performance. Protocol amendment A2 sets the final planning allowance to2400 seconds,
+within the unchanged2700-second hard cap. The final feasibility calculation takes
+worst timings across all three complete mandatory-size pilots, not the fastest
+run. It separately repeats the N6 lower-bound censor at the new allowance. The
+scientific functions, initial states, grid, thresholds and precision are unchanged;
+only the planning constant and pre-primary resource documentation change.
