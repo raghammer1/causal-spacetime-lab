@@ -1,0 +1,115 @@
+{
+  "analysis_seconds": 56.614629249990685,
+  "artifact_sha256": {
+    "conditional.csv": "99fe9556088eecf3c1e1d1fa44df0afc7d64f802d587ac86b5ce0120a501011b",
+    "conditional_laws.png": "ce809b63d7929ee20f91e3b9027f7a998c3f7d3b5011503531a3f6440e65049a",
+    "dimension_reconstruction.png": "e95b342734b2ca34ea11f38ee7e59ababa4e2dfaf082be33052ab78a564308fa",
+    "exact_pair_scaling.png": "d7afb17d5e6463f7fdb7fd513e738cec4516fafc05dc8bb4b0bb5eff16607178",
+    "exact_structural_witness.png": "bd292cd5ee005354b1f051aa34d7b1f000077e0cfbcbae2559c4fb9831104b7f",
+    "fiber_search.png": "a882226ed0e9cd4767ab386cdc76bffcaf4119efb186ff16656fd79cc5bcef1c",
+    "global.csv": "0be64aed37d7ee2e7ef3b61dda42af230d2ee7f40cd0933c03e950b9d83db9f4",
+    "global_two_plus_two.png": "becaee6aa5b1061edcbf32cefcad2da351315c807f03f49e8ef4942cba6649a3",
+    "interval_joint_structure.png": "a28d5fcc9d9d908f1013ae5eac69f7776247a7d691148d36a0325aabe4cbdf1f",
+    "pairs.csv": "b4431645420b83bac60035c4fb4d69848e826a4547fccabced0b712bc6276afe",
+    "pairs.jsonl.gz": "e20cfbb4410dd615cbeac9f9ca48f3de471beae64109cb98c9330a81e6c47188",
+    "raw_orders.jsonl.gz": "49e17b435f037308007248748faba517982d3cf3125051256f88d6e47c4777e9",
+    "references.json.gz": "5bac639621dcaca433da874f324c5db860394e11fdfc83c5623d0c7eb918d65f",
+    "searches.csv": "d7711b2977799dcd0678675570de490d7eea3b13d2c5b495e74f43b4e641ba9a",
+    "searches.jsonl.gz": "6e586f52b2720bb31b1893eca422fae09c0cc18465b22c4052e4069edab8c61a",
+    "structural_correlations.png": "f456dee8df61d7711cd6d78d95c0984348d134d8793ec95b13aabcc74d77fb6b",
+    "summary.json": "b41482b889e3495c9f7279b66b021d89aabbee0052bd069aea83a2e345dff687"
+  },
+  "config": {
+    "bootstrap_draws": 2000,
+    "counts": [
+      64,
+      128,
+      256
+    ],
+    "dimensions": [
+      2,
+      3,
+      4
+    ],
+    "fiber_repeats": 32,
+    "fits": 3,
+    "motif_draws": 4096,
+    "reference4": 5000,
+    "reference8": 2000,
+    "repeats": 200,
+    "seed": 20261025,
+    "wall_seconds": 2700.0,
+    "workers": 3
+  },
+  "conservative_peak_rss_bytes": 2381774848,
+  "exact_pairs": 3600,
+  "fiber_searches": 864,
+  "figures": [
+    "conditional_laws.png",
+    "dimension_reconstruction.png",
+    "exact_pair_scaling.png",
+    "fiber_search.png",
+    "global_two_plus_two.png",
+    "interval_joint_structure.png",
+    "structural_correlations.png",
+    "exact_structural_witness.png"
+  ],
+  "fits": [
+    {
+      "fit": 0,
+      "peak_rss_bytes": 318881792,
+      "seconds": 651.8817962080066
+    },
+    {
+      "fit": 1,
+      "peak_rss_bytes": 318554112,
+      "seconds": 652.7533084170136
+    },
+    {
+      "fit": 2,
+      "peak_rss_bytes": 319389696,
+      "seconds": 650.0712230829813
+    }
+  ],
+  "machine": "arm64",
+  "numpy": "2.5.4",
+  "pair_count": 3600,
+  "parent_checkpoint_records": 31392,
+  "parent_seconds": 654.9303611670039,
+  "platform": "Darwin",
+  "python": "3.14.4",
+  "reference_seconds": 5.003051125007914,
+  "resource_limits_satisfied": true,
+  "row_count": 31392,
+  "sampling_law_comparisons_are_not_embeddability_tests": true,
+  "scientific_digest_scope": "canonical raw orders, references, summaries, exact-pair and search records; excludes timing/provenance metadata and figures",
+  "scientific_sha256": "f8e8ac15ac466c05cc662e93b2d394ef7750cdc669e5244b1740cece248e880d",
+  "search_count": 864,
+  "source_commit": "96234c586ab983c7a8b4ffc11ddd12b278d4ea70",
+  "source_hashes": {
+    "docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md": "f85265b32bcaf5dffe3a1eaf2e9ec1f9cb99d2bfda3427051c926d7406cf91d7",
+    "docs/LOCAL_CAUSAL_STRUCTURE_PROTOCOL.md": "ad6bfe26c4755a86e3d8d46ec31b1e507c08f37e93d7794bc051fa05a81a6243",
+    "docs/LOCAL_CAUSAL_STRUCTURE_THEORY.md": "eb642c673bc41aeaf8f8bfd34e1cf68ef09236f9cf8b014bf428f5b32ad93ea9",
+    "docs/LOCAL_CAUSAL_STRUCTURE_WORKLOAD.md": "361e37fe0364521f85fd65517efc5a430073ac3c0d2380a9ed98a07b8246f66a",
+    "src/causal_lab/__init__.py": "945c1b0c1f23b05139ed37d1d62a51748273d214f922b41e4c1ce1207f16f75a",
+    "src/causal_lab/adversarial_artifacts.py": "dbf215f4e883224e08dfb6dcdd354bbba128137451613eba5e29d2d026cf22d6",
+    "src/causal_lab/adversarial_detectors.py": "c3730143ac1648e5a8db88f43a58c53940bf6899d24f1f8187be91dc54053579",
+    "src/causal_lab/adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+    "src/causal_lab/adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+    "src/causal_lab/adversarial_study.py": "29c8da9f0541c13882dfb83615f01c29277dbc55ac4bdee2f3c8cdabc934f6c1",
+    "src/causal_lab/cli.py": "6449a264d0542995a87b3ee0c70d01ceb98257962ce3355472257959f4727abc",
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "src/causal_lab/dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+    "src/causal_lab/local_generators.py": "12cd9cbc86996c38250c1b81e139f7c6d2a08b5543b0d5b0ffea73eb54b6c2f7",
+    "src/causal_lab/local_random.py": "6886f177070ada0af1d2746d37624b2a6ed583918fa1dabe52f3105c77c2f97e",
+    "src/causal_lab/local_statistics.py": "0ba483e23e23e6b640ecbd156aa265fed6ce367af324f21e01e68fd4eafa0192",
+    "src/causal_lab/local_structure.py": "c65b7f80c0c31dbd25c5b8d7ace7f079303fbffa0cffc898795ce63bd31dcb81",
+    "src/causal_lab/local_structure_artifacts.py": "fd33e829e242832151f4e7049ca84d082cef638babe59d98d735f8bf8cc1a49e",
+    "src/causal_lab/local_structure_study.py": "47dab785b4f80fcceace169d34f5a7646002009fb28c8ab2f86063beb470dd27",
+    "src/causal_lab/order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "total_seconds": 716.5480415420025,
+  "working_tree_dirty": false
+}

@@ -44,8 +44,12 @@ also requires a specified volume sampling law and separation between sampling
 and geometric scales. Agreement of a few distributions proves neither existence
 of such an embedding nor uniqueness up to controlled error. Exact summary
 collisions and rank-two/diamond law equivalence survive our finite study. The
-pigeonhole argument for fixed motifs plus the old histogram does not establish
-noninjectivity of the entire growing size/component profile A[m,k].
+pigeonhole argument for fixed motifs plus the old histogram did not by itself
+establish noninjectivity of the growing size/component profile A[m,k]. The
+[postregistration analytic extension](LOCAL_CAUSAL_STRUCTURE_RESULTS.md#postregistration-analytic-extension-a-complete-selected-summary-collision)
+does establish collisions of the entire measured vector in the height-two class,
+where every open interval is empty. That result does not establish ambiguity
+within a specified manifoldlike class.
 
 **A convergence notion and control of limits.** Specify the sequence of order
 laws, normalization of counting measure, candidate continuum class, and what

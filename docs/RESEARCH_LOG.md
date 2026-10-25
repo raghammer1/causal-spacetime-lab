@@ -120,3 +120,45 @@ reproduction evidence, retained failures and all six comparison figures.
 Recommend a new preregistered diagnostic/adversarial study before interpreting
 coordinate-free growth as geometric evidence. No gravitational dynamics,
 Einstein-equation derivation or black-hole/singularity claim follows.
+
+## 2026-10-25 — Local causal structure and geometric identifiability v1
+
+**Gate and registration:** verified Experiment 3 PR #3 merged at `8dccf04` and
+post-merge CI green before implementation. Created the experimental branch,
+committed mathematical protocol/theory as `e92c6e4`, then committed verified
+implementation and timing-only workload selection as `96234c5` before primary
+sampling. The full R=200,F=32 choice followed the fixed resource rule.
+
+**Executed:** three independent fits, d=2,3,4, N=64,128,256; 31,392 parent/checkpoint
+records, 3,600 exact matched pairs, 864 searches and 387,072 attempted switches.
+All 42 primary convex-region comparisons and their 126 per-fit counterparts
+meet the registered practical-equivalence margins. The conditional interval-law
+derivation explains why slabs retain local dimensional information despite
+global boundary bias. The study adds no learned classifier or geometric label.
+
+**Exact information and limits:** induced 2+2 counts, open-interval connectivity
+and overlap moments distinguish old-summary collisions; several other quantities
+are algebraically redundant. All exact pair predictions hold. A separately
+labeled post-registration 12-event counterexample matches the entire measured
+structural vector, and a restricted height-two counting argument proves that
+such collisions are unavoidable. Two-ranking/d2-diamond full-law equivalence
+remains exact; S3 obstructs d2 but has an explicit d3 embedding.
+
+**Failures retained:** 528 searches accept no proposal. d2 searches detect no
+local-invariant change; d4 changes are common, but neither motion nor stalling
+certifies embeddability. At N256 every switched ensemble meets the local-law
+margins, including d4 with 96/96 changed invariants. Small-N d4 slabs have sparse
+or absent intervals; boxes retain dimension bias; rank-three/d3 comparisons
+include four inconclusive margins. TV bootstrap bias and only three fits limit
+the uncertainty interpretation.
+
+**Verification:** 661 passing tests and an end-to-end CLI smoke run; exhaustive
+poset and motif checks, full archive audit,
+independent coordinate/dual-count reconstruction of a fixed 129-record subset
+including 27 complete searches, complete scientific replay, and eight reviewed
+figures. The results report records exact digests, test/CI evidence and costs.
+
+**Decision:** useful structural progress, no claim of complete reconstruction.
+Stop classifier optimization; prioritize specified continuum convergence,
+embedding and scale-control conditions. Exploratory intrinsic causal dynamics
+is a separate research direction, not evidence of emergent gravity.

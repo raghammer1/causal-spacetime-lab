@@ -1,0 +1,26 @@
+{
+  "bootstrap_intervals_recomputed": false,
+  "checks": [
+    "finite JSON",
+    "unique records",
+    "histogram and chain identities",
+    "connectivity and conditional-pattern margins",
+    "overlap arithmetic",
+    "global motif sampling arithmetic",
+    "exact pair invariants",
+    "fiber checkpoints and attempt accounting",
+    "reference raw outcomes",
+    "independently enumerated exact d2 references",
+    "complete configured grid",
+    "independent scientific and file digests"
+  ],
+  "exact_pairs": 3600,
+  "explicit_search_budget_exception": false,
+  "fiber_searches": 864,
+  "independent_motif_classes": 16,
+  "metadata_present": true,
+  "parent_records": 31392,
+  "reference_fits": 9,
+  "status": "passed",
+  "summary_present": true
+}

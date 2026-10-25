@@ -1,0 +1,7 @@
+count,density_difference,deterministic_contrast,n22_difference,old_signature_matches,pair_count,scaling
+64,5.036387902596258e-05,True,32,600,600,fixed
+128,5.999250093738283e-06,True,64,600,600,fixed
+256,7.322962797518248e-07,True,128,600,600,fixed
+64,0.00040291103220770064,True,256,600,600,inflated
+128,0.0003839520059992501,True,4096,600,600,inflated
+256,0.0003749356952329343,True,65536,600,600,inflated
