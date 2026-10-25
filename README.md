@@ -2,6 +2,27 @@
 
 A small, reproducible Python research sandbox for exploring how **geometric quantities can be inferred from causal order** in toy models. This is an educational computational lab and **not evidence** that spacetime is discrete, that General Relativity is incorrect, or that black-hole singularities have been resolved.
 
+## Interactive Research Atlas
+
+Explore the first five experiments through an interactive React/TypeScript atlas:
+causal diamonds, dimension guessing, adversarial orders, local structure,
+background-free growth, a scientific evidence map and the archived data explorer.
+All research implementations and historical archives remain unchanged.
+
+- [Atlas application, run instructions and deployment](apps/research-atlas/README.md)
+- [Scientific provenance and interpretation audit](apps/research-atlas/SCIENTIFIC_AUDIT.md)
+- [Interactive atlas (GitHub Pages target; available after the atlas PR is merged and deployed)](https://raghammer1.github.io/causal-spacetime-lab/)
+
+```bash
+cd apps/research-atlas
+npm ci
+npm run dev
+```
+
+Browser demonstrations are illustrative; recorded results retain their source
+links and uncertainty definitions. The tested classical growth route failed its
+Minkowski target. The broader emergent-spacetime hypothesis remains open.
+
 ## First experiment: recover proper time from causal relationships
 
 1. Create a 1+1D flat Minkowski causal diamond with known elapsed time `T`.
