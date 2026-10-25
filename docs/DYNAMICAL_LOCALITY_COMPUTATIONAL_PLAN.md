@@ -74,3 +74,13 @@ cached sizes. The matrix-free N6 path is unchanged. Independent dense-state,
 entangled-state, phase, reversal and conservation tests validate the optimization.
 This changes computation only; the full primary Hamiltonian, controls, parameter
 families, scientific thresholds, precision and resource limits remain frozen.
+
+## Resource-only amendment A1
+
+The optimized second complete pilot also rejected R4 under1200 seconds. Its full
+choices, overhead and source hashes are retained in
+[attempt2](experiments/dynamical-locality-pilot-attempt2.json). Before any primary
+execution, protocol amendment A1 increases the planning allowance to1800 seconds;
+all scientific settings and the original hard runtime/memory limits remain intact.
+A third full timing pilot, not outcome-based parameter selection, determines the
+final complete workload. Its N6 lower-bound cutoff is1800/(2*84)+.05 seconds.

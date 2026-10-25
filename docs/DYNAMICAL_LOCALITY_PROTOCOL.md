@@ -275,3 +275,24 @@ covering all seven experiments. Choose A/B/C from the user brief with evidence.
 For NO-GO or INCONCLUSIVE, default to stopping computational exploration; do not
 invent Experiment8 or a new Hamiltonian. Push and open the requested PR into main,
 verify published CI, and do not merge automatically.
+
+## Resource-only amendment A1, before primary generation
+
+Two complete timing-only N4/N5 pilots rejected the minimum R4 cohort under the
+original1200-second conservative projection. The first is retained at
+[attempt1](experiments/dynamical-locality-pilot-attempt1.json); an exact frozen-sector
+optimization was independently tested before
+[attempt2](experiments/dynamical-locality-pilot-attempt2.json), which also exceeded
+that target. No primary data exist at this amendment, and pilot scientific outcomes
+were discarded rather than used to choose a workload.
+
+For one final timing pilot, raise ONLY the conservative full-workload planning
+allowance from20 to30 minutes (1800 seconds). Retain the factor2 safety margin,
+45-minute hard primary cap, separate45-minute replay cap,20-minute pilot cap,
+2GiB RSS limit, single worker/thread, complete cohorts, R candidates12/8/4, all
+parameters/preparations/controls, precision and every scientific decision threshold.
+The N6 censored timing bound consequently becomes1800/(2*84)+.05 seconds. Re-run
+the complete timing pilot from committed source before selecting R and freezing
+primary execution. This spends more computation; it does not relax a scientific
+advancement rule. The original rejected projections and this amendment remain
+visible in history and the final report.

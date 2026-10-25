@@ -30,6 +30,7 @@ CELLS=tuple((mu,gamma) for mu in (2.,.1,-2.) for gamma in (.25,1.))
 STREAMS={'smoke':1,'calibration':2,'pilot':3,'primary':4,'audit':5}
 PROTOCOL_COMMIT='5b71924'
 BASELINE_COMMIT='73baea299fb07d608bade8364d6cf66443e23166'
+PLANNING_BUDGET_SECONDS=1800.  # Resource-only amendment A1 before primary data.
 
 
 def plain(x):
@@ -380,7 +381,7 @@ def pilot(out):
             tick=time.monotonic();catalog=GraphCatalog(n);maxima[n]=0.;fixed[n]=time.monotonic()-tick
             # Before any costly N6 fixed controls, test a rigorous lower bound on bundle cost.
             if n==6:
-                limit=1200/(2*6*(3*4+2))+.05
+                limit=PLANNING_BUDGET_SECONDS/(2*6*(3*4+2))+.05
                 def timeout(signum,frame):raise TimeoutError('N6 censored timing lower bound exceeds admission inequality')
                 old=signal.signal(signal.SIGALRM,timeout);tick=time.monotonic()
                 try:
@@ -399,7 +400,7 @@ def pilot(out):
                     decision['N6']='excluded: censored quantum-bundle cost already fails conservative complete minimum-cohort inequality'
                 finally:
                     signal.setitimer(signal.ITIMER_REAL,0);signal.signal(signal.SIGALRM,old)
-                if 2*maxima[n]*84>1200:decision['N6']='excluded: quantum-bundle lower bound already fails conservative complete minimum-cohort inequality'
+                if 2*maxima[n]*84>PLANNING_BUDGET_SECONDS:decision['N6']='excluded: quantum-bundle lower bound already fails conservative complete minimum-cohort inequality'
                 checkpoint()
                 if 'N6' in decision:continue
             tick=time.monotonic();cache=FrozenGraphResponse(catalog,times=DELAYS)
@@ -453,7 +454,7 @@ def pilot(out):
     for r in (12,8,4):
         projection=2*(sum(maxima[n]*6*(3*r+2)+fixed[n] for n in (4,5))+overhead)
         choices.append(dict(repeats_per_batch=r,mandatory_projection_seconds=projection))
-        if projection<=1200:chosen=r;break
+        if projection<=PLANNING_BUDGET_SECONDS:chosen=r;break
     else:
         checkpoint()
         write_json(out/'pilot.json',dict(status='infeasible',source=initial_source,measurements=measurements,
@@ -463,13 +464,13 @@ def pilot(out):
         raise RuntimeError('mandatory minimum cohort does not fit; pre-primary computational amendment required')
     if 'N6' not in decision:
         allcost=2*(sum(maxima[n]*6*(3*chosen+2)+fixed[n] for n in (4,5,6))+overhead)
-        if allcost<=1200:sizes.append(6);decision['N6']='admitted complete cohort'
+        if allcost<=PLANNING_BUDGET_SECONDS:sizes.append(6);decision['N6']='admitted complete cohort'
         else:decision['N6']='excluded: complete same-R cohort exceeds budget'
     if initial_source['sha256']!=source_metadata()['sha256']:raise RuntimeError('source changed during pilot; repeat timing before freeze')
     result=dict(sizes=sizes,repeats_per_batch=chosen,max_bundle_seconds=maxima,fixed_seconds=fixed,
         postprocessing_seconds_largest_candidate=overhead,choices=choices,N6=decision['N6'],measurements=measurements,source=initial_source,
         projected_seconds=2*(sum(maxima[n]*6*(3*chosen+2)+fixed[n] for n in sizes)+overhead),
-        safety_factor=2.,primary_budget_seconds=1200,hard_cap_seconds=2700,
+        safety_factor=2.,primary_budget_seconds=PLANNING_BUDGET_SECONDS,hard_cap_seconds=2700,
         pilot_elapsed_seconds=time.monotonic()-start,peak_rss_bytes=peak_bytes(),
         selection_uses='timing, memory and numerical validity only; all pilot scientific arrays discarded')
     write_json(out/'pilot.json',result);print(json.dumps(dict(sizes=sizes,repeats=chosen)),flush=True)
