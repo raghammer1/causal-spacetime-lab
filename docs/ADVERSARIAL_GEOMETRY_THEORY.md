@@ -187,6 +187,33 @@ allegedly nongeometric family. This argument makes no claim that a generic
 intersection of three or more rankings has the law of a higher-dimensional
 Minkowski interval.
 
+## A structural distinction for the unseen interval family
+
+The registered random-interval generator cannot contain an induced **2+2**:
+four events whose only relations are two disjoint two-event chains. This
+follows directly from its endpoint rule, without a Monte Carlo argument.
+Write each interval as `(left_i,right_i)` and let `a≺b` and `c≺d`. If
+`right_a <= right_c`, then `right_a <= right_c < left_d`, forcing `a≺d`.
+If instead `right_c < right_a`, then `right_c < right_a < left_b`, forcing
+`c≺b`. Either case supplies an extra relation, contradicting an induced 2+2.
+An exact test enumerates all 105 pairings of eight endpoint ranks, representing
+all four-interval configurations up to event relabeling and endpoint reversal.
+
+Flat d=2 Alexandrov-interval samples can contain this pattern. For example,
+rescaled null-coordinate pairs
+`(.2,.6), (.4,.8), (.6,.2), (.8,.4)` realize precisely two unrelated chains.
+Every relevant coordinate difference is strictly separated from zero, so
+sufficiently small open neighborhoods preserve this order. Independent uniform
+sampling assigns those neighborhoods positive probability. Thus the two
+sampling laws differ in more than their construction labels, even if selected
+summary statistics sometimes accept both.
+
+This derived lemma identifies a possible additional order statistic for a
+future experiment; it does not alter the six registered detectors. Absence
+of an induced 2+2 is not a generic certificate of non-manifoldlikeness:
+particular finite continuum samples can also lack the pattern, and the
+argument does not address all continuum regions or sampling laws.
+
 ## What the calibration does and does not cover
 
 The finite-N reference distribution depends on the sampling law and region.

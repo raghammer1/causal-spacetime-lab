@@ -1,0 +1,148 @@
+{
+  "architecture": "arm64",
+  "calibration_per_cell": 10,
+  "cells": [
+    {
+      "count": 64,
+      "dimension": 2,
+      "search_mean_seconds": 0.10313879149907734,
+      "search_seconds": [
+        0.10690650000469759,
+        0.0993710829934571
+      ],
+      "setup_seconds": 0.06465308298356831
+    },
+    {
+      "count": 64,
+      "dimension": 3,
+      "search_mean_seconds": 0.09060256248631049,
+      "search_seconds": [
+        0.0919912499957718,
+        0.08921387497684918
+      ],
+      "setup_seconds": 0.018249374988954514
+    },
+    {
+      "count": 64,
+      "dimension": 4,
+      "search_mean_seconds": 0.07569868800055701,
+      "search_seconds": [
+        0.07748654199531302,
+        0.07391083400580101
+      ],
+      "setup_seconds": 0.01646712500951253
+    },
+    {
+      "count": 128,
+      "dimension": 2,
+      "search_mean_seconds": 0.34513045799394604,
+      "search_seconds": [
+        0.37875004098168574,
+        0.31151087500620633
+      ],
+      "setup_seconds": 0.08625812499667518
+    },
+    {
+      "count": 128,
+      "dimension": 3,
+      "search_mean_seconds": 0.2074160005140584,
+      "search_seconds": [
+        0.20554083402385004,
+        0.20929116700426675
+      ],
+      "setup_seconds": 0.04553070801193826
+    },
+    {
+      "count": 128,
+      "dimension": 4,
+      "search_mean_seconds": 0.17073854198679328,
+      "search_seconds": [
+        0.18097941699670628,
+        0.16049766697688028
+      ],
+      "setup_seconds": 0.037597291986458004
+    },
+    {
+      "count": 256,
+      "dimension": 2,
+      "search_mean_seconds": 0.7805425205006031,
+      "search_seconds": [
+        0.746875207987614,
+        0.8142098330135923
+      ],
+      "setup_seconds": 0.19354483298957348
+    },
+    {
+      "count": 256,
+      "dimension": 3,
+      "search_mean_seconds": 0.5329721460002474,
+      "search_seconds": [
+        0.5361005000013392,
+        0.5298437919991557
+      ],
+      "setup_seconds": 0.13044412501039915
+    },
+    {
+      "count": 256,
+      "dimension": 4,
+      "search_mean_seconds": 0.4369446454948047,
+      "search_seconds": [
+        0.4201514159794897,
+        0.45373787501011975
+      ],
+      "setup_seconds": 0.0991691249946598
+    }
+  ],
+  "counts": [
+    64,
+    128,
+    256
+  ],
+  "development_per_cell": 10,
+  "dimensions": [
+    2,
+    3,
+    4
+  ],
+  "families": [
+    "calibration",
+    "development",
+    "donor_selection",
+    "search"
+  ],
+  "fit": 0,
+  "key_schema": [
+    "adversarial-v1",
+    20261024,
+    0,
+    "pilot",
+    "family",
+    "dimension",
+    "count",
+    "repeat",
+    null
+  ],
+  "master_seed": 20261024,
+  "namespace": "adversarial-v1",
+  "numpy": "2.5.4",
+  "peak_rss_bytes": 76267520,
+  "phase": "pilot",
+  "platform": "Darwin",
+  "projected_primary_searches": 5400,
+  "projected_serial_search_seconds": 1645.9106126858387,
+  "projected_three_worker_search_seconds_optimistic": 548.6368708952796,
+  "projection_note": "Linear extrapolation of two searches per cell, not a confidence bound. Three-worker estimate assumes perfect parallel speedup; excludes full-study non-search generation, model fitting, decisions, statistical evaluation, and output writing.",
+  "protocol_sha256": "7504899a67e9d563610d1b7a776df05b6e953c56f311bbd6d1a30ee41bfda190",
+  "purpose": "Resource-only preregistered pilot; no scientific feature values or acceptance outcomes inspected or retained.",
+  "python": "3.14.4",
+  "search_evaluations": 64,
+  "searches_per_cell": 2,
+  "source_sha256": {
+    "src/causal_lab/adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+    "src/causal_lab/adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+    "src/causal_lab/dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "src/causal_lab/order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412"
+  },
+  "total_searches": 18,
+  "wall_seconds": 6.180351999995764
+}
