@@ -1,0 +1,73 @@
+{
+  "allocation_scope": "Separate tracemalloc pass of same deterministic benchmark sample; peak newly traced Python/NumPy allocations, excluding retained inputs; not total resident memory. Unsupported native allocations may be invisible.",
+  "artifact_sha256": {
+    "agreement.csv": "407f2d5eeeeac39251c5a8c6445d7259eaeca166423372f2f2368d4f8c61404a",
+    "bias_scaling.png": "ef22ade6544b47d7389ed1bd7493e92d1a9333c340971908fe9e99cd034ad862",
+    "chain_controls.png": "a8b658b083b2c96a507ea25c6951f1944d89533a65f2b89364b28816ff447d5a",
+    "diagnostics.json": "1523550a78bf4b42321baf51c5326c25b674213871d588ff398311c85b3831fd",
+    "raw.csv": "1453f8f40c39188bd2769b52ac614b421d2d0c26b4e277e16d72b4ebf7d607dd",
+    "reconstruction.png": "7f1952f9edcc7d734ed14784d94e8cee0fdb197ecfab0d127a5b58732987950f",
+    "summary.csv": "c18d7fd0075add7a62394a891521f1a7045b3b00a6d3a6a8d35d97a7de54680e",
+    "summary.json": "255eb28fe4defdc74f56d07569b02ced90410a600bfbcb3de0c2e30b34e52df6"
+  },
+  "benchmark_selection": "Independent benchmark streams; matrix phases only when realized N <= order_max_count, so they are count-selected near the cap. No extrapolation of timings beyond measured sizes.",
+  "bootstrap": {
+    "confidence": 0.95,
+    "coverage": "pointwise",
+    "method": "percentile",
+    "resamples": 5000,
+    "unit": "independent whole sprinkling repetition"
+  },
+  "config": {
+    "benchmark_repeats": 3,
+    "bootstrap": 5000,
+    "densities": [
+      80.63494719327188,
+      1290.1591550923501
+    ],
+    "durations": [
+      0.5,
+      2.0
+    ],
+    "order_max_count": 256,
+    "order_repeats": 20,
+    "repeats": 2000,
+    "seed": 20261026
+  },
+  "git_commit": "135dd3cfeafea530c387200b6ed4b3d54a0accda",
+  "git_worktree_dirty": true,
+  "nondeterministic_artifacts": [
+    "benchmarks.csv",
+    "benchmarks.png",
+    "metadata.json"
+  ],
+  "output_wall_seconds": 1.0259904580016155,
+  "platform": {
+    "machine": "arm64",
+    "release": "25.5.0",
+    "system": "Darwin"
+  },
+  "process_peak_rss_after_outputs_bytes": 129564672,
+  "process_peak_rss_after_outputs_scope": "Process lifetime through CSV/JSON and PNG generation, including plotting; not incremental memory for this study alone.",
+  "process_peak_rss_bytes": 85311488,
+  "process_peak_rss_scope": "Process lifetime through study completion, including imports, bootstrap and benchmark passes; excludes subsequent output plotting. Darwin ru_maxrss bytes; Linux KiB converted to bytes; unavailable platforms null. Prior work in this process may contribute.",
+  "protocol_sha256": "b05beac6c926d992a46a1a0806a0f53d071e79b50529a02d5eff0eb5969218fa",
+  "reproduction_command": "python -m causal_lab.scaling --densities 80.63494719327188 1290.1591550923501 --durations 0.5 2.0 --repeats 2000 --seed 20261026 --bootstrap 5000 --order-repeats 20 --order-max-count 256 --benchmark-repeats 3 --out results/finite-density-v1",
+  "rng": "NumPy Generator(PCG64(int(SHA256(identity).hexdigest(), 16)))",
+  "schema_version": 1,
+  "scientific_digest": "c5d6e31b59ba4fe51379bae38c704be3666aa222c6b4461f3ce7a6e98b3b3bdb",
+  "scientific_status": "Numerical test in known Minkowski geometry; no evidence of microscopic physical discreteness, background-free emergence, gravitational dynamics or singularity resolution.",
+  "seed_identity": "ASCII master_seed|float(duration).hex()|float(density).hex()|repeat|stream; decimal integers; physical stream='physical', independent benchmark and bootstrap purpose strings",
+  "source_sha256": {
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "study_wall_seconds": 4.931883209006628,
+  "timing_scope": "perf_counter seconds for separate untraced calls; RNG setup excluded from sprinkle; fast uses coordinates; order_matrix builds relation; order_only includes strict transitivity validation and DP, excludes input matrix construction",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "package": "0.1.0",
+    "python": "3.14.4"
+  }
+}

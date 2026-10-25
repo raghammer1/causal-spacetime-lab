@@ -1,0 +1,107 @@
+{
+  "agreement_summary": {
+    "candidate_primary_trials": 80,
+    "checked_primary_trials": 60,
+    "mismatches": 0,
+    "order_max_count": 256,
+    "selection": "first order_repeats per cell, retained only if realized N <= order_max_count",
+    "skipped_above_count_limit": 20
+  },
+  "endpoint_contrasts": [
+    {
+      "ci_high": 0.1894606278779415,
+      "ci_low": 0.17152643918334431,
+      "contrast": "high_minus_low_normalized_bias",
+      "contrast_interval_outcome": "positive",
+      "difference": 0.1804836903974404,
+      "duration": 0.5,
+      "high_density": 1290.1591550923501,
+      "high_normalized_bias": -0.1433324311371048,
+      "low_density": 80.63494719327188,
+      "low_normalized_bias": -0.3238161215345452,
+      "negative_bias_supported": true,
+      "pointwise_interval_outcome": "supports_improvement"
+    },
+    {
+      "ci_high": 0.08756943453429489,
+      "ci_low": 0.07997545726871769,
+      "contrast": "high_minus_low_normalized_bias",
+      "contrast_interval_outcome": "positive",
+      "difference": 0.08380935765101472,
+      "duration": 2.0,
+      "high_density": 1290.1591550923501,
+      "high_normalized_bias": -0.059385269621257786,
+      "low_density": 80.63494719327188,
+      "low_normalized_bias": -0.1431946272722725,
+      "negative_bias_supported": true,
+      "pointwise_interval_outcome": "supports_improvement"
+    }
+  ],
+  "equal_lambda_comparisons": [
+    {
+      "ci_high": 0.005197174330816237,
+      "ci_low": -0.004823627425788923,
+      "contrast": "relative_mean_b_minus_a",
+      "density_a": 1290.1591550923501,
+      "density_b": 80.63494719327188,
+      "difference": 0.00013780386483230878,
+      "duration_a": 0.5,
+      "duration_b": 2.0,
+      "expected_count": 161.26989438654377,
+      "investigate_five_se": false,
+      "standard_error": 0.0025584992227558976,
+      "z": 0.05386121035591826
+    }
+  ],
+  "poisson_moments": [
+    {
+      "count_mean": 10.1015,
+      "count_variance": 9.854124812406205,
+      "density": 80.63494719327188,
+      "duration": 0.5,
+      "expected_count": 10.079368399158986,
+      "investigate_five_se": false,
+      "mean_standard_error_theory": 0.07099073319511141,
+      "mean_z": 0.31175337744699066,
+      "variance_standard_error_theory": 0.3266254334407069,
+      "variance_z": -0.689608229157297
+    },
+    {
+      "count_mean": 160.8555,
+      "count_variance": 158.80602276138066,
+      "density": 1290.1591550923501,
+      "duration": 0.5,
+      "expected_count": 161.26989438654377,
+      "investigate_five_se": false,
+      "mean_standard_error_theory": 0.28396293278044565,
+      "mean_z": -1.4593256327020798,
+      "variance_standard_error_theory": 5.1089748753840345,
+      "variance_z": -0.4822634061158702
+    },
+    {
+      "count_mean": 161.088,
+      "count_variance": 158.03027113556777,
+      "density": 80.63494719327188,
+      "duration": 2.0,
+      "expected_count": 161.26989438654377,
+      "investigate_five_se": false,
+      "mean_standard_error_theory": 0.28396293278044565,
+      "mean_z": -0.6405567964900953,
+      "variance_standard_error_theory": 5.1089748753840345,
+      "variance_z": -0.6341043614414873
+    },
+    {
+      "count_mean": 2581.3655,
+      "count_variance": 2583.0114154577286,
+      "density": 1290.1591550923501,
+      "duration": 2.0,
+      "expected_count": 2580.3183101847003,
+      "investigate_five_se": false,
+      "mean_standard_error_theory": 1.1358517311217826,
+      "mean_z": 0.9219423509311115,
+      "variance_standard_error_theory": 81.62513967929105,
+      "variance_z": 0.03299357628801197
+    }
+  ],
+  "uncertainty_note": "Pointwise 95% percentile bootstrap intervals; no multiplicity correction. Endpoint and equal-lambda contrasts resample independent cells independently."
+}
