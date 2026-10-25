@@ -13,6 +13,7 @@ from time import perf_counter
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 import numpy as np
 
 from .adversarial_features import exact_counterexamples, nondual_pair
@@ -77,11 +78,13 @@ def make_figures(result, out):
         for i, name in enumerate(names):
             genuine = [r["mean_acceptance"] for r in primary if r["detector"] == name and r["count"] == n and r["family"] == "genuine"]
             negative = [r["mean_acceptance"] for r in primary if r["detector"] == name and r["count"] == n and r["family"] not in {"genuine", "rank_overlap", "box"}]
-            ax.scatter(min(genuine), max(negative), color=COLORS[i], s=55, label=LABELS[i])
-            ax.annotate(name, (min(genuine), max(negative)), xytext=(4, 3), textcoords="offset points")
+            ax.scatter(min(genuine), max(negative), color=COLORS[i], marker="os^vDP"[i], s=55, label=LABELS[i])
+            offsets = ((-48, 22), (-16, 36), (-56, -16), (-24, 24), (-62, 20), (-28, 4))
+            ax.annotate(name, (min(genuine), max(negative)), xytext=offsets[i], textcoords="offset points",
+                        color=COLORS[i], arrowprops={"arrowstyle": "-", "lw": .7, "color": COLORS[i]})
         ax.axvline(.9, color="grey", ls=":")
         ax.axhline(.05, color="grey", ls=":")
-        ax.set(xlim=(0, 1.02), ylim=(-.03, 1.05), title=f"N={n}",
+        ax.set(xlim=(0, 1.02), ylim=(-.07, 1.15), title=f"N={n}",
                xlabel="Worst genuine dimension: mean acceptance", ylabel="Worst negative cell: mean acceptance")
     axes[0, -1].legend(fontsize=7, loc="lower left")
     fig.suptitle(f"Worst-cell overview across {result['config']['fits']} fits; dashed lines are targets, not CI tests")
@@ -135,23 +138,32 @@ def make_figures(result, out):
 
     fig, axes = plt.subplots(2, len(dimensions), figsize=(4.3*len(dimensions), 6), squeeze=False)
     for column, d in enumerate(dimensions):
-        for n in counts:
+        for index, n in enumerate(counts):
             rows = [r for r in result["searches"] if r["dimension"] == d and r["count"] == n]
             if not rows:
                 continue
             initial = np.array([r["initial_objective"] for r in rows])
             final = np.array([r["best_objective"] for r in rows])
             axes[0, column].plot([0, 1], [np.median(initial), np.median(final)], "o-", label=f"N={n}")
-            axes[1, column].plot([0, 1], [np.mean([r["height_fraction_match"] for r in rows]),
-                                         np.mean([r["multifeature_match"] for r in rows])], "o-", label=f"N={n}")
+            for offset, key, label, color in ((-.17, "height_fraction_match", "r/height tolerance", COLORS[0]),
+                                               (.17, "multifeature_match", "all 15 within 1 SD", COLORS[1])):
+                successes = sum(r[key] for r in rows)
+                rate = successes/len(rows)
+                axes[1, column].bar(index+offset, rate, width=.32, color=color,
+                                    label=label if index == 0 else None)
+                axes[1, column].text(index+offset, rate+.02, f"{successes}/{len(rows)}",
+                                     ha="center", va="bottom", fontsize=7, rotation=90 if rate > .8 else 0)
         axes[0, column].set(title=f"Target d={d}", ylabel="Median standardized RMS residual")
-        axes[0, column].set_yscale("symlog", linthresh=1)
-        axes[1, column].set(ylabel="Fraction meeting stage-specific tolerance", ylim=(-.03, 1.03))
-        for ax in axes[:, column]:
-            ax.set(xticks=(0, 1), xticklabels=("r/height checkpoint", "full search"))
-            ax.legend(fontsize=8)
+        axes[0, column].yaxis.set_major_locator(MaxNLocator(nbins=5))
+        axes[0, column].yaxis.set_major_formatter(FormatStrFormatter("%.2g"))
+        axes[0, column].set(xticks=(0, 1), xticklabels=("r/height checkpoint", "full search"), ylim=(0, None))
+        axes[1, column].set(ylabel="Fraction meeting stage-specific tolerance", ylim=(-.03, 1.3),
+                            xticks=range(len(counts)), xticklabels=[str(n) for n in counts], xlabel="N")
+        axes[0, column].legend(fontsize=8)
+    handles, labels = axes[1, 0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8)
     fig.suptitle("All searches retained; stage tolerances differ and do not certify geometry")
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, .06, 1, 1))
     _save(fig, out/"matching_quality.png")
 
     first, second = nondual_pair()

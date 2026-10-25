@@ -1,0 +1,97 @@
+{
+  "artifact_sha256": {
+    "acceptance_tradeoff.png": "9a42fd53e9d9aeaa285dd6a13cd3c218ff2c25a01bba013f43c2320b2ef27ba9",
+    "advancement.json": "841ebd524402f18d3ccdc2f29fde6dc03f6c740ec27e92a3845bdc8b8fadc042",
+    "calibration_sensitivity.png": "ed140bc28cc8742fe05bc9eff3b0923e4d070c243d1f76983d072a4843a16728",
+    "classification.csv": "cfcd050f0699bdd67db16abf66f040f71111379cb35a07227eb803ca9be1bd0c",
+    "detector_comparison.png": "f6a01cd21b11b69e1be382b7075a25083342d7e4d932f6c645e4d78a922e2bf1",
+    "exact_counterexamples.json": "46a3a5015bf4e8d707834dcc6d716b97dcf4e912fc9ea393f1221c57b0a431d1",
+    "exact_degeneracy.png": "395c63d4b6e3e6527e208e24c168eb00d3976f9bd885e0fcd53ed007851e6d00",
+    "examples.json": "3dbc32e31a9bc586f187df574b778aae652beb20a2fbd3b5e8ca1fc670f932c6",
+    "genuine_acceptance.png": "4bd2f2d3f42d814c86d2b8f3a1c746103a93448dc842d5e48bc806b653977c3a",
+    "matching_quality.png": "021ad79da57557e0be286199984366785822c452f6d2e1fa9907d8e2c2ac5db8",
+    "models.json": "e91939a72c407a063a0a87e1f968d67a80f3029efd1bbbaf76b0598cef9ca0f4",
+    "paired.jsonl.gz": "78edb459cbed14583a36c053f4117e3293497c739249f1840854fa670b0d6d80",
+    "rates.csv": "cea816366391537785494b90ee9d761abf781fc55978810aef18826552451c69",
+    "raw.jsonl.gz": "af9ab815dc100597f5819a2f1f950baf9c04becee22c6ad031fcab3e257906e1",
+    "resources.csv": "f2d253f9252409577deb817f8308433bcc2ed050ae560e32b2fa7ec44a290227",
+    "search_effects.json": "b55633e26e6f48a6a3400505ac2d4a95cd6f72c780bfb9f59479592568c88a07",
+    "searches.jsonl.gz": "2720486f200928a45fd1a2cf2a25ffb8f3f83bf16d3d5f77fbec56f1114c93f3",
+    "summary.json": "c44f6060738849c47f3eb60531844364714eb2b2546ef904f88ad806e8590a19"
+  },
+  "candidate_evaluations": 345600,
+  "config": {
+    "bootstrap": 2000,
+    "calibration": 100,
+    "counts": [
+      64,
+      128,
+      256
+    ],
+    "development": 100,
+    "dimensions": [
+      2,
+      3,
+      4
+    ],
+    "fits": 3,
+    "repeats": 200,
+    "search_steps": 64,
+    "seed": 20261025,
+    "validation": 200,
+    "workers": 3
+  },
+  "elapsed_seconds": 747.3242459999747,
+  "fit_resources": [
+    {
+      "elapsed_seconds": 736.835830875003,
+      "fit": 0,
+      "peak_rss_bytes": 160251904
+    },
+    {
+      "elapsed_seconds": 735.7034941670136,
+      "fit": 1,
+      "peak_rss_bytes": 159940608
+    },
+    {
+      "elapsed_seconds": 741.3077232080104,
+      "fit": 2,
+      "peak_rss_bytes": 160366592
+    }
+  ],
+  "git_dirty": true,
+  "git_parent": "e4dfbc06f1eac7cb1706824ccb0f3dfd28740ac9",
+  "output_seconds": 10.855842874996597,
+  "peak_parent_rss_bytes": 450740224,
+  "platform": {
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "protocol_sha256": "7504899a67e9d563610d1b7a776df05b6e953c56f311bbd6d1a30ee41bfda190",
+  "random_stream": "SHA256 compact ASCII JSON [adversarial-v1,seed,fit,phase,family,d,N,repeat,parameter] -> PCG64",
+  "recorded_orders": 52218,
+  "resource_scope": "Wall timers exclude interpreter/import startup. Worker RSS values are per-process peaks, not simultaneous sums. Timing is excluded from scientific digest.",
+  "scientific_sha256": "218a3de6419410ddd874321d794656a01bc285436cbe8b65babd5a592f4b5ec2",
+  "searches": 5400,
+  "source_sha256": {
+    "__init__.py": "945c1b0c1f23b05139ed37d1d62a51748273d214f922b41e4c1ce1207f16f75a",
+    "adversarial_artifacts.py": "dbf215f4e883224e08dfb6dcdd354bbba128137451613eba5e29d2d026cf22d6",
+    "adversarial_detectors.py": "c3730143ac1648e5a8db88f43a58c53940bf6899d24f1f8187be91dc54053579",
+    "adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+    "adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+    "adversarial_study.py": "29c8da9f0541c13882dfb83615f01c29277dbc55ac4bdee2f3c8cdabc934f6c1",
+    "cli.py": "6449a264d0542995a87b3ee0c70d01ceb98257962ce3355472257959f4727abc",
+    "core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+    "order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+    "scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "summary_seconds": 5.240628083993215,
+  "uncertainty": "Per-fit Wilson; hierarchical fits then whole orders; only three primary fits; pointwise intervals.",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "python": "3.14.4"
+  }
+}

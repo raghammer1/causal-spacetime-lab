@@ -56,12 +56,44 @@ The first study's selected features are also exactly equal for nonisomorphic V
 and dual orders. Explore additional observables and ablations without interpreting
 a successful finite feature list as a complete geometry test.
 
-## B. Background-free growth — planned after observables are validated
+## A2. Adversarial geometry — implemented, advancement gate not met
+
+[Experiment 3](ADVERSARIAL_GEOMETRY_RESULTS.md) compares six detectors across
+three independent calibrations, multiple DAG probabilities, protected-height
+searches and an unseen interval-order family. All 5,400 searches match height and
+ordering fraction; none satisfies every one of the 15 full-match constraints.
+Some failed searches still pass every detector. Every detector fails the primary
+advancement benchmark. Complex models improve selected contrasts, but no primary
+contrast meets the complete genuine-retention guard; the prespecified 97.5%
+sensitivity target supports some local gains over the two-feature baseline.
+
+**Next experiment:** preregister richer structural diagnostics and stronger
+adversaries before claiming geometry validation. Candidate diagnostics include
+induced 2+2 motifs, internal interval order types and overlaps, and joint rather
+than only marginal feature information. Scale search budgets with N; separate
+finite-budget failure from an information-theoretic limit. Increase independent
+calibration fits and handle discrete score ties before claiming exactly matched
+acceptance rates. Reserve fresh generator families and untouched test streams.
+
+**Exact boundary:** a rank-two abstract sampler has the same order distribution
+as a d=2 flat diamond, so no order-only statistic can distinguish their provenance.
+The selected full interval histogram also coincides for exact nondual finite
+orders. Conversely, flat samples with different region boundaries can be rejected.
+Validation must define the target sampling law, not equate rejection with absence
+of geometry or coordinate-free generation with emergence.
+
+**Stopping criterion:** retain the no-go for interpreting a growth experiment as
+validated emergent geometry until a new protocol survives its declared stronger
+tests. Exploratory growth remains possible as a mathematical model with explicit
+failed controls; it must not treat these classifiers as spacetime certificates.
+
+## B. Background-free growth — exploratory only after Experiment 3 failures
 
 **Question:** Can an explicitly specified rule on abstract orders produce stable
 continuum-like statistics without supplied positions or metric?
 
-Start with the transition rules in
+Before using growth results as geometric evidence, resolve the diagnostic gaps
+above. For an explicitly exploratory model, start with the transition rules in
 [Rideout and Sorkin (2000)](https://arxiv.org/abs/gr-qc/9904062), including
 transitive percolation as a control. Specify allowed transitions, probabilities,
 transitive closure and relabeling invariance before running anything. Retain

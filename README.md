@@ -62,7 +62,7 @@ and memory observations vary across runs and machines.
 
 ## Experiment 2: reconstruct spacetime dimension
 
-The `experiment/dimension-reconstruction-v1` branch adds independent flat-space
+Experiment 2, merged into `main`, adds independent flat-space
 generators for spacetime dimensions 2, 3 and 4, and a Myrheim–Meyer estimator
 that receives only the causal-order matrix. The [mathematical derivation](docs/DIMENSION_THEORY.md)
 verifies the volume measure and ordering-fraction normalization. The
@@ -85,6 +85,44 @@ summaries, six figures, runtime measurements and limitations. Artificial orders
 are tested against both the single fraction and an exploratory combination of
 chain and interval observables. No finite collection of these statistics proves
 that a causal order is manifold-like. No black-hole model is included.
+
+## Experiment 3: adversarial geometry and identifiability
+
+The [registered protocol](docs/ADVERSARIAL_GEOMETRY_PROTOCOL.md) compares six
+detectors: ordering fraction, height, their combination, the original five-feature
+RMS score, a maximum-residual score, and interval abundance. Three independent
+calibration fits have disjoint training, development, validation and final-test
+streams. Controls include protected-height adversarial searches, an unseen
+interval-order family, and a rank-based sampler with exactly the d=2 geometric
+order law. The [theory](docs/ADVERSARIAL_GEOMETRY_THEORY.md) explains why the last
+family is a positive control and gives exact information-loss counterexamples.
+
+```bash
+python -m causal_lab.adversarial_study --seed 20261025 --dimensions 2 3 4 --counts 64 128 256 --fits 3 --calibration 100 --development 100 --validation 200 --repeats 200 --search-steps 64 --bootstrap 2000 --workers 3 --out results/adversarial-geometry-v1
+```
+
+The full workload records 52,218 orders, including both checkpoints of 5,400
+bounded searches. It takes substantially longer than the earlier experiments.
+`--workers 1` runs serially without changing scientific streams or the digest.
+For a small reproducible smoke run:
+
+```bash
+python -m causal_lab.adversarial_study --dimensions 2 3 --counts 12 --fits 2 --calibration 10 --development 10 --validation 12 --repeats 2 --search-steps 4 --bootstrap 32 --seed 101 --out results/adversarial-smoke
+```
+
+The [results report](docs/ADVERSARIAL_GEOMETRY_RESULTS.md) links compressed raw
+features, complete interval histograms, every search including failed matches,
+fitted models, per-fit Wilson intervals, hierarchical paired comparisons and six
+figures. Nominal validation acceptance targets are shared across detectors;
+discrete score ties and holdout variability can produce different achieved rates.
+Three fits provide a limited assessment of calibration uncertainty. Acceptance
+compares selected summaries with a specified sampling model; it is not a physical
+spacetime certificate.
+
+Verify the curated full archive with `python scripts/audit_adversarial.py`.
+`python scripts/analyze_adversarial_searches.py docs/experiments/adversarial-geometry-v1`
+also reconstructs nine seeded search cases. These audits deliberately require the
+registered full grid; they write their reports to ignored `results/` files.
 
 ## Interpretation boundaries
 
