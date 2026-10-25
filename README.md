@@ -1,6 +1,6 @@
 # Causal Spacetime Lab
 
-A small, reproducible Python research sandbox for exploring how **geometric quantities can be inferred from causal order** in toy models. This is an educational computational lab and **not evidence** that spacetime is discrete, that General Relativity is incorrect, or that black-hole singularities have been resolved.
+A small, reproducible Python research sandbox for exploring **geometric reconstruction from causal order and quantum information** in toy models. This is an educational computational lab and **not evidence** that spacetime is discrete, that General Relativity is incorrect, or that black-hole singularities have been resolved.
 
 ## Interactive Research Atlas
 
@@ -216,6 +216,42 @@ to stop tuning this baseline. Further intrinsic dynamics needs an explicit chang
 assumption, a justified convergence question, and fresh consistency/covariance
 analysis. No physical spacetime or gravitational dynamics is established.
 
+## Experiment 6: quantum information before spacetime
+
+Exact 6-, 8- and 10-qubit calculations distinguish reconstructing supplied locality
+from claiming that geometry emerged. All 72 registered h=1 chain samples recover
+their hidden bonds. Random all-to-all interactions yield perturbation-stable MI
+rankings, but fail the required phase-scrambled control comparison at two of three
+sizes. The symmetric model cannot select ground-state neighborhoods by an exact
+finite-system theorem. Raw information distances can violate metric axioms, and
+Bell/GHZ/Haar controls expose misleading geometric-looking representations.
+
+The [results and A–J research decision](docs/QUANTUM_EMERGENCE_RESULTS.md) retain
+1,818 state records, 873 ground-state solves, six figures, every registered field
+and control, independent numerical/statistical audits and a full byte-identical
+scientific replay. The independent uncertainty calibration covered only 91.25% of
+known means with nominal 95% bootstrap intervals; those intervals are explicitly
+descriptive. Exact binomial chain bounds are separately validated.
+
+Read the [theory](docs/QUANTUM_EMERGENCE_THEORY.md),
+[preregistration](docs/QUANTUM_EMERGENCE_PROTOCOL.md) and
+[resource-selected workload](docs/QUANTUM_EMERGENCE_WORKLOAD.md). SciPy supplies
+sparse exact-state solvers; no learned geometry classifier was added.
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+python -m causal_lab.quantum_study --smoke --output results/quantum-smoke
+python -m causal_lab.quantum_audit docs/experiments/quantum-information-v1 --output results/quantum-audit.json
+python scripts/audit_quantum_statistics.py docs/experiments/quantum-information-v1 --output results/quantum-statistics-audit
+```
+
+The complete study took about 88 seconds in the recorded environment. Exact
+reproduction uses its frozen commit, as documented in the report. The decision is
+to stop optimizing these correlation classifiers/layouts and require a justified
+state-selection mechanism plus independent operational locality tests before a
+new quantum emergence experiment. This is useful structural research, without a
+controlled continuum, gravitational dynamics or physical-spacetime claim.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.
@@ -223,6 +259,7 @@ analysis. No physical spacetime or gravitational dynamics is established.
 - Pair comparability supports a dimension estimate under stated flat-interval
   assumptions; an arbitrary order can imitate it. It does not prove geometry.
 - A discrete causal graph is not automatically physical spacetime; additional tests include locality, effective dimension, dynamics, Lorentz invariance, stability and ultimately agreement with GR.
+- Quantum MI measures total correlations, including classical correlations. A correlation graph, imposed metric or low-dimensional layout does not establish emergent space or time.
 - Simulating horizon-like behaviour is not experimental observation of a black hole.
 
 ## Research workflow

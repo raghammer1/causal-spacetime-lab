@@ -217,3 +217,51 @@ consistent with the known almost-semiorder theorem. Stop tuning this baseline.
 Further intrinsic dynamics requires a mathematical reason to change specified
 assumptions, fresh covariance/consistency analysis and a precise convergence
 target. No physical spacetime, gravity or singularity claim follows.
+
+## 2026-10-25 — Quantum information before spacetime v1
+
+**Gate and registration:** verified Experiment 5 PR #5 merged at `9bc5984`, green
+post-merge push CI and 813 baseline tests. Protocol `ee9ece7` preceded model code
+and outcomes; mathematical theory was completed during implementation and frozen
+with workload/source `6dd6598` before primary execution. The timing-only rule chose
+R8 in three independent batches, keeping n6/8/10 and h=.5/1/2. Unrelated local work
+was preserved through an isolated experiment worktree.
+
+**Executed:** 1,818 planned state records, 873 ground-state solves, zero numerical
+failures. Models comprise symmetric and exchangeable signed all-to-all interactions,
+a hidden-label chain, analytic product/Bell/GHZ controls, Haar states, matched phase
+scrambles, coupling perturbations and bounded controlled-time preparations. No J,
+coordinates or target dimension enters MI inference. No feedback law was invented
+after outcomes; that optional phase was omitted before the experiment.
+
+**Findings:** all 72 h=1 chain cases have perfect edge AUC/recall; each size's exact
+binomial lower bound is .84316. h=.5 recovery worsens with size. B has robust finite
+rankings but its physical phase-null advantage fails at n6 and10. Direct coupling
+and ZZ associations remain substantial, raw triangles/Euclidean Gram conditions
+fail, and information rank drifts with size. Model A has an exact finite-ground-state
+symmetry obstruction; local-X gauge ambiguity and the first-order propagation
+identity expose supplied structure. Bell/GHZ/Haar controls demonstrate why good
+layouts and selected cut-law agreement cannot certify geometry.
+
+**Adverse uncertainty:** nominal 95% bootstrap coverage was 365/400=91.25%, retained
+without retuning. Bootstrap screens are descriptive; exact binomial calculations
+remain separately justified. Three-preparation cells have no fabricated CI.
+
+**Verification:** generating source passed 987 tests and full CLI smoke. Independent
+state audit checked all states, 873 direct Hamiltonian actions, 53,328 pair reductions
+and 21,816 cut entropies with zero failures. Independent statistical reconstruction
+made 289,132 checks with maximum discrepancy 7.11e-15. Full replay from the frozen
+commit reproduced all nine nonmetadata artifacts, including six figures, byte for
+byte. Scientific digest:
+`016d5fbef1c4418779b61ffc578abad2162ccb1503e8bb10b06e0842d2fea55d`.
+Primary/repeat runtimes were 88.216/86.047 seconds; primary peak RSS about 411 MiB.
+An independent geometry audit added 468,387 passing comparisons across all 5,454
+inference records. The final local suite passed 1,001 tests. Publication CI is linked
+in the results report/PR.
+
+**Decision:** useful quantum reconstruction and information-loss evidence; no
+limited GO for geometric emergence from these models. Stop optimizing this
+classifier/layout baseline. A further quantum program requires an independently
+justified state-selection law, operational factorization/coarse-graining and
+controlled propagation/continuum conditions. No emergent time, gravity, black-hole
+or singularity-resolution claim follows.

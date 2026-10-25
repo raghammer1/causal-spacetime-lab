@@ -1,0 +1,78 @@
+{
+  "peak_rss_bytes": 107823104,
+  "phase": "pilot",
+  "projected_seconds": {
+    "2": 47.66866249172017,
+    "4": 95.33732498344034,
+    "8": 190.67464996688068
+  },
+  "scientific_values_inspected": false,
+  "selected_repeats": 8,
+  "source": {
+    "baseline_commit": "9bc5984c656271c247354e0079fd900702642064",
+    "platform": {
+      "machine": "arm64",
+      "system": "Darwin"
+    },
+    "protocol_commit": "ee9ece7",
+    "seeds": {
+      "audit": [
+        61501
+      ],
+      "bootstrap": [
+        61401
+      ],
+      "calibration": [
+        61003
+      ],
+      "pilot": [
+        61002
+      ],
+      "primary": [
+        61101,
+        61201,
+        61301
+      ],
+      "smoke": [
+        61001
+      ]
+    },
+    "source_commit": "ee9ece735642d9a818053f11e290a8450f403d90",
+    "source_hashes": {
+      "src/causal_lab/quantum.py": "6a80e2e306acb9bded9c1f702b373f33c4316d8fa3b7f33bd6ca46f5151b9fc5",
+      "src/causal_lab/quantum_artifacts.py": "e970568c9ad9b15aff4757807a401837d698e14cc129243eada7a1280609338b",
+      "src/causal_lab/quantum_geometry.py": "2c7c4ff6fc4d9fd91f79660f0534de56d741a79cce2382045c30a36e99823a03",
+      "src/causal_lab/quantum_measurements.py": "bdb71469b94287717fa588079f20cb2cbf96b9f5f1320d4b25d7d5f84b60c0a6",
+      "src/causal_lab/quantum_random.py": "3bc3879b44b8bd821e3329a06c8ddd731a941a5ac0df25c9aec008f8773d1c29",
+      "src/causal_lab/quantum_statistics.py": "a22ec5777d20b319d192a2df5e8c52b1273ab56dda900f3b0be1c6f79155dab5",
+      "src/causal_lab/quantum_study.py": "abfae9e5634733d3a38706f32bf50ac8227e8cee4199ab20b61344f8fad9548d"
+    },
+    "tracked_dirty": true,
+    "untracked_scientific_files": "docs/QUANTUM_EMERGENCE_THEORY.md\nsrc/causal_lab/quantum.py\nsrc/causal_lab/quantum_artifacts.py\nsrc/causal_lab/quantum_geometry.py\nsrc/causal_lab/quantum_measurements.py\nsrc/causal_lab/quantum_random.py\nsrc/causal_lab/quantum_statistics.py\nsrc/causal_lab/quantum_study.py\ntests/test_quantum.py\ntests/test_quantum_geometry.py\ntests/test_quantum_statistics.py",
+    "versions": {
+      "numpy": "2.5.4",
+      "python": "3.14.4",
+      "scipy": "1.18.1"
+    }
+  },
+  "timings": [
+    {
+      "failed": 0,
+      "n": 6,
+      "seconds": 0.9688435829884838,
+      "states": 47
+    },
+    {
+      "failed": 0,
+      "n": 8,
+      "seconds": 1.2730321249982808,
+      "states": 47
+    },
+    {
+      "failed": 0,
+      "n": 10,
+      "seconds": 1.7305128329899162,
+      "states": 47
+    }
+  ]
+}

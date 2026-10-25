@@ -152,6 +152,48 @@ require hidden coordinates, or cannot distinguish matched controls. Even success
 would demonstrate properties of a mathematical model, not its relevance to our
 universe, Lorentzian dynamics or quantum gravity.
 
+## B2. Quantum information — useful proximity, no geometric advancement
+
+[Experiment 6](QUANTUM_EMERGENCE_RESULTS.md) changes the foundational hypothesis;
+the classical CSG obstruction does not automatically extend to quantum models.
+Its finite transverse-field Ising laboratory recovers supplied chain edges at h=1
+and finds stable rankings in random exchangeable interactions. The symmetric
+finite ground state has an exact no-neighborhood theorem. The random model fails
+the all-size physical-null comparison; raw distances violate metric conditions,
+cut-law assumptions are not generally satisfied, and early-time propagation
+explicitly follows supplied couplings. A fixed tensor factorization and external
+time remain assumptions. No independent dynamical locality was established.
+
+**Decision:** no limited GO for a geometric mechanism from these models. Stop
+classifier, layout and favorable-parameter optimization. Preserve the useful
+reconstruction result and the adverse field/control/uncertainty findings, including
+91.25% calibration coverage for nominal 95% bootstrap intervals. A new study needs
+a theoretical reason to alter the mechanism, not additional visually convincing
+features or a reward for a selected dimension.
+
+**Next mathematical prerequisites:** define operational subsystem algebras and
+coarse-graining; specify a justified autonomous state/interaction law; identify its
+symmetries and conserved quantities; derive a falsifiable propagation or entropy
+consequence that is not already inserted through J. A potential quantum-edge model
+would require its own derivation and controls; this experiment did not implement
+or validate Quantum Graphity. Any external classical feedback must be labeled as
+such and include measurement/backaction assumptions.
+
+**Controlled-limit requirements:** a compatible sequence of states/observables,
+metric nondegeneracy and approximate uniqueness, concentration/tightness,
+mesoscopic scale separation, universality and local propagation bounds uniform
+on the relevant scales. Lorentzian causality, a matter sector, conservation laws
+and effective gravitational equations are separate obligations. Passing a sampled
+cut law or reconstructing a fixed chain supplies none of these automatically.
+
+**Refutation:** neighborhoods depend on arbitrary labels/ties, numerical floors or
+convenient projections; physical nulls look equivalent; independent preparation
+or perturbation destroys the proposed structure; a dimension drifts without a
+controlled scaling law; or the proposed propagation simply copies supplied
+interactions. Inconclusive finite evidence must remain inconclusive. Broader
+quantum-information-first approaches are neither confirmed nor universally ruled
+out by this small experiment.
+
 ## C. Curved backgrounds and causal horizons — later
 
 Use a specified metric and its invariant volume element. Compare recovered
