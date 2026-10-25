@@ -252,6 +252,46 @@ state-selection mechanism plus independent operational locality tests before a
 new quantum emergence experiment. This is useful structural research, without a
 controlled continuum, gravitational dynamics or physical-spacetime claim.
 
+## Experiment 7 — final dynamical-locality test and programme closure
+
+**NO-GO for the registered finite unconditioned locality benchmark.** The final
+quantum-link study retains every parameter setting at N=4 and 5: 144 independent
+exchangeable preparations plus 24 symmetric preparations, equilibrium analyses,
+exact Born graph laws, operational interventions and matched controls. Every
+size/parameter cell has 0/12 joint successes; simultaneous exact upper bound 0.402190
+falls below the required 0.8. Independent implementations reproduce the decision.
+
+The model produces nontrivial graph correlations and measurement backaction, but
+these do not establish dynamically selected physical geometry. Conditional response
+on a known measured graph is a different experiment from an unconditioned target
+measurement. Continuum scaling remains unresolved at these sizes. The resource
+selection, rejected pilots and all negative results are preserved.
+
+Read the [complete A–L results](docs/DYNAMICAL_LOCALITY_RESULTS.md),
+[theory](docs/DYNAMICAL_LOCALITY_THEORY.md),
+[registered protocol](docs/DYNAMICAL_LOCALITY_PROTOCOL.md),
+[frozen workload](docs/DYNAMICAL_LOCALITY_WORKLOAD.md), and
+[final synthesis of all seven experiments](docs/FINAL_RESEARCH_SYNTHESIS.md).
+The primary archive includes 238 deterministic scientific artifacts and seven figures;
+previous experiments and the interactive research atlas remain intact.
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+python -m causal_lab.dynamical_study --mode smoke --output results/dynamical-smoke
+python scripts/audit_dynamical_primary.py docs/experiments/dynamical-quantum-locality-v1 \
+  --thermal-replay --output results/dynamical-audit.json
+python scripts/audit_dynamical_graphs.py docs/experiments/dynamical-quantum-locality-v1 \
+  --output results/dynamical-graph-audit.json
+```
+
+**Programme conclusion B:** useful mathematical/computational research, but
+insufficient evidence to pursue the physical hypothesis through more simulations.
+This closes the seven-experiment programme. No Experiment 8, further classifier
+optimization or replacement Hamiltonian is proposed. Restart would require a new
+physical principle, controlled mathematical derivation or discriminating empirical
+prediction. No physical spacetime, emergent time, gravitational dynamics or
+black-hole singularity resolution has been established.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.
@@ -264,7 +304,7 @@ controlled continuum, gravitational dynamics or physical-spacetime claim.
 
 ## Research workflow
 
-See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for next experiments, [docs/RESEARCH_LOG.md](docs/RESEARCH_LOG.md) for falsifiable hypotheses and [CODEX_PROMPT.md](CODEX_PROMPT.md) for agent instructions.
+See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for the completed roadmap and stopping criteria, [docs/RESEARCH_LOG.md](docs/RESEARCH_LOG.md) for falsifiable hypotheses and [CODEX_PROMPT.md](CODEX_PROMPT.md) for agent instructions.
 
 ## Further reading
 

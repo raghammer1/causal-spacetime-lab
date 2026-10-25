@@ -1,0 +1,404 @@
+{
+  "decisions": {
+    "N6": "excluded: quantum-bundle lower bound already fails conservative complete minimum-cohort inequality"
+  },
+  "failure": "Minimum mandatory cohort R4 exceeds1200-second conservative projection; no primary data generated.",
+  "fixed_seconds": {
+    "4": 6.062998124893056,
+    "5": 45.42211950101773,
+    "6": 0.15850974997738376
+  },
+  "maxima": {
+    "4": 0.3269507499935571,
+    "5": 10.8817394170037,
+    "6": 7.2062015410047024
+  },
+  "measurements": [
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 102252544,
+      "preparation": "Splus",
+      "seconds": 0.3269507499935571,
+      "serialized_bytes": 36381,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 102563840,
+      "preparation": "Sempty",
+      "seconds": 0.27125479199457914,
+      "serialized_bytes": 36173,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 102907904,
+      "preparation": "E",
+      "seconds": 0.30307179101509973,
+      "serialized_bytes": 67589,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "Splus",
+      "seconds": 0.3014100000145845,
+      "serialized_bytes": 37097,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "Sempty",
+      "seconds": 0.2861170420073904,
+      "serialized_bytes": 37039,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "E",
+      "seconds": 0.301677458017366,
+      "serialized_bytes": 67694,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "Splus",
+      "seconds": 0.2408348750032019,
+      "serialized_bytes": 36334,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "Sempty",
+      "seconds": 0.22439583300729282,
+      "serialized_bytes": 35075,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 128434176,
+      "preparation": "E",
+      "seconds": 0.24616016700747423,
+      "serialized_bytes": 67557,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 128614400,
+      "preparation": "Splus",
+      "seconds": 0.26306908298283815,
+      "serialized_bytes": 36572,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 128958464,
+      "preparation": "Sempty",
+      "seconds": 0.25360079199890606,
+      "serialized_bytes": 35361,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 129269760,
+      "preparation": "E",
+      "seconds": 0.2684720830002334,
+      "serialized_bytes": 67647,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 129269760,
+      "preparation": "Splus",
+      "seconds": 0.20565925000119023,
+      "serialized_bytes": 36774,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 129269760,
+      "preparation": "Sempty",
+      "seconds": 0.20819249999476597,
+      "serialized_bytes": 34491,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 129433600,
+      "preparation": "E",
+      "seconds": 0.20348250001552515,
+      "serialized_bytes": 67699,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 129794048,
+      "preparation": "Splus",
+      "seconds": 0.2231303750013467,
+      "serialized_bytes": 38261,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 130121728,
+      "preparation": "Sempty",
+      "seconds": 0.21612079101032577,
+      "serialized_bytes": 35532,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 130416640,
+      "preparation": "E",
+      "seconds": 0.22435091697843745,
+      "serialized_bytes": 67619,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 9.73118370800512,
+      "serialized_bytes": 251619,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 10.094831791997422,
+      "serialized_bytes": 294598,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 10.36238387497724,
+      "serialized_bytes": 665395,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 10.8817394170037,
+      "serialized_bytes": 282256,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 8.730683292000322,
+      "serialized_bytes": 298206,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 9.820818500011228,
+      "serialized_bytes": 665811,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 7.930075625015888,
+      "serialized_bytes": 256182,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 6.414182834007079,
+      "serialized_bytes": 250985,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 8.062817083002301,
+      "serialized_bytes": 665272,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 8.48618258300121,
+      "serialized_bytes": 277105,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 7.535680917004356,
+      "serialized_bytes": 282166,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 8.711344957991969,
+      "serialized_bytes": 665946,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 5.959175249998225,
+      "serialized_bytes": 262705,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 4.899499624996679,
+      "serialized_bytes": 226944,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 5.951736084010918,
+      "serialized_bytes": 665060,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Splus",
+      "seconds": 6.248558041988872,
+      "serialized_bytes": 294161,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "Sempty",
+      "seconds": 5.839124332997017,
+      "serialized_bytes": 242504,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 180797440,
+      "preparation": "E",
+      "seconds": 6.329063582990784,
+      "serialized_bytes": 665608,
+      "valid": true
+    },
+    {
+      "N": 6,
+      "cell": 0,
+      "censored": true,
+      "elapsed_lower_bound_seconds": 7.2062015410047024,
+      "lower_bound_only": true,
+      "peak_rss_bytes": 453476352,
+      "preparation": "Splus"
+    }
+  ],
+  "minimum_projection_lower_bound_seconds": 1986.0301833073609,
+  "pilot_elapsed_seconds": 216.26278112499858,
+  "qualification": "Postprocessing was completed but its separate duration was not retained on this failure path; the displayed projection omits it and is a lower bound.",
+  "remediation": "Exact Gamma=0 graph-sector propagation; no Hamiltonian, observable, threshold, precision or workload-grid changes.",
+  "sha256": {
+    "docs/DYNAMICAL_LOCALITY_COMPUTATIONAL_PLAN.md": "31257f245559837cef12c41ebb0a6d401e4f3be037db483c8714b36b41942144",
+    "docs/DYNAMICAL_LOCALITY_PROTOCOL.md": "7bf9ff5f78b0d7fa7183e99399b9ea2c265cf5164a2a58d656a2824d9e7fc1f5",
+    "docs/DYNAMICAL_LOCALITY_THEORY.md": "fcbe94446dfc2c99bf7196de38fa9eb12ad769f7f4ba8bde5625b1128438af07",
+    "src/causal_lab/dynamical_artifacts.py": "62af503301e79f49815626ee7483acd1ea6aafcbe4447fdf697f7979003909b4",
+    "src/causal_lab/dynamical_core.py": "e7464acac35a123a5a52d520e17e74168525f98c8d900e84bbe1bb00789bf5a2",
+    "src/causal_lab/dynamical_diagnostics.py": "02ca12ec2952c3f2b48449e30505e88095136c7e88d9fe1373e4e751cc81bafd",
+    "src/causal_lab/dynamical_graphs.py": "5ff4f780103114b0eb1107611b4f2648306212708aa39c8e72076de53b1e451b",
+    "src/causal_lab/dynamical_statistics.py": "1c32e4cefff8f825395cd364bfaa159563335588249498546d96d02d4a57b27b",
+    "src/causal_lab/dynamical_study.py": "a7ba70ccfb28ac731380924b7a7fa4b1d311482578b9e5203ba78434e4ad6ff8"
+  },
+  "source_commit": "24b7525",
+  "status": "infeasible under registered conservative planning target"
+}

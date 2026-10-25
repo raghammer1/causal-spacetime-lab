@@ -1,0 +1,430 @@
+{
+  "choices": [
+    {
+      "mandatory_projection_seconds": 5611.580140671809,
+      "repeats_per_batch": 12
+    },
+    {
+      "mandatory_projection_seconds": 3882.55733861879,
+      "repeats_per_batch": 8
+    },
+    {
+      "mandatory_projection_seconds": 2153.5345365657704,
+      "repeats_per_batch": 4
+    }
+  ],
+  "decisions": {
+    "N6": "excluded: quantum-bundle lower bound already fails conservative complete minimum-cohort inequality"
+  },
+  "fixed_seconds": {
+    "4": 7.500291834963718,
+    "5": 49.726938626001356,
+    "6": 0.15863024999271147
+  },
+  "maxima": {
+    "4": 0.46227420901414007,
+    "5": 11.544828583020717,
+    "6": 10.769558375002816
+  },
+  "measurements": [
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 100777984,
+      "preparation": "Splus",
+      "seconds": 0.46227420901414007,
+      "serialized_bytes": 36581,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 100777984,
+      "preparation": "Sempty",
+      "seconds": 0.408162582985824,
+      "serialized_bytes": 37012,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 100777984,
+      "preparation": "E",
+      "seconds": 0.31662337502348237,
+      "serialized_bytes": 67565,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 119767040,
+      "preparation": "Splus",
+      "seconds": 0.20919154200237244,
+      "serialized_bytes": 37222,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 120160256,
+      "preparation": "Sempty",
+      "seconds": 0.21052220900310203,
+      "serialized_bytes": 37904,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 120422400,
+      "preparation": "E",
+      "seconds": 0.21531799997319467,
+      "serialized_bytes": 67704,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 120815616,
+      "preparation": "Splus",
+      "seconds": 0.17749899998307228,
+      "serialized_bytes": 36470,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 121176064,
+      "preparation": "Sempty",
+      "seconds": 0.16240658299648203,
+      "serialized_bytes": 35898,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 121470976,
+      "preparation": "E",
+      "seconds": 0.17511166699114256,
+      "serialized_bytes": 67570,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Splus",
+      "seconds": 0.19576116601820104,
+      "serialized_bytes": 36684,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Sempty",
+      "seconds": 0.19038050001836382,
+      "serialized_bytes": 36215,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "E",
+      "seconds": 0.1940066660172306,
+      "serialized_bytes": 67646,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Splus",
+      "seconds": 0.1965466249966994,
+      "serialized_bytes": 36765,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Sempty",
+      "seconds": 0.15676687500672415,
+      "serialized_bytes": 35556,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "E",
+      "seconds": 0.1660102080204524,
+      "serialized_bytes": 67718,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Splus",
+      "seconds": 0.3392564580135513,
+      "serialized_bytes": 38200,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "Sempty",
+      "seconds": 0.17590833298163489,
+      "serialized_bytes": 36530,
+      "valid": true
+    },
+    {
+      "N": 4,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 121487360,
+      "preparation": "E",
+      "seconds": 0.16973737499210984,
+      "serialized_bytes": 67603,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 128991232,
+      "preparation": "Splus",
+      "seconds": 10.888988249993417,
+      "serialized_bytes": 251613,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 135626752,
+      "preparation": "Sempty",
+      "seconds": 10.187084625009447,
+      "serialized_bytes": 295655,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 0,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "E",
+      "seconds": 11.544828583020717,
+      "serialized_bytes": 665395,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "Splus",
+      "seconds": 10.197762374999002,
+      "serialized_bytes": 282251,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "Sempty",
+      "seconds": 6.635084417008329,
+      "serialized_bytes": 299260,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 1,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "E",
+      "seconds": 7.460016958997585,
+      "serialized_bytes": 665824,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "Splus",
+      "seconds": 5.806044540979201,
+      "serialized_bytes": 256373,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "Sempty",
+      "seconds": 4.686701124999672,
+      "serialized_bytes": 252155,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 2,
+      "censored": false,
+      "peak_rss_bytes": 136069120,
+      "preparation": "E",
+      "seconds": 5.959789500018815,
+      "serialized_bytes": 665252,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 137363456,
+      "preparation": "Splus",
+      "seconds": 8.316119249997428,
+      "serialized_bytes": 277244,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 137363456,
+      "preparation": "Sempty",
+      "seconds": 6.198356959008379,
+      "serialized_bytes": 283371,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 3,
+      "censored": false,
+      "peak_rss_bytes": 137838592,
+      "preparation": "E",
+      "seconds": 6.776507165981457,
+      "serialized_bytes": 665940,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "Splus",
+      "seconds": 4.682241332979174,
+      "serialized_bytes": 262610,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "Sempty",
+      "seconds": 4.144964249979239,
+      "serialized_bytes": 228360,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 4,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "E",
+      "seconds": 4.697176374989795,
+      "serialized_bytes": 665072,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "Splus",
+      "seconds": 5.176971207984025,
+      "serialized_bytes": 294057,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "Sempty",
+      "seconds": 5.012200291996123,
+      "serialized_bytes": 243840,
+      "valid": true
+    },
+    {
+      "N": 5,
+      "cell": 5,
+      "censored": false,
+      "peak_rss_bytes": 139821056,
+      "preparation": "E",
+      "seconds": 6.354896166012622,
+      "serialized_bytes": 665613,
+      "valid": true
+    },
+    {
+      "N": 6,
+      "cell": 0,
+      "censored": true,
+      "elapsed_lower_bound_seconds": 10.769558375002816,
+      "lower_bound_only": true,
+      "peak_rss_bytes": 470974464,
+      "preparation": "Splus"
+    }
+  ],
+  "peak_rss_bytes": 470974464,
+  "pilot_elapsed_seconds": 208.0836619590118,
+  "postprocessing_seconds_largest_candidate": 10.943403290992137,
+  "source": {
+    "baseline_commit": "73baea299fb07d608bade8364d6cf66443e23166",
+    "commit": "e2600e63ccb1aea226b5464baafd63e18b19ae30",
+    "machine": "arm64",
+    "numpy": "2.5.4",
+    "platform": "Darwin",
+    "protocol_commit": "5b71924",
+    "python": "3.14.4",
+    "scipy": "1.18.1",
+    "sha256": {
+      "docs/DYNAMICAL_LOCALITY_COMPUTATIONAL_PLAN.md": "2daf720f80718e91deba7e0d95fb6b870e1c027c03c3c3b99587eb39e3842879",
+      "docs/DYNAMICAL_LOCALITY_PROTOCOL.md": "4bc44719f701494f205aef199eec317fcd8c510d3c0bb672e3bf3d6ffa5bb524",
+      "docs/DYNAMICAL_LOCALITY_THEORY.md": "fcbe94446dfc2c99bf7196de38fa9eb12ad769f7f4ba8bde5625b1128438af07",
+      "src/causal_lab/dynamical_artifacts.py": "62af503301e79f49815626ee7483acd1ea6aafcbe4447fdf697f7979003909b4",
+      "src/causal_lab/dynamical_core.py": "04d5889b9afd3ed75576c69af5b1c161de5999e48d395254615c321b55032826",
+      "src/causal_lab/dynamical_diagnostics.py": "02ca12ec2952c3f2b48449e30505e88095136c7e88d9fe1373e4e751cc81bafd",
+      "src/causal_lab/dynamical_graphs.py": "5ff4f780103114b0eb1107611b4f2648306212708aa39c8e72076de53b1e451b",
+      "src/causal_lab/dynamical_statistics.py": "1c32e4cefff8f825395cd364bfaa159563335588249498546d96d02d4a57b27b",
+      "src/causal_lab/dynamical_study.py": "3429b32795a45e59cd26d2d7d8ec78c6311da77295c0b7814c5dc3c7613fc868"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "status": "infeasible"
+}

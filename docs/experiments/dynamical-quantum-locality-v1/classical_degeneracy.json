@@ -1,0 +1,26 @@
+{
+  "canonical_zero_temperature_connectivity": 0.75,
+  "connected_cycles": 60,
+  "connected_matter_microstates": 120,
+  "cycle_spectrum": [
+    5.091496914390436e-16,
+    0.9999999999999991,
+    1.0,
+    2.9999999999999996,
+    3.0000000000000004,
+    3.999999999999998
+  ],
+  "degree_two_graphs": 70,
+  "disconnected_matter_microstates": 40,
+  "disconnected_triangle_pairs": 10,
+  "n": 6,
+  "triangles_spectrum": [
+    -1.1102230246251565e-16,
+    1.1102230246251565e-16,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+  ],
+  "uniform_graph_connectivity": 0.8571428571428571
+}

@@ -1,0 +1,267 @@
+[
+  {
+    "ambiguous_degree_class_count": 0,
+    "ambiguous_degree_classes": [],
+    "ambiguous_degree_multisets": [],
+    "connectivity_advantage_possible": false,
+    "interpretation": "Finite-size identifiability and gate restriction; not a criterion defining physical locality.",
+    "maximum_connectivity_advantage": 0.0,
+    "minimum_ambiguous_class_mass_for_registered_advantage": null,
+    "n": 4,
+    "proof": "Without isolated vertices a disconnected N5 graph splits into two and three vertices and has at most four edges. A possibly connected class therefore consists only of six P5 paths and one C3 plus K2, with fixed labeled degrees (1,1,2,2,2). For N4 every full-degree class has fixed connectivity.",
+    "registered_advantage_threshold": 0.1,
+    "total_degree_classes": 54
+  },
+  {
+    "ambiguous_degree_class_count": 10,
+    "ambiguous_degree_classes": [
+      {
+        "connected_graph_indices": [
+          86,
+          101,
+          142,
+          163,
+          269,
+          275
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "disconnected_graph_indices": [
+          519
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          92,
+          113,
+          154,
+          169,
+          525,
+          531
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "disconnected_graph_indices": [
+          281
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          108,
+          114,
+          282,
+          297,
+          526,
+          547
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "disconnected_graph_indices": [
+          170
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          172,
+          178,
+          284,
+          305,
+          534,
+          549
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "disconnected_graph_indices": [
+          116
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          204,
+          210,
+          337,
+          393,
+          581,
+          643
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "disconnected_graph_indices": [
+          225
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          226,
+          332,
+          353,
+          394,
+          582,
+          771
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "disconnected_graph_indices": [
+          338
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          228,
+          340,
+          402,
+          417,
+          646,
+          773
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "disconnected_graph_indices": [
+          396
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          232,
+          344,
+          594,
+          609,
+          650,
+          777
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "disconnected_graph_indices": [
+          588
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          240,
+          408,
+          596,
+          652,
+          673,
+          785
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "disconnected_graph_indices": [
+          658
+        ],
+        "disconnected_graphs": 1
+      },
+      {
+        "connected_graph_indices": [
+          368,
+          424,
+          612,
+          674,
+          780,
+          786
+        ],
+        "connected_graphs": 6,
+        "degree_null_connectivity": 0.8571428571428571,
+        "degrees": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "disconnected_graph_indices": [
+          801
+        ],
+        "disconnected_graphs": 1
+      }
+    ],
+    "ambiguous_degree_multisets": [
+      [
+        1,
+        1,
+        2,
+        2,
+        2
+      ]
+    ],
+    "connectivity_advantage_possible": true,
+    "interpretation": "Finite-size identifiability and gate restriction; not a criterion defining physical locality.",
+    "maximum_connectivity_advantage": 0.1428571428571429,
+    "minimum_ambiguous_class_mass_for_registered_advantage": 0.6999999999999998,
+    "n": 5,
+    "proof": "Without isolated vertices a disconnected N5 graph splits into two and three vertices and has at most four edges. A possibly connected class therefore consists only of six P5 paths and one C3 plus K2, with fixed labeled degrees (1,1,2,2,2). For N4 every full-degree class has fixed connectivity.",
+    "registered_advantage_threshold": 0.1,
+    "total_degree_classes": 533
+  }
+]

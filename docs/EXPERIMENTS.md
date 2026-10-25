@@ -1,5 +1,12 @@
 # Research roadmap and stopping criteria
 
+**Programme closed after Experiment 7; overall conclusion B.** The
+[final synthesis](FINAL_RESEARCH_SYNTHESIS.md) records what all seven experiments
+establish and what remains unresolved. The sections below preserve the research
+trajectory. They are not a queue for Experiment 8 or a new tuned Hamiltonian.
+Further computation requires an independently justified physical principle,
+controlled mathematical construction or discriminating prediction.
+
 This project is a numerical lab. Mathematical reconstruction in an assumed
 geometry, emergence in an abstract model, and measured evidence about our
 universe are different claims. No experiment below licenses skipping the next
@@ -194,9 +201,42 @@ interactions. Inconclusive finite evidence must remain inconclusive. Broader
 quantum-information-first approaches are neither confirmed nor universally ruled
 out by this small experiment.
 
-## C. Curved backgrounds and causal horizons — later
+## B3. Dynamical quantum locality — final test, finite benchmark NO-GO
 
-Use a specified metric and its invariant volume element. Compare recovered
+[Experiment 7](DYNAMICAL_LOCALITY_RESULTS.md) promotes links to quantum degrees of
+freedom and tests operational Y-intervention responses, exact Born laws, symmetry,
+equilibrium, measurement backaction and density/degree-matched frozen controls.
+All twelve parameter/size cells have 0/12 joint successes, with simultaneous exact
+upper probability bound 0.402190 below the required 0.8. All required controls pass.
+Independent state/statistical and graph/static implementations verify the result.
+
+The law does produce correlations beyond independent links, favorable perturbation
+rank stability in some diagnostics, and measurable dephasing effects. These are
+not a controlled geometric mechanism. Symmetric states retain uniform labeled
+responses. The complete microscopic interaction support, exact matching-sector
+fragmentation and tiny-size degree-null restrictions expose supplied structure.
+Conditional fresh-matter propagation on a recorded graph answers a different
+question from the unconditioned quantum assay. Relational/thermodynamic continuum
+interpretations remain unresolved, not universally excluded.
+
+**Final decision:** stop this computational model-exploration programme. Preserve
+all failures, audits, resource amendments and exact counterexamples. Do not
+optimize another classifier, tune a connectivity reward, propose Experiment 8 or
+choose a replacement Hamiltonian merely to continue. The overall conclusion is B:
+useful mathematics and computation, insufficient physical evidence for further
+simulation-led pursuit of the hypothesis.
+
+**Conditions for a meaningful restart:** a new independently motivated principle,
+a specified sequence with controlled coarse-graining and effective locality,
+or a quantitative discriminating prediction. Energy normalization, relational
+observables, concentration, geometric nondegeneracy/uniqueness, scale separation,
+Lorentzian causality and gravitational dynamics are separate obligations. No
+such restart is planned or authorized by this roadmap.
+
+## C. Curved backgrounds and causal horizons — unimplemented prerequisites
+
+These historical checks are prerequisites for any justified restart, not a next
+experiment. Such a study would require a specified metric and invariant volume element. Compare recovered
 proper time with an independent continuum calculation along known geodesics.
 Separate density gradients, boundary effects and curvature. Flat-space recovery
 must be regained in the appropriate limit. Observer-dependent causal horizons
@@ -206,7 +246,7 @@ can occur in flat spacetime: a causal horizon is **not a black-hole solution**.
 or sensitivity to coordinate choices beyond numerical error. No claim of
 singularity resolution follows from a finite graph or a missing divergent value.
 
-## D. Gravitational dynamics and observation — much later
+## D. Gravitational dynamics and observation — unimplemented prerequisites
 
 Only a demonstrably consistent dynamics and continuum limit could motivate tests
 of Einstein's equations, gravitational time dilation, exterior black-hole limits,
