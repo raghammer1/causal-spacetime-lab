@@ -1,0 +1,10 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+package-lock.json
+src/data/generated/
+src/data/index.ts
+src/data/catalog.ts
+src/data/loader.ts
+src/lib/python-reference.json
