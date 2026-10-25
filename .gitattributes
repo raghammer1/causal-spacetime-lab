@@ -1,5 +1,6 @@
 # Curated scientific outputs are reproducible artifacts; review the report and source.
 docs/experiments/adversarial-geometry-v1/** linguist-generated=true
 docs/experiments/local-causal-structure-v1/** linguist-generated=true
+docs/experiments/background-free-growth-v1/** linguist-generated=true
 # Preserve the CSV writer's CRLF bytes so archived checksum/replay evidence holds.
 docs/experiments/local-causal-structure-v1/*.csv -text whitespace=cr-at-eol

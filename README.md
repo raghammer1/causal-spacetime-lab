@@ -165,6 +165,36 @@ The [continuum requirements](docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md) separate
 full causal-order reconstruction, volume/density assumptions, convergence and
 dynamics. Further classifier optimization is not the next research objective.
 
+## Experiment 5: background-free causal growth
+
+Intrinsic transitive percolation generates consistent causal histories without
+coordinates or target geometry, but all six registered fixed-p settings fail the
+finite Minkowski signature. Both the d2 reference and an explicit height-two
+control pass that signature, demonstrating its insufficiency. Ordinary classical
+sequential growth also has a known almost-semiorder obstruction to the specified
+Minkowski sampling limit; finite feature matches cannot overcome it.
+
+The [results](docs/BACKGROUND_FREE_GROWTH_RESULTS.md) retain 1,056 independent
+stochastic histories, 17,986 dependent records, nine figures, exact derivations,
+all failed and inconclusive comparisons, and adverse reference-control results.
+The full repeat reproduced all 31 data/table/figure artifacts byte for byte.
+Independent counting and 4,877 statistical checks found no discrepancies.
+The [protocol](docs/BACKGROUND_FREE_GROWTH_PROTOCOL.md),
+[foundations](docs/BACKGROUND_FREE_GROWTH_THEORY.md) and
+[workload amendment](docs/BACKGROUND_FREE_GROWTH_WORKLOAD.md) preceded primary data.
+
+```bash
+python -m causal_lab.growth_study --histories 32 --workers 3 --output results/growth-primary
+python -m causal_lab.growth_audit docs/experiments/background-free-growth-v1 --output results/growth-audit.json
+python scripts/review_growth_statistics.py docs/experiments/background-free-growth-v1
+python -m causal_lab.growth_study --smoke --workers 1 --output results/growth-smoke
+```
+
+The full run takes about eleven minutes on the recorded machine. The decision is
+to stop tuning this baseline. Further intrinsic dynamics needs an explicit changed
+assumption, a justified convergence question, and fresh consistency/covariance
+analysis. No physical spacetime or gravitational dynamics is established.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.

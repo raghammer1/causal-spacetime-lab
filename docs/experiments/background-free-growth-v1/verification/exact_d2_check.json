@@ -1,0 +1,30 @@
+{
+  "kind": "post-registration secondary exact analytical check; no primary criterion changed",
+  "permutation_count": 24,
+  "motif_permutations": {
+    "22": [
+      [
+        2,
+        3,
+        0,
+        1
+      ]
+    ],
+    "31": [
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        3,
+        0,
+        1,
+        2
+      ]
+    ]
+  },
+  "t22": 0.041666666666666664,
+  "t31": 0.08333333333333333
+}

@@ -1,0 +1,21 @@
+{
+  "artifact_files": 28,
+  "bootstrap_intervals_recomputed": false,
+  "failure_count": 0,
+  "failures": [],
+  "four_subsets_checked": 4896,
+  "history_records": 9,
+  "independent_count_checks": 153,
+  "raw_records": 153,
+  "records_per_history": [
+    17
+  ],
+  "regenerated_histories": 9,
+  "regenerated_motif_samples": 153,
+  "regenerated_thinnings": 108,
+  "scientific_sha256": "a5ab478ed82cb5a5175e8ff39af172677c2192758c6c30bf821daeefea75ab71",
+  "selected_histories": 9,
+  "selected_raw_records": 153,
+  "selection": "batch0/history_number0 in every available family, including endpoints",
+  "status": "passed"
+}

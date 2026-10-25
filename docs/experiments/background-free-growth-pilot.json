@@ -1,0 +1,107 @@
+{
+  "exact_reference_seconds": 1.368898665998131,
+  "fabricated_bootstrap_seconds": 0.8469931670115329,
+  "history_timings": [
+    {
+      "family": "percolation",
+      "parameter": 0.005,
+      "peak_rss_bytes": 42680320,
+      "seconds": 0.258098374994006
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.01,
+      "peak_rss_bytes": 42860544,
+      "seconds": 0.31541287500294857
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.02,
+      "peak_rss_bytes": 43089920,
+      "seconds": 0.7539861669938546
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.05,
+      "peak_rss_bytes": 43433984,
+      "seconds": 2.2135875420062803
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.1,
+      "peak_rss_bytes": 43483136,
+      "seconds": 1.9852475830120966
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.3,
+      "peak_rss_bytes": 43515904,
+      "seconds": 1.3216752499865834
+    },
+    {
+      "family": "minkowski",
+      "parameter": 2,
+      "peak_rss_bytes": 51363840,
+      "seconds": 1.2564933339890558
+    },
+    {
+      "family": "minkowski",
+      "parameter": 3,
+      "peak_rss_bytes": 53559296,
+      "seconds": 0.7732840420212597
+    },
+    {
+      "family": "minkowski",
+      "parameter": 4,
+      "peak_rss_bytes": 53608448,
+      "seconds": 0.3336261250078678
+    },
+    {
+      "family": "semiorder",
+      "parameter": 0.25,
+      "peak_rss_bytes": 53657600,
+      "seconds": 2.5072180419811048
+    },
+    {
+      "family": "matched_bipartite",
+      "parameter": 0.38042684413094974,
+      "peak_rss_bytes": 53919744,
+      "seconds": 0.33257262501865625
+    },
+    {
+      "family": "percolation",
+      "parameter": 0.0,
+      "peak_rss_bytes": 53919744,
+      "seconds": 0.1695798340078909
+    },
+    {
+      "family": "percolation",
+      "parameter": 1.0,
+      "peak_rss_bytes": 53968896,
+      "seconds": 1.0481856669939589
+    }
+  ],
+  "peak_rss_bytes": 104841216,
+  "pilot_seed": 20261024,
+  "projected_reference_seconds": 5.121007016452495,
+  "projection_formula": "1.5 * (3*R*sum(stochastic history seconds)/2 + endpoint seconds + reference projection +180)",
+  "projections": [
+    {
+      "histories_per_batch": 64,
+      "projected_seconds": 2014.8812410181563
+    },
+    {
+      "histories_per_batch": 32,
+      "projected_seconds": 1147.194699897169
+    },
+    {
+      "histories_per_batch": 16,
+      "projected_seconds": 713.3514293366752
+    }
+  ],
+  "reference_seed": 20261023,
+  "scientific_values_retained": false,
+  "selected_histories_per_batch": 32,
+  "small_stochastic_reference_seconds": 0.07504216700908728,
+  "timing_only": true
+}

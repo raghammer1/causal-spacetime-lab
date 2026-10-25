@@ -1,0 +1,121 @@
+{
+  "failure_count": 0,
+  "failures": [],
+  "frozen_config": {
+    "batches": 3,
+    "bootstrap_draws": 2000,
+    "histories": 32,
+    "motif_draws": 4096,
+    "probabilities": [
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.3
+    ],
+    "reference4": 5000,
+    "reference8": 2000,
+    "reference_seed": 20261028,
+    "seed": 20261027,
+    "smoke": false,
+    "wall_seconds": 2700.0,
+    "workers": 3
+  },
+  "primary_source_dirty": false,
+  "reference_fits": [
+    {
+      "dimension": 2,
+      "fit": 0,
+      "m4_count": 24,
+      "m8_count": 40320,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 3,
+      "fit": 0,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 4,
+      "fit": 0,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 2,
+      "fit": 1,
+      "m4_count": 24,
+      "m8_count": 40320,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 3,
+      "fit": 1,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 4,
+      "fit": 1,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 2,
+      "fit": 2,
+      "m4_count": 24,
+      "m8_count": 40320,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 3,
+      "fit": 2,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    },
+    {
+      "dimension": 4,
+      "fit": 2,
+      "m4_count": 5000,
+      "m8_count": 2000,
+      "passed": true,
+      "seed": 20261028
+    }
+  ],
+  "smoke_history_identity_disjointness": [
+    {
+      "archive": "growth-smoke-integration",
+      "history_count": 9,
+      "overlap_with_primary": 0
+    },
+    {
+      "archive": "growth-smoke-verified",
+      "history_count": 9,
+      "overlap_with_primary": 0
+    },
+    {
+      "archive": "growth-smoke-final",
+      "history_count": 9,
+      "overlap_with_primary": 0
+    }
+  ],
+  "source_commit": "9fbf2d5f979693999b3aff50890b5d1dce1eb138",
+  "source_hash_count": 29,
+  "source_hash_mismatches": [],
+  "status": "passed"
+}
