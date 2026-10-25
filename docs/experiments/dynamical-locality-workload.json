@@ -1,0 +1,77 @@
+{
+  "N6": {
+    "admitted": false,
+    "censor_seconds": 14.335714285714287,
+    "censored": true,
+    "elapsed_lower_bound_seconds": 14.344800332997693,
+    "minimum_cohort_bundle_count": 84,
+    "projection_lower_bound_seconds": 2409.9264559436124,
+    "reason": "censored lower-bound projection exceeds planning limit"
+  },
+  "choices": [
+    {
+      "mandatory_projection_seconds": 5611.587724339857,
+      "repeats_per_batch": 12
+    },
+    {
+      "mandatory_projection_seconds": 3882.564922286838,
+      "repeats_per_batch": 8
+    },
+    {
+      "mandatory_projection_seconds": 2153.5421202338184,
+      "repeats_per_batch": 4
+    }
+  ],
+  "fixed_seconds": {
+    "4": 7.500291834963718,
+    "5": 49.726938626001356
+  },
+  "hard_cap_seconds": 2700,
+  "max_bundle_seconds": {
+    "4": 0.46227420901414007,
+    "5": 11.544828583020717
+  },
+  "peak_rss_bytes": 462766080,
+  "postprocessing_seconds_largest_candidate": 10.947195125016151,
+  "primary_budget_seconds": 2400.0,
+  "prior_pilots": [
+    "dynamical-locality-pilot-attempt1.json",
+    "dynamical-locality-pilot-attempt2.json",
+    "dynamical-locality-pilot-attempt3.json"
+  ],
+  "projected_seconds": 2153.5421202338184,
+  "repeats_per_batch": 4,
+  "resource_amendment": "A2",
+  "safety_factor": 2.0,
+  "selection_uses": "worst complete-pilot timing and memory only; no primary outcomes existed",
+  "sizes": [
+    4,
+    5
+  ],
+  "source": {
+    "baseline_commit": "73baea299fb07d608bade8364d6cf66443e23166",
+    "commit": "9afe2cf383b6c34ae226b827166653e19ba93d26",
+    "machine": "arm64",
+    "numpy": "2.5.4",
+    "platform": "Darwin",
+    "protocol_commit": "5b71924",
+    "python": "3.14.4",
+    "scipy": "1.18.1",
+    "sha256": {
+      "docs/DYNAMICAL_LOCALITY_COMPUTATIONAL_PLAN.md": "ef6a85a52e83d572d3f7fed331ed000c13d11fb881c3673a8651bdaee06b8034",
+      "docs/DYNAMICAL_LOCALITY_PROTOCOL.md": "f40df4d4a9b82f585c3c916793c8254d3119ea2ce0c8e1d43cea9209164d6ec2",
+      "docs/DYNAMICAL_LOCALITY_THEORY.md": "fcbe94446dfc2c99bf7196de38fa9eb12ad769f7f4ba8bde5625b1128438af07",
+      "src/causal_lab/dynamical_artifacts.py": "62af503301e79f49815626ee7483acd1ea6aafcbe4447fdf697f7979003909b4",
+      "src/causal_lab/dynamical_core.py": "04d5889b9afd3ed75576c69af5b1c161de5999e48d395254615c321b55032826",
+      "src/causal_lab/dynamical_diagnostics.py": "02ca12ec2952c3f2b48449e30505e88095136c7e88d9fe1373e4e751cc81bafd",
+      "src/causal_lab/dynamical_graphs.py": "5ff4f780103114b0eb1107611b4f2648306212708aa39c8e72076de53b1e451b",
+      "src/causal_lab/dynamical_statistics.py": "1c32e4cefff8f825395cd364bfaa159563335588249498546d96d02d4a57b27b",
+      "src/causal_lab/dynamical_study.py": "d34dc1989fd6304915e7202d1f5c64d239fcf907f8e1ec74ef2d72ca3e8f8d84"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  }
+}
