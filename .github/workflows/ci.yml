@@ -27,3 +27,5 @@ jobs:
         run: python -m causal_lab.adversarial_study --dimensions 2 3 --counts 12 --fits 2 --calibration 10 --development 10 --validation 12 --repeats 2 --search-steps 4 --bootstrap 32 --seed 101 --out results/adversarial-smoke
       - name: Reproduce local causal structure smoke study
         run: python -m causal_lab.local_structure_study --smoke --workers 1 --output results/local-structure-smoke
+      - name: Reproduce background-free growth smoke study
+        run: python -m causal_lab.growth_study --smoke --workers 1 --output results/growth-smoke

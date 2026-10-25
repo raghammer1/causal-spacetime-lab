@@ -362,7 +362,7 @@ strictly inside the region. Small neighborhoods preserve all inequalities and
 have positive volume, so the `2+2` sampling probability is positive there too.
 Its numerical value needs a separate derivation or independent reference fit.
 
-A nonmanifold semiorder control uses iid uniform utilities and threshold
+A semiorder control uses iid uniform utilities and threshold
 `c=0.25`, as an explicitly coordinate-defined mathematical reference, not an
 intrinsic candidate dynamics. It has `a22=a31=0` exactly at every size and
 expected ordering fraction `(1-c)^2=9/16`. This checks that a nontrivial
