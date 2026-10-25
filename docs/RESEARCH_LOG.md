@@ -328,3 +328,22 @@ frozen production source, primary data and scientific decision are unchanged.
 The initial failure is linked in the final results report.
 The corrected full suite (1,142 tests) and smoke CLI passed locally under both
 Python 3.14.4 and 3.10.19; older-environment warnings are disclosed in the report.
+
+
+## 2026-10-25 — Research closure reflected in the atlas
+
+The programme is closed at the user's direction after Experiment 7. The research
+atlas now includes Experiments 6 and 7, their archived decision and control data,
+and a separate final synthesis. Home, journey, evidence map and navigation mark
+the programme as complete. These presentation changes add no scientific cohort,
+change no registered criterion and preserve the primary archives and source hashes.
+Publication remains through review of PR #8; this update does not merge or deploy
+an unreviewed branch to the public Pages site.
+
+Frontend verification: deterministic conversion of 20 datasets, 18 transformation
+checks, 105 frontend tests and 46 desktop/mobile/tablet browser tests passed;
+TypeScript, lint and production build passed. The existing Python suite passed
+1,142 tests and the seeded baseline CLI completed. All 16,541 older frontend
+observation records are unchanged. Final review explicitly preserves Model A's
+MDS degeneracy, one-sided confidence bounds, undefined metrics and conditional
+probability mass. No new scientific result is claimed by the presentation.

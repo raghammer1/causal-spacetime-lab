@@ -13,6 +13,35 @@ const palette = [
   "#8fb9c8",
   "#d68c7e",
 ];
+
+function recordedBounds(row: DataRow, spec: ChartSpec) {
+  const finite = (value: unknown): number | null =>
+    typeof value === "number" && Number.isFinite(value) ? value : null;
+  return {
+    lower: spec.low ? finite(row[spec.low]) : null,
+    upper: spec.high ? finite(row[spec.high]) : null,
+  };
+}
+
+function describeBounds(row: DataRow, spec: ChartSpec): string {
+  const { lower, upper } = recordedBounds(row, spec);
+  if (lower !== null && upper !== null)
+    return `interval ${formatNumber(lower)} to ${formatNumber(upper)}`;
+  // Missing data cannot change a declared two-sided interval into a one-sided claim.
+  if (spec.low && spec.high) {
+    if (lower !== null)
+      return `incomplete two-sided interval: lower endpoint ${formatNumber(lower)}; upper endpoint unavailable`;
+    if (upper !== null)
+      return `incomplete two-sided interval: upper endpoint ${formatNumber(upper)}; lower endpoint unavailable`;
+    return "";
+  }
+  if (lower !== null)
+    return `one-sided lower bound ${formatNumber(lower)}; no upper bound recorded`;
+  if (upper !== null)
+    return `one-sided upper bound ${formatNumber(upper)}; no lower bound recorded`;
+  return "";
+}
+
 export default function ScientificChart({
   rows,
   spec,
@@ -113,6 +142,15 @@ export default function ScientificChart({
         .ticks(4)
         .filter((_, i, a) => a.length < 9 || i % Math.ceil(a.length / 7) === 0)
     : y.ticks(5);
+  const hasLowerOnly = Boolean(spec.low && !spec.high) && valid.some((row) => {
+    const { lower, upper } = recordedBounds(row, spec);
+    return lower !== null && upper === null;
+  });
+  const hasUpperOnly = Boolean(spec.high && !spec.low) && valid.some((row) => {
+    const { lower, upper } = recordedBounds(row, spec);
+    return upper !== null && lower === null;
+  });
+  const selectedBounds = inspect ? recordedBounds(inspect, spec) : null;
   return (
     <div className="scientific-chart">
       <div className="chart-axis-title">
@@ -122,6 +160,8 @@ export default function ScientificChart({
         <title id={id}>
           {spec.label} by {humanize(spec.x)}. {valid.length} archived estimates;
           vertical bars show the source intervals described below.
+          {(hasLowerOnly || hasUpperOnly) &&
+            " Arrow markers locate recorded one-sided bounds and point toward allowed values; no second endpoint is implied."}
         </title>
         {ticks.map((t) => (
           <g key={t}>
@@ -213,16 +253,37 @@ export default function ScientificChart({
                 />
               )}
               {rs.map((r, j) => {
-                const a = spec.low ? r[spec.low] : null,
-                  b = spec.high ? r[spec.high] : null;
+                const { lower: a, upper: b } = recordedBounds(r, spec);
+                const boundDescription = describeBounds(r, spec);
+                const oneSided = spec.low && !spec.high && a !== null
+                  ? { kind: "lower", value: a, direction: -1 }
+                  : spec.high && !spec.low && b !== null
+                    ? { kind: "upper", value: b, direction: 1 }
+                    : null;
                 return (
                   <g key={j}>
-                    {typeof a === "number" && typeof b === "number" && (
+                    {a !== null && b !== null && (
                       <path
+                        data-bound-kind="two-sided"
                         d={`M${x(r)},${y(a)}V${y(b)}M${x(r) - 4},${y(a)}h8M${x(r) - 4},${y(b)}h8`}
                         fill="none"
                         strokeWidth="1.4"
                       />
+                    )}
+                    {oneSided && (
+                      <g
+                        role="img"
+                        aria-label={boundDescription}
+                        data-bound-kind={oneSided.kind}
+                        transform={`translate(${x(r)},${y(oneSided.value)})`}
+                      >
+                        <title>{boundDescription}. Arrow points toward allowed values, not a second endpoint.</title>
+                        <path
+                          d={`M-5,0H5M0,0V${oneSided.direction * 10}M-4,${oneSided.direction * 6}L0,${oneSided.direction * 10}L4,${oneSided.direction * 6}`}
+                          fill="none"
+                          strokeWidth="1.6"
+                        />
+                      </g>
                     )}
                     <circle
                       cx={x(r)}
@@ -230,7 +291,7 @@ export default function ScientificChart({
                       r="4"
                       tabIndex={0}
                       role="button"
-                      aria-label={`${s}, ${humanize(spec.x)} ${r[spec.x]}: ${formatNumber(r[spec.y])}${typeof a === "number" ? `, interval ${formatNumber(a)} to ${formatNumber(b)}` : ""}`}
+                      aria-label={`${s}, ${humanize(spec.x)} ${r[spec.x]}: ${formatNumber(r[spec.y])}${boundDescription ? `, ${boundDescription}` : ""}`}
                       onFocus={() => setInspect(r)}
                       onMouseEnter={() => setInspect(r)}
                       onClick={() => setInspect(r)}
@@ -242,8 +303,10 @@ export default function ScientificChart({
                       }}
                     >
                       <title>
-                        {s} · {spec.x}={r[spec.x]} · {formatNumber(r[spec.y])} [
-                        {formatNumber(a)}, {formatNumber(b)}]
+                        {s} · {spec.x}={r[spec.x]} · {formatNumber(r[spec.y])}
+                        {a !== null && b !== null
+                          ? ` [${formatNumber(a)}, ${formatNumber(b)}]`
+                          : boundDescription ? `; ${boundDescription}` : ""}
                       </title>
                     </circle>
                   </g>
@@ -273,6 +336,14 @@ export default function ScientificChart({
           </span>
         ))}
       </div>
+      {(hasLowerOnly || hasUpperOnly) && (
+        <p className="microcopy" aria-label="One-sided bound legend">
+          {hasLowerOnly && "↑ One-sided lower bound. "}
+          {hasUpperOnly && "↓ One-sided upper bound. "}
+          Each horizontal cap marks the recorded bound; its arrow shows the allowed
+          direction, not another endpoint. Circles remain the archived estimates.
+        </p>
+      )}
       {inspect && (
         <div className="point-inspector" role="status">
           <strong>Selected record</strong>{" "}
@@ -295,10 +366,11 @@ export default function ScientificChart({
             ))}{" "}
           · {humanize(spec.x)}: {formatNumber(inspect[spec.x])} ·{" "}
           {formatNumber(inspect[spec.y])} {spec.unit}{" "}
-          {spec.low && spec.high && (
+          {describeBounds(inspect, spec) && (
             <>
-              · interval [{formatNumber(inspect[spec.low])},{" "}
-              {formatNumber(inspect[spec.high])}]
+              {selectedBounds && selectedBounds.lower !== null && selectedBounds.upper !== null
+                ? `· interval [${formatNumber(selectedBounds.lower)}, ${formatNumber(selectedBounds.upper)}]`
+                : `· ${describeBounds(inspect, spec)}`}
             </>
           )}
         </div>

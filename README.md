@@ -4,14 +4,15 @@ A small, reproducible Python research sandbox for exploring **geometric reconstr
 
 ## Interactive Research Atlas
 
-Explore the first five experiments through an interactive React/TypeScript atlas:
-causal diamonds, dimension guessing, adversarial orders, local structure,
-background-free growth, a scientific evidence map and the archived data explorer.
-All research implementations and historical archives remain unchanged.
+Explore all seven experiments and the final research conclusion through the
+interactive React/TypeScript atlas: causal reconstruction, adversarial orders,
+classical growth, quantum information and dynamical quantum locality.
+**This research programme is closed.** The frontend preserves the evidence,
+negative findings and precise limits of the claims.
 
 - [Atlas application, run instructions and deployment](apps/research-atlas/README.md)
 - [Scientific provenance and interpretation audit](apps/research-atlas/SCIENTIFIC_AUDIT.md)
-- [Interactive atlas (GitHub Pages target; available after the atlas PR is merged and deployed)](https://raghammer1.github.io/causal-spacetime-lab/)
+- [Public research atlas](https://raghammer1.github.io/causal-spacetime-lab/) — updates publish after the reviewed PR is merged and Pages CI succeeds.
 
 ```bash
 cd apps/research-atlas
@@ -19,9 +20,11 @@ npm ci
 npm run dev
 ```
 
-Browser demonstrations are illustrative; recorded results retain their source
-links and uncertainty definitions. The tested classical growth route failed its
-Minkowski target. The broader emergent-spacetime hypothesis remains open.
+The original browser demonstrations remain illustrative. The quantum evidence
+views read archived results; no new quantum experiment runs in the browser.
+Recorded uncertainty, dependence and source hashes retain their meaning. The
+final synthesis selects conclusion B: useful mathematics and computation, but
+insufficient evidence for further simulation-led pursuit of the physical hypothesis.
 
 ## First experiment: recover proper time from causal relationships
 

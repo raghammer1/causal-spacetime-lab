@@ -7,7 +7,7 @@ export default function Journey() {
   return (
     <div className="container">
       <header className="page-head">
-        <p className="eyebrow">FIVE EXPERIMENTS / A CHANGING QUESTION</p>
+        <p className="eyebrow">SEVEN EXPERIMENTS / A COMPLETED PROGRAMME</p>
         <h1>
           A journey from
           <br />
@@ -15,7 +15,8 @@ export default function Journey() {
         </h1>
         <p>
           We began by asking what causal order can reveal. Each result made the
-          next question sharper.
+          next question sharper. The seventh experiment closes this line of
+          computational research; the archive keeps the entire journey visible.
         </p>
       </header>
       <div className="journey-timeline">
@@ -32,7 +33,8 @@ export default function Journey() {
                     ? "RECONSTRUCTION"
                     : exp.id < 5
                       ? "IDENTIFIABILITY"
-                      : "INTRINSIC DYNAMICS"}
+                      : exp.id === 5 ? "CLASSICAL GROWTH"
+                        : exp.id === 6 ? "QUANTUM INFORMATION" : "DYNAMICAL LOCALITY"}
                 </span>
                 <Link className="text-link" to={"/experiment/" + exp.id}>
                   Open experiment <ArrowUpRight size={16} />
@@ -83,7 +85,7 @@ export default function Journey() {
                 </a>
               </details>
               <div className="next-question">
-                <ArrowDown size={20} />
+                {exp.id < 7 ? <ArrowDown size={20} /> : <ArrowRight size={20} />}
                 <p>{exp.next}</p>
               </div>
             </div>
@@ -92,20 +94,22 @@ export default function Journey() {
       </div>
       <section className="journey-ending">
         <span className="tag amber">
-          A TURNING POINT, NOT AN OVERALL DISPROOF
+          PROGRAMME CLOSED · CONCLUSION B
         </span>
         <h2>
-          We rejected a route.
+          We have reached a stopping point.
           <br />
           <em>We did not settle the universe.</em>
         </h2>
         <p>
-          Experiments 1–4 start with supplied geometry or reference laws.
-          Experiment 5 changes the question: can the studied classical dynamics
-          produce the required sampling limit? The answer is no for this route.
+          Causal reconstruction and quantum correlations yielded useful
+          mathematical results. The classical and quantum models did not
+          establish emergent physical spacetime. The final finite locality
+          benchmark failed, and there is insufficient evidence to continue
+          through more simulations.
         </p>
-        <Link className="button primary" to="/evidence">
-          See exactly what was disproved <ArrowRight size={17} />
+        <Link className="button primary" to="/synthesis">
+          Read the final synthesis <ArrowRight size={17} />
         </Link>
       </section>
     </div>

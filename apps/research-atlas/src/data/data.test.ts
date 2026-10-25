@@ -26,6 +26,13 @@ const expectedRows: Record<string, number> = {
   "growth-global": 2200,
   "growth-primary": 64,
   "growth-conditional": 4968,
+  "quantum-summary": 2043,
+  "quantum-chain": 3,
+  "quantum-calibration": 16,
+  "dynamical-primary": 12,
+  "dynamical-structure": 1008,
+  "dynamical-response": 336,
+  "dynamical-conditioned": 216,
 };
 
 describe("archived scientific data contract", () => {
@@ -34,7 +41,7 @@ describe("archived scientific data contract", () => {
       Object.keys(expectedRows).sort(),
     );
     expect(new Set(datasets.map((d) => d.experiment))).toEqual(
-      new Set([1, 2, 3, 4, 5]),
+      new Set([1, 2, 3, 4, 5, 6, 7]),
     );
     for (const dataset of datasets) {
       expect(dataset.rows).toHaveLength(expectedRows[dataset.id]);
@@ -64,7 +71,7 @@ describe("archived scientific data contract", () => {
     );
   });
   it("pins documentary references and verifies current bytes of actual data inputs", () => {
-    expect(sourceCommit).toBe("9bc5984c656271c247354e0079fd900702642064");
+    expect(sourceCommit).toBe("4e1a667ad2d590ee365a395021f0c9772e63b8d1");
     expect(provenance.schemaVersion).toBe(1);
     const lock = JSON.parse(
       readFileSync(resolve(process.cwd(), "scripts/source-lock.json"), "utf8"),

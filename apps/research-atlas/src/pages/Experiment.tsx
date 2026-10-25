@@ -8,16 +8,22 @@ import {
   AdversarialLab,
   LocalLab,
   GrowthLab,
+  QuantumLab,
+  DynamicalLab,
 } from "../components/labs";
 import AsyncDataPanel from "../components/AsyncDataPanel";
 import ModelLimit from "../components/ModelLimit";
-const labs = [TimeLab, DimensionLab, AdversarialLab, LocalLab, GrowthLab];
+const labs = [
+  TimeLab, DimensionLab, AdversarialLab, LocalLab, GrowthLab, QuantumLab, DynamicalLab,
+];
 const datasetsByExperiment = [
   ["time-primary", "time-followup"],
   ["dimension-summary"],
   ["detector-summary", "detector-rates"],
   ["local-dimensions", "local-primary"],
   ["growth-global", "growth-primary"],
+  ["quantum-chain", "quantum-summary"],
+  ["dynamical-primary", "dynamical-structure"],
 ];
 export default function Experiment() {
   const { id } = useParams();
@@ -33,7 +39,7 @@ export default function Experiment() {
   const Lab = labs[exp.id - 1];
   return (
     <div className="container experiment-page" key={exp.id}>
-      <nav className="experiment-rail" aria-label="Five experiments">
+      <nav className="experiment-rail" aria-label="Seven experiments">
         {experiments.map((e) => (
           <Link
             to={"/experiment/" + e.id}
@@ -49,7 +55,11 @@ export default function Experiment() {
         <div>
           <p className="eyebrow">
             EXPERIMENT {String(exp.id).padStart(2, "0")} /{" "}
-            {exp.id === 5 ? "INTRINSIC GROWTH" : "CAUSAL RECONSTRUCTION"}
+            {exp.id === 7
+              ? "DYNAMICAL QUANTUM LOCALITY"
+              : exp.id === 6
+                ? "QUANTUM INFORMATION"
+                : exp.id === 5 ? "INTRINSIC GROWTH" : "CAUSAL RECONSTRUCTION"}
           </p>
           <h1>{exp.title}</h1>
           <p>{exp.question}</p>
@@ -77,7 +87,7 @@ export default function Experiment() {
               {s === "idea"
                 ? "The idea"
                 : s === "interactive"
-                  ? "Try it yourself"
+                  ? (exp.id >= 6 ? "Explore the evidence" : "Try it yourself")
                   : s === "results"
                     ? "Recorded evidence"
                     : s === "interpretation"
@@ -115,17 +125,19 @@ export default function Experiment() {
       <section id="interactive" className="experiment-section">
         <div className="section-heading small">
           <div>
-            <p className="eyebrow">01 / THE INTERACTIVE PROCEDURE</p>
+            <p className="eyebrow">
+              {exp.id >= 6 ? "01 / EXPLORE THE ARCHIVED EVIDENCE" : "01 / THE INTERACTIVE PROCEDURE"}
+            </p>
             <h2>
-              A small universe.
+              {exp.id >= 6 ? "Follow the evidence." : "A small universe."}
               <br />
-              <em>In your hands.</em>
+              <em>{exp.id >= 6 ? "Test the interpretation." : "In your hands."}</em>
             </h2>
           </div>
           <p>
-            These deterministic, bounded browser demonstrations teach the
-            mathematical rules. They are separate from the archived research
-            ensembles below.
+            {exp.id >= 6
+              ? "Change the view, not the experiment. These controls explore recorded results from the frozen study; they do not run a quantum simulation in your browser."
+              : "These deterministic, bounded browser demonstrations teach the mathematical rules. They are separate from the archived research ensembles below."}
           </p>
         </div>
         <Lab />
@@ -168,7 +180,11 @@ export default function Experiment() {
                     ? "ALL 42 REGISTERED PRIMARY CHECKS"
                     : exp.id === 5
                       ? "REGISTERED SIMULTANEOUS DECISION BANDS"
-                      : "PER-FIT WILSON INTERVALS"}
+                      : exp.id === 6
+                        ? "REGISTERED ADVANCEMENT AND ITS LIMITATIONS"
+                        : exp.id === 7
+                          ? "RECORDED STRUCTURE, SEPARATE FROM THE DECISION"
+                          : "PER-FIT WILSON INTERVALS"}
               </p>
             )}
             <AsyncDataPanel datasetId={datasetId} compact />
@@ -258,15 +274,15 @@ export default function Experiment() {
       <div className="next-experiment">
         <div>
           <p className="eyebrow">
-            {exp.id < 5 ? "THE NEXT QUESTION" : "THE BIGGER PICTURE"}
+            {exp.id < 7 ? "THE NEXT QUESTION" : "THE PROGRAMME CONCLUSION"}
           </p>
           <p>{exp.next}</p>
         </div>
         <Link
           className="button primary"
-          to={exp.id < 5 ? "/experiment/" + (exp.id + 1) : "/evidence"}
+          to={exp.id < 7 ? "/experiment/" + (exp.id + 1) : "/synthesis"}
         >
-          {exp.id < 5 ? "Experiment 0" + (exp.id + 1) : "The evidence map"}
+          {exp.id < 7 ? "Experiment 0" + (exp.id + 1) : "Read the final synthesis"}
           <ArrowRight size={17} />
         </Link>
       </div>

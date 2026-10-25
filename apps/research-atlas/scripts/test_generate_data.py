@@ -1,5 +1,6 @@
 """Regression checks anchored in independently reported scientific outcomes."""
 import csv
+import gzip
 import json
 import unittest
 from tempfile import TemporaryDirectory
@@ -78,6 +79,92 @@ class ArchiveTransformationTests(unittest.TestCase):
             self.assertEqual([row['pointwise_low'], row['pointwise_high']], json.loads(row['pointwise_ci95']))
         self.assertTrue(any(r['band_low'] != r['pointwise_low'] for r in primary))
 
+    def test_quantum_selection_preserves_archived_estimates_and_failed_uncertainty(self):
+        original=g.read_json('docs/experiments/quantum-information-v1/summary.json')
+        lookup={(c['family'],c['n'],c['h'],c['preparation'],c['delta'],c['time']):c for c in original}
+        rows=self.by_id['quantum-summary']['rows']
+        self.assertEqual(len(rows),2043)
+        self.assertEqual(len({r['metric'] for r in rows}),19)
+        for row in rows:
+            cell=lookup[tuple(row[k] for k in ('family','n','h','preparation','delta','time'))]
+            if row['metric'] not in cell['metrics']:
+                self.assertIsNone(row['mean'])
+                self.assertIsNone(row['ci_low'])
+                self.assertIsNone(row['ci_high'])
+                self.assertEqual(row['independent_units'],0)
+                self.assertEqual(row['undefined'],cell['undefined_metrics'][row['metric']])
+                continue
+            estimate=cell['metrics'][row['metric']]
+            self.assertEqual(row['mean'],estimate['mean'])
+            self.assertEqual([row['ci_low'],row['ci_high']],estimate.get('ci95') or [None,None])
+            self.assertEqual(row['lower'],estimate.get('lower'))
+            self.assertEqual(row['undefined'],estimate['undefined'])
+        calibration=self.by_id['quantum-calibration']['rows']
+        failed=next(r for r in calibration if r['method']=='normal_percentile_bootstrap')
+        self.assertEqual(failed['coverage'],.9125)
+        self.assertEqual(failed['trials'],400)
+        self.assertLess(failed['coverage'],failed['nominal_coverage'])
+        self.assertEqual(len([r for r in calibration if r['method']=='exact_binomial']),15)
+        self.assertTrue(any(r['mean'] is None and r['undefined'] for r in rows))
+
+    def test_exact_chain_bounds_are_separate_from_bootstrap_means(self):
+        rows=self.by_id['quantum-chain']['rows']
+        self.assertEqual(len(rows),3)
+        self.assertEqual(sum(r['successes'] for r in rows),72)
+        self.assertEqual({r['n'] for r in rows},{6,8,10})
+        for row in rows:
+            self.assertEqual(row['attempted'],24)
+            self.assertEqual(row['success_fraction'],1)
+            self.assertAlmostEqual(row['lower'],.8431607171566665)
+            self.assertLess(row['lower'],1)
+            self.assertTrue(row['gate_eligible'])
+
+    def test_dynamical_decision_retains_components_and_both_exact_interval_families(self):
+        rows=self.by_id['dynamical-primary']['rows']
+        self.assertEqual(len(rows),12)
+        self.assertEqual(sum(r['attempted'] for r in rows),144)
+        self.assertEqual(sum(r['successes'] for r in rows),0)
+        for row in rows:
+            self.assertEqual(row['decision'],'NO-GO')
+            self.assertEqual(row['lower'],0)
+            self.assertEqual(row['upper'],.40218992470918974)
+            self.assertGreater(row['go_upper'],row['upper'])
+            self.assertLess(row['upper'],row['target_joint_probability'])
+        cell=next(r for r in rows if r['N']==4 and r['cell']==3)
+        self.assertEqual((cell['C'],cell['L'],cell['T'],cell['D']),(0,3,0,2))
+        self.assertEqual((cell['mu'],cell['Gamma']),(.1,1))
+
+    def test_dynamical_structure_and_actual_response_keep_preparation_identity(self):
+        structure=self.by_id['dynamical-structure']['rows']
+        response=self.by_id['dynamical-response']['rows']
+        self.assertEqual(len(structure),1008)
+        self.assertEqual(len(response),336)
+        self.assertEqual(len({(r['N'],r['cell'],r['batch'],r['replicate']) for r in structure if r['preparation']=='E'}),144)
+        self.assertEqual(len([r for r in structure if r['preparation']!='E']),24*6)
+        raw=json.loads(gzip.decompress((g.ROOT/'docs/experiments/dynamical-quantum-locality-v1/raw.json.gz').read_bytes()))
+        expected=[(unit,detail) for unit in raw for detail in unit['gate']['response_details']]
+        for row,(unit,detail) in zip(response,expected):
+            for name,value in detail.items():self.assertEqual(row[name],value)
+            for name in ('mu','Gamma'):self.assertEqual(row[name],unit['parameters'][name])
+            for name in ('N','cell','preparation','batch','replicate'):self.assertEqual(row[name],unit[name])
+        self.assertIn('actual',self.by_id['dynamical-response']['title'].lower())
+
+    def test_conditional_summary_keeps_validity_mass_and_is_not_actual_quantum_response(self):
+        rows=self.by_id['dynamical-conditioned']['rows']
+        self.assertEqual(len(rows),216)
+        case=next(r for r in rows if (r['N'],r['cell'],r['preparation'],r['law'],r['delay'])==(5,0,'Sempty','Born',.25))
+        self.assertGreater(case['mean_graph_conditioned_F_given_valid_mean'],.998)
+        self.assertLess(case['valid_graph_F_probability_mean'],.004)
+        self.assertGreater(case['undefined_graph_F_probability_mean'],.99)
+        self.assertAlmostEqual(case['F_of_unobserved_mixture_response_mean'],.5)
+        self.assertIsNone(case['mean_graph_conditioned_F_given_valid_sd'])
+        originals=g.read_json('docs/experiments/dynamical-locality-conditioned-response.json')['aggregates']
+        for row,original in zip(rows,originals):
+            for metric,estimate in original['metrics'].items():
+                for key,value in estimate.items():self.assertEqual(row[f'{metric}_{key}'],value)
+            self.assertEqual(row['pooled_graph_conditioned_F_given_valid'],original['pooled_graph_conditioned_F_given_valid'])
+        self.assertIn('Secondary',self.by_id['dynamical-conditioned']['description'])
+
     def test_default_filters_match_data_and_chart_columns_exist(self):
         for dataset in self.datasets:
             matching = [row for row in dataset['rows'] if all(row.get(key) == value for key, value in dataset['defaultFilters'].items())]
@@ -110,14 +197,14 @@ class ArchiveTransformationTests(unittest.TestCase):
             self.assertEqual({key: value for key, value in metadata.items() if key != 'rowCount'},
                              {key: value for key, value in original.items() if key != 'rows'})
 
-    def test_later_research_documents_do_not_change_first_five_snapshot(self):
+    def test_later_research_documents_do_not_change_pinned_snapshot(self):
         expected = g.generated_files()
         with TemporaryDirectory() as folder:
             later_root = Path(folder)
             docs = later_root / 'docs'
             docs.mkdir()
             (docs / 'experiments').symlink_to(g.ROOT / 'docs/experiments', target_is_directory=True)
-            (docs / 'RESEARCH_LOG.md').write_text('New research after the first-five atlas.\n')
+            (docs / 'RESEARCH_LOG.md').write_text('Later documentary change after the pinned research snapshot.\n')
             (docs / 'EXPERIMENTS.md').write_text('An updated research roadmap.\n')
             (docs / 'EXPERIMENT_SIX_RESULTS.md').write_text('A later experiment.\n')
             with patch.object(g, 'ROOT', later_root):

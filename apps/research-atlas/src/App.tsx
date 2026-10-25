@@ -11,7 +11,9 @@ const Evidence = lazy(() => import("./pages/Evidence"));
 const DataExplorer = lazy(() => import("./pages/DataExplorer"));
 const Learn = lazy(() => import("./pages/Learn"));
 const Sources = lazy(() => import("./pages/Sources"));
+const Synthesis = lazy(() => import("./pages/Synthesis"));
 const links = [
+  { to: "/synthesis", label: "Final conclusion" },
   { to: "/journey", label: "The journey" },
   { to: "/experiment/1", label: "Experiments" },
   { to: "/evidence", label: "Evidence map" },
@@ -66,6 +68,7 @@ function Shell() {
             "/data": "Data explorer",
             "/learn": "Visual education lab",
             "/sources": "Sources & methods",
+            "/synthesis": "Final research conclusion",
           } as Record<string, string>
         )[location.pathname] || "Page not found";
     document.title = label + " — Causal Spacetime Lab";
@@ -124,7 +127,7 @@ function Shell() {
               <Dialog.Content className="menu-panel">
                 <Dialog.Title>Explore the atlas</Dialog.Title>
                 <Dialog.Description>
-                  Five experiments. One open question.
+                  Seven experiments. A completed research programme.
                 </Dialog.Description>
                 <Dialog.Close
                   className="menu-close"
@@ -154,9 +157,9 @@ function Shell() {
       <div className="reading-bar">
         <div className="container">
           <span>
-            <i className="status-dot" /> INDEPENDENT NUMERICAL RESEARCH{" "}
+            <i className="status-dot" /> RESEARCH PROGRAMME CLOSED{" "}
             <span className="reading-dash">/</span>{" "}
-            <span className="atlas-version">ATLAS 01–05</span>
+            <span className="atlas-version">ARCHIVE 01–07</span>
           </span>
           <LevelSwitch />
         </div>
@@ -178,6 +181,7 @@ function Shell() {
               <Route path="/data" element={<DataExplorer />} />
               <Route path="/learn" element={<Learn />} />
               <Route path="/sources" element={<Sources />} />
+              <Route path="/synthesis" element={<Synthesis />} />
               <Route
                 path="*"
                 element={
@@ -204,10 +208,13 @@ function Shell() {
           </span>
         </Link>
         <p>
-          Reconstruction is not emergence.
-          <br />A model’s failure is not the end of an idea.
+          Seven experiments. Evidence preserved.
+          <br />This research programme is closed.
         </p>
         <div>
+          <Link to="/synthesis">
+            Final conclusion <ArrowUpRight size={14} />
+          </Link>
           <Link to="/sources">
             Sources & methods <ArrowUpRight size={14} />
           </Link>

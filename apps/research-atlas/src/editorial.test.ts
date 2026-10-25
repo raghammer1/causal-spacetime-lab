@@ -32,6 +32,9 @@ describe("scientific editorial boundaries", () => {
       "one-statistic": "falsified",
       "selected-statistics": "falsified",
       "classical-route": "falsified",
+      "quantum-reconstruction": "supported",
+      "fixed-quantum-emergence": "falsified",
+      "dynamical-locality": "falsified",
       "emergence-impossible": "untested",
       "physical-discreteness": "untested",
       "singularity-resolved": "untested",
@@ -61,12 +64,13 @@ describe("scientific editorial boundaries", () => {
       ).toBe(true);
       expect(claim.assumptions.length).toBeGreaterThan(60);
       expect(claim.scope.length).toBeGreaterThan(60);
-      expect(claim.experiments.every((n) => n >= 1 && n <= 5)).toBe(true);
+      expect(claim.experiments.every((n) => n >= 1 && n <= 7)).toBe(true);
     }
   });
 
   it("pins repository citations and verifies that every cited local artifact exists", () => {
     expect(SCIENTIFIC_REF).toMatch(/^[a-f0-9]{40}$/);
+    expect(SCIENTIFIC_REF).toBe("4e1a667ad2d590ee365a395021f0c9772e63b8d1");
     const allSources = [...experiments, ...claims, ...concepts].flatMap(
       (item) => item.sources,
     );
@@ -90,7 +94,9 @@ describe("scientific editorial boundaries", () => {
       dimensions = experiments[1],
       adversaries = experiments[2],
       local = experiments[3],
-      growth = experiments[4];
+      growth = experiments[4],
+      quantum = experiments[5],
+      dynamical = experiments[6];
     expect(time.measured).toMatch(/4,200.*8,000/);
     expect(time.limitations.join(" ")).toMatch(/post hoc.*not pooled/);
     expect(dimensions.found).toMatch(/200\/200.*98.1%/);
@@ -105,6 +111,14 @@ describe("scientific editorial boundaries", () => {
     expect(growth.limitations.join(" ")).toMatch(/48 entries.*pointwise/);
     expect(growth.limitations.join(" ")).toMatch(/falsely rejected.*exclud/);
     expect(growth.assumptions.join(" ")).toMatch(/dependent.*together/);
+    expect(quantum.measured).toMatch(/1,818 state records.*873 ground-state/);
+    expect(quantum.failed).toMatch(/365\/400.*91.25%/);
+    expect(quantum.limitations.join(" ")).toContain("not 1,818 independent");
+    expect(quantum.found).toMatch(/n = 6 and 10/);
+    expect(dynamical.found).toMatch(/0\/12.*0.402190.*0.8/);
+    expect(dynamical.limitations.join(" ")).toMatch(/cannot certify GO.*reject the observed/);
+    expect(dynamical.limitations.join(" ")).toContain("does not cause the primary NO-GO");
+    expect(dynamical.assumptions.join(" ")).toMatch(/one independent unit.*dependent/);
   });
 
   it("retains reported headline values rather than inventing an improved outcome", () => {
@@ -114,6 +128,8 @@ describe("scientific editorial boundaries", () => {
       "ADVERSARIAL_GEOMETRY_RESULTS",
       "LOCAL_CAUSAL_STRUCTURE_RESULTS",
       "BACKGROUND_FREE_GROWTH_RESULTS",
+      "QUANTUM_EMERGENCE_RESULTS",
+      "DYNAMICAL_LOCALITY_RESULTS",
     ];
     const facts = [
       ["4,200", "8,000", "7.844"],
@@ -121,6 +137,8 @@ describe("scientific editorial boundaries", () => {
       ["63.17%", "57.33%", "69.00%"],
       ["4.5813", "3.9948", "3.9478"],
       ["1,056", "17,986", "48"],
+      ["1,818", "873", "91.25%", ".84316"],
+      ["0/12", "0.402190", "144", "238"],
     ];
     reportPaths.forEach((report, i) => {
       const archived = readFileSync(
@@ -133,6 +151,23 @@ describe("scientific editorial boundaries", () => {
         expect(narrative, `narrative: ${fact}`).toContain(fact);
       }
     });
+  });
+
+  it("completes seven experiments and closes the programme without a universal no-go", () => {
+    expect(experiments.map((experiment) => experiment.id)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(new Set(experiments.map((experiment) => experiment.slug)).size).toBe(7);
+    expect(claims).toHaveLength(11);
+    expect(experiments[4].next).toMatch(/Historically.*Experiment 6/);
+    expect(experiments[5].next).toMatch(/Experiment 7.*final experiment/);
+    expect(experiments[6].next).toMatch(/programme is closed.*conclusion B.*no Experiment 8/);
+    expect(experiments[6].unresolved).toMatch(/not a universal impossibility theorem/);
+    expect(experiments[6].sources).toContainEqual({
+      label: "Final synthesis and programme closure",
+      path: "docs/FINAL_RESEARCH_SYNTHESIS.md",
+    });
+    expect(claims.find((claim) => claim.id === "dynamical-locality")?.scope).toMatch(
+      /unconditioned screen.*scaling.*remain unresolved.*conclusion B/,
+    );
   });
 });
 
@@ -211,6 +246,32 @@ describe("editorial integration", () => {
     ).toBe(3);
   });
 
+  it.each([6, 7])("renders Experiment %i with its own explanation and research limits", (id) => {
+    const experiment = experiments[id - 1];
+    render(
+      createElement(
+        ReadingProvider,
+        null,
+        createElement(LevelSwitch),
+        createElement(
+          MemoryRouter,
+          { initialEntries: [`/experiment/${id}`] },
+          createElement(
+            Routes,
+            null,
+            createElement(Route, { path: "/experiment/:id", element: createElement(ExperimentPage) }),
+          ),
+        ),
+      ),
+    );
+    expect(screen.getByRole("heading", { level: 1, name: experiment.title })).toBeInTheDocument();
+    expect(screen.getByTestId("level-explanation")).toHaveTextContent(experiment.explorer);
+    fireEvent.click(screen.getByRole("button", { name: "researcher" }));
+    expect(screen.getByTestId("level-explanation")).toHaveTextContent(experiment.researcher);
+    expect(screen.getByText(experiment.unresolved)).toBeInTheDocument();
+    expect(screen.getByText(experiment.next)).toBeInTheDocument();
+  });
+
   it("shows model-specific evidence separately from a universal untested claim", () => {
     render(
       createElement(
@@ -244,6 +305,24 @@ describe("editorial integration", () => {
     ).toHaveAttribute(
       "href",
       sourceUrl("docs/BACKGROUND_FREE_GROWTH_RESULTS.md"),
+    );
+  });
+
+  it("links the finite quantum-link failure to evidence without relabeling universal impossibility", () => {
+    render(
+      createElement(
+        MemoryRouter,
+        { initialEntries: ["/evidence?claim=dynamical-locality"] },
+        createElement(Evidence),
+      ),
+    );
+    const detail = document.querySelector(".claim-detail") as HTMLElement;
+    expect(within(detail).getByText("Falsified within scope")).toBeInTheDocument();
+    expect(detail).toHaveTextContent("0.402190 < 0.8");
+    expect(detail).toHaveTextContent("geometric scaling and broader relational protocols remain unresolved");
+    expect(within(detail).getByRole("link", { name: /Programme conclusion B/ })).toHaveAttribute(
+      "href",
+      sourceUrl("docs/FINAL_RESEARCH_SYNTHESIS.md"),
     );
   });
 });
