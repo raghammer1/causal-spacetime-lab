@@ -1,0 +1,79 @@
+{
+  "allocation_scope": "Separate tracemalloc pass of same deterministic benchmark sample; peak newly traced Python/NumPy allocations, excluding retained inputs; not total resident memory. Unsupported native allocations may be invisible.",
+  "artifact_sha256": {
+    "agreement.csv": "faa987d6e5e9a313fe28491f33f1c31cf38c95f0ded5bd41f802567810bc0cec",
+    "bias_scaling.png": "ef94df1ed56bb429fda9c372dd34251366e3ee48783f6a6864197f98d436704f",
+    "chain_controls.png": "1cc492a243cd6757be7797a9770edc2075d738f87d9a9edd94afa1a56676d2f7",
+    "diagnostics.json": "d85e304616c94a996d9d8cdb2c8e4684f550b624eb87dbfe06b88e8e171d90b5",
+    "raw.csv": "9fbc7637c6912d53a4bfea112bee0848795f379e25c8082a674ebb92c4b6099d",
+    "reconstruction.png": "46b6f0ba249428078f09c09d93c3f04ee750b5bdb39802c435b3581f63d9eadf",
+    "summary.csv": "d4d6574dbe04886cbe465ec3ede68b7b613a33b9671b0a1384e690bc23ce13c7",
+    "summary.json": "54143cf4629b5e15836b881c81925f578bd69c9900a920ab6d61b8a60e346c77"
+  },
+  "benchmark_selection": "Independent benchmark streams; matrix phases only when realized N <= order_max_count, so they are count-selected near the cap. No extrapolation of timings beyond measured sizes.",
+  "bootstrap": {
+    "confidence": 0.95,
+    "coverage": "pointwise",
+    "method": "percentile",
+    "resamples": 2000,
+    "unit": "independent whole sprinkling repetition"
+  },
+  "config": {
+    "benchmark_repeats": 3,
+    "bootstrap": 2000,
+    "densities": [
+      32.0,
+      80.63494719327188,
+      203.1873346519296,
+      511.99999999999955,
+      1290.1591550923501,
+      3250.9973544308687,
+      8192.0
+    ],
+    "durations": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "order_max_count": 256,
+    "order_repeats": 20,
+    "repeats": 200,
+    "seed": 20261025
+  },
+  "git_commit": "135dd3cfeafea530c387200b6ed4b3d54a0accda",
+  "git_worktree_dirty": true,
+  "nondeterministic_artifacts": [
+    "benchmarks.csv",
+    "benchmarks.png",
+    "metadata.json"
+  ],
+  "output_wall_seconds": 1.3772931249986868,
+  "platform": {
+    "machine": "arm64",
+    "release": "25.5.0",
+    "system": "Darwin"
+  },
+  "process_peak_rss_after_outputs_bytes": 121110528,
+  "process_peak_rss_after_outputs_scope": "Process lifetime through CSV/JSON and PNG generation, including plotting; not incremental memory for this study alone.",
+  "process_peak_rss_bytes": 82903040,
+  "process_peak_rss_scope": "Process lifetime through study completion, including imports, bootstrap and benchmark passes; excludes subsequent output plotting. Darwin ru_maxrss bytes; Linux KiB converted to bytes; unavailable platforms null. Prior work in this process may contribute.",
+  "protocol_sha256": "b05beac6c926d992a46a1a0806a0f53d071e79b50529a02d5eff0eb5969218fa",
+  "reproduction_command": "python -m causal_lab.scaling --densities 32.0 80.63494719327188 203.1873346519296 511.99999999999955 1290.1591550923501 3250.9973544308687 8192.0 --durations 0.5 1.0 2.0 --repeats 200 --seed 20261025 --bootstrap 2000 --order-repeats 20 --order-max-count 256 --benchmark-repeats 3 --out results/finite-density-v1",
+  "rng": "NumPy Generator(PCG64(int(SHA256(identity).hexdigest(), 16)))",
+  "schema_version": 1,
+  "scientific_digest": "bcdc5b6c785faf3927298eef212ea06ef81caf478e1707c848823af3487ece81",
+  "scientific_status": "Numerical test in known Minkowski geometry; no evidence of microscopic physical discreteness, background-free emergence, gravitational dynamics or singularity resolution.",
+  "seed_identity": "ASCII master_seed|float(duration).hex()|float(density).hex()|repeat|stream; decimal integers; physical stream='physical', independent benchmark and bootstrap purpose strings",
+  "source_sha256": {
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "study_wall_seconds": 5.731276583013823,
+  "timing_scope": "perf_counter seconds for separate untraced calls; RNG setup excluded from sprinkle; fast uses coordinates; order_matrix builds relation; order_only includes strict transitivity validation and DP, excludes input matrix construction",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "package": "0.1.0",
+    "python": "3.14.4"
+  }
+}

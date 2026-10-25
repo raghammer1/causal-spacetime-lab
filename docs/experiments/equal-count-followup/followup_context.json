@@ -1,0 +1,7 @@
+{
+  "classification": "Post hoc diagnostic; plan written before follow-up execution",
+  "plan": "docs/EQUAL_COUNT_FOLLOWUP_PROTOCOL.md",
+  "plan_sha256": "464ab5410cc7a2442fdf00eaf428fb449eebbdfe99c163aad24d715fa3f2d03e",
+  "pool_with_primary": false,
+  "primary_scientific_digest": "bcdc5b6c785faf3927298eef212ea06ef81caf478e1707c848823af3487ece81"
+}

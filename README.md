@@ -33,6 +33,33 @@ edge cases and performance. The [mathematical derivation](docs/THEORY.md) explai
 the density normalization and finite-size limitations. Small reviewed scientific
 artifacts are versioned under `docs/`; local runtime output remains ignored.
 
+## Finite-density study
+
+On `experiment/finite-density-scaling-v1`, run the preregistered study:
+
+```bash
+python -m causal_lab.scaling --seed 20261025 --repeats 200 --bootstrap 2000 --out results/finite-density-scaling-v1
+```
+
+The defaults sweep seven logarithmically spaced densities from 32 to 8192 at
+durations 0.5, 1 and 2: 4,200 primary sprinklings. Outputs include raw trials,
+summary CSV/JSON, pointwise 95% bootstrap intervals, negative controls,
+small-case algorithm checks, separate performance measurements and four plots.
+The [protocol](docs/FINITE_DENSITY_PROTOCOL.md) states adverse and inconclusive
+outcomes in advance. The [results report](docs/FINITE_DENSITY_RESULTS.md) links
+the reviewed tables and plots and explains the finite-density limitations.
+
+For a quick smoke run:
+
+```bash
+python -m causal_lab.scaling --densities 8 32 --durations 0.5 1 --repeats 8 --bootstrap 100 --order-repeats 2 --benchmark-repeats 1 --out results/scaling-smoke
+```
+
+Physical samples use independent streams keyed by parameters and repetition;
+changing grid traversal or bootstrap count does not change them. Reproduction
+metadata records versions, source hashes and a scientific-data digest. Timings
+and memory observations vary across runs and machines.
+
 ## Interpretation boundaries
 
 - The longest-chain estimate is asymptotic in 1+1 dimensions. It has bias at finite event density.
