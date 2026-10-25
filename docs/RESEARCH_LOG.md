@@ -79,3 +79,44 @@ artifacts, source/protocol hashes and reproduction commands.
 **Next:** harder held-out adversaries and calibration uncertainty, then a specified
 background-free growth experiment; independently verified curvature benchmarks
 remain a separate prerequisite before gravitational or black-hole modeling.
+
+## 2026-10-25 — Adversarial geometry and identifiability v1
+
+**Registration:** branched from merged Experiment 2 at `c121da2`; independently
+replayed its seven reported limitations. Committed protocol/audit/theory as
+`351c8b9`, then verified implementation and a resource-only pilot as `e4dfbc0`.
+No previous result or detector implementation was altered.
+
+**Executed:** three independent fits, d=2,3,4, N=64,128,256; 52,218 recorded
+orders with separate calibration/development/validation/test streams; 5,400
+bounded searches and 345,600 candidate evaluations. All six detectors use matched
+nominal validation targets; discrete-height ties produce higher achieved rates.
+
+**Primary finding:** no model meets the full registered advancement criterion.
+Height alone rejects every matched bipartite control; all 5,400 fraction/height
+search checkpoints match their targets, but none of the searches meets every
+15-feature one-SD constraint. Some failed searches still pass all six detectors.
+At N64,target-d2, F accepts 63.17% of full-search outputs, hierarchical interval
+[57.33%,69.00%]. Its unseen-family acceptance is 23.33% [19.67%,27.17%].
+
+**Adverse outcomes:** D admits 62.83 percentage points more sparse N64 DAGs than
+C, paired interval [52.67,75.84]. No primary contrast passes the full meaningful
+improvement gate; some prespecified 97.5%-target local contrasts do. Missing
+genuine lower bounds are inconclusive, not proof of acceptance below 90%.
+Increasing N also weakens the fixed-budget adversarial search, so rejection alone
+does not establish asymptotic identifiability.
+
+**Exact limits:** nondual orders share all selected summaries; rank-two sampling
+and d2 geometric sampling have the same full order law. Flat box samples can be
+rejected because of their different boundaries. These findings separate a
+generator's provenance, reference-model compatibility and physical geometry.
+
+**Verification:** 506 tests, complete archive replay, independent seed-based
+search reconstructions, source/artifact hashes and visual figure review. The
+[results report](ADVERSARIAL_GEOMETRY_RESULTS.md) gives uncertainties, costs,
+reproduction evidence, retained failures and all six comparison figures.
+
+**Decision:** no-go for advancing on a claim of validated emergent geometry.
+Recommend a new preregistered diagnostic/adversarial study before interpreting
+coordinate-free growth as geometric evidence. No gravitational dynamics,
+Einstein-equation derivation or black-hole/singularity claim follows.

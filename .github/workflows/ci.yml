@@ -23,3 +23,5 @@ jobs:
         run: python -m causal_lab.scaling --seed 20261025 --densities 8 32 --durations 0.5 1 --repeats 8 --bootstrap 100 --order-repeats 2 --benchmark-repeats 1 --out results/scaling-smoke
       - name: Reproduce dimension smoke study
         run: python -m causal_lab.dimension_study --dimensions 2 3 --counts 16 --repeats 3 --calibration-repeats 10 --bootstrap 100 --benchmark-repeats 1 --out results/dimension-smoke
+      - name: Reproduce adversarial geometry smoke study
+        run: python -m causal_lab.adversarial_study --dimensions 2 3 --counts 12 --fits 2 --calibration 10 --development 10 --validation 12 --repeats 2 --search-steps 4 --bootstrap 32 --seed 101 --out results/adversarial-smoke

@@ -1,0 +1,20 @@
+{
+  "decisions_replayed": 745524,
+  "full_scientific_repeat_identical": true,
+  "independent_searches": 5400,
+  "models_refit": 9,
+  "paired_tables_checked": 9450,
+  "recorded_orders": 52218,
+  "scientific_sha256": "218a3de6419410ddd874321d794656a01bc285436cbe8b65babd5a592f4b5ec2",
+  "script_sha256": {
+    "analyze_adversarial_searches.py": "1c512a27135b014c88bd174b4fda31590299684de39801c275d992eae447c659",
+    "audit_adversarial.py": "f936f19047e64c23b1f2261fd3a661348a5d628e5f4984f715bf3a03fe0c715b"
+  },
+  "seeded_search_reconstructions": 9,
+  "six_figures_visually_reviewed": true,
+  "smoke_scientific_sha256": "63ca2985cd435dee35668b2dc207c4f716901fa5a8243c232b1eef96f7450c55",
+  "stage_tables_checked": 486,
+  "status": "passed",
+  "summary_cells_checked": 1350,
+  "tests_passed": 506
+}

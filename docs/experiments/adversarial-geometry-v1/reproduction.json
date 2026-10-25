@@ -1,0 +1,101 @@
+{
+  "archived_repeat": {
+    "elapsed_seconds": 747.3242459999747,
+    "fit_resources": [
+      {
+        "elapsed_seconds": 736.835830875003,
+        "fit": 0,
+        "peak_rss_bytes": 160251904
+      },
+      {
+        "elapsed_seconds": 735.7034941670136,
+        "fit": 1,
+        "peak_rss_bytes": 159940608
+      },
+      {
+        "elapsed_seconds": 741.3077232080104,
+        "fit": 2,
+        "peak_rss_bytes": 160366592
+      }
+    ],
+    "git_parent": "e4dfbc06f1eac7cb1706824ccb0f3dfd28740ac9",
+    "output_seconds": 10.855842874996597,
+    "peak_parent_rss_bytes": 450740224,
+    "source_sha256": {
+      "__init__.py": "945c1b0c1f23b05139ed37d1d62a51748273d214f922b41e4c1ce1207f16f75a",
+      "adversarial_artifacts.py": "dbf215f4e883224e08dfb6dcdd354bbba128137451613eba5e29d2d026cf22d6",
+      "adversarial_detectors.py": "c3730143ac1648e5a8db88f43a58c53940bf6899d24f1f8187be91dc54053579",
+      "adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+      "adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+      "adversarial_study.py": "29c8da9f0541c13882dfb83615f01c29277dbc55ac4bdee2f3c8cdabc934f6c1",
+      "cli.py": "6449a264d0542995a87b3ee0c70d01ceb98257962ce3355472257959f4727abc",
+      "core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+      "dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+      "dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+      "order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+      "scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+    }
+  },
+  "byte_identical_files": [
+    "advancement.json",
+    "calibration_sensitivity.png",
+    "classification.csv",
+    "detector_comparison.png",
+    "exact_counterexamples.json",
+    "exact_degeneracy.png",
+    "examples.json",
+    "genuine_acceptance.png",
+    "models.json",
+    "paired.jsonl.gz",
+    "rates.csv",
+    "raw.jsonl.gz",
+    "search_effects.json",
+    "searches.jsonl.gz",
+    "summary.json"
+  ],
+  "change_reason": "Two figure formats improved; resource timings and metadata vary. No scientific inputs, thresholds, features or statistical rules changed.",
+  "changed_files": [
+    "acceptance_tradeoff.png",
+    "matching_quality.png",
+    "metadata.json",
+    "resources.csv"
+  ],
+  "first_run": {
+    "elapsed_seconds": 810.0349778750096,
+    "fit_resources": [
+      {
+        "elapsed_seconds": 803.9940877920017,
+        "fit": 0,
+        "peak_rss_bytes": 161021952
+      },
+      {
+        "elapsed_seconds": 797.8469310000073,
+        "fit": 1,
+        "peak_rss_bytes": 162889728
+      },
+      {
+        "elapsed_seconds": 795.7160423749883,
+        "fit": 2,
+        "peak_rss_bytes": 163397632
+      }
+    ],
+    "git_parent": "e4dfbc06f1eac7cb1706824ccb0f3dfd28740ac9",
+    "output_seconds": 10.572366875014268,
+    "peak_parent_rss_bytes": 456065024,
+    "source_sha256": {
+      "__init__.py": "945c1b0c1f23b05139ed37d1d62a51748273d214f922b41e4c1ce1207f16f75a",
+      "adversarial_artifacts.py": "666350595d9bae287abe5d8f66a193fce2e68001248cef9b8e9df30a96b5816c",
+      "adversarial_detectors.py": "c3730143ac1648e5a8db88f43a58c53940bf6899d24f1f8187be91dc54053579",
+      "adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+      "adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+      "adversarial_study.py": "29c8da9f0541c13882dfb83615f01c29277dbc55ac4bdee2f3c8cdabc934f6c1",
+      "cli.py": "6449a264d0542995a87b3ee0c70d01ceb98257962ce3355472257959f4727abc",
+      "core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+      "dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+      "dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+      "order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+      "scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+    }
+  },
+  "scientific_sha256": "218a3de6419410ddd874321d794656a01bc285436cbe8b65babd5a592f4b5ec2"
+}
