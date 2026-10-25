@@ -265,3 +265,56 @@ classifier/layout baseline. A further quantum program requires an independently
 justified state-selection law, operational factorization/coarse-graining and
 controlled propagation/continuum conditions. No emergent time, gravity, black-hole
 or singularity-resolution claim follows.
+
+
+## 2026-10-25 — Dynamical quantum locality: final experiment
+
+**Gate and registration:** Experiment 6 PR #7 merged at `73baea2` with green post-merge
+CI; 1,001 baseline tests passed. Protocol/theory `5b71924` preceded implementation.
+The final source/workload commit `ff8d088` preceded primary generation. Three complete
+mandatory-size timing pilots failed initial planning allowances; every failure is
+retained. Exact coherent Gamma=0 sector propagation improved computation without
+altering physics. Resource-only amendments 20→30→40 minutes reused worst retained
+timings and preserved the 45-minute hard cap, 2 GiB RSS cap and all scientific criteria.
+The complete workload uses N=4/5 and three batches of four E preparations per cell.
+N=6 quantum execution was excluded by a fresh censored timing check.
+
+**Executed:** 168 preparation bundles (144 independent E and 24 symmetric), 12 grounds,
+12 exact N=4 Gibbs laws, 36 independent-link controls, six full dephasing comparisons,
+and every one of 1,088 N=4/N=5 graph/static controls. All six (mu,Gamma) settings and
+all registered times/perturbations/frozen comparisons were retained. Zero numerical
+failures or missing units occurred. Runtime 604.133 s; peak RSS 349,536,256 bytes.
+
+**Findings:** all twelve size/parameter cells have 0/12 joint C/L/T/D successes.
+Each simultaneous exact upper bound is 0.402190 against target 0.8: NO-GO for the
+registered finite unconditioned locality benchmark. Only 5/144 E units satisfy
+late connectedness; none meets both late-law stability limits; no N=5 unit passes
+the response-concentration screen. Favorable rank robustness and individual N=4
+L/D successes remain recorded. Graph-law differences and measurement backaction
+are real model effects, not evidence of a manifold or physical spacetime.
+
+**Mathematics and scope:** finite symmetric expectations/responses stay uniform;
+h,Gamma>0 gives a unique positive symmetric ground. Exact Gamma=0 matching and
+classical degree-two examples expose energetic structure and fragmentation.
+The full interaction commutator has complete pair support; aged response depends
+on joint moments. N=5's extra degree-null connectivity gate is path-selective by
+an exact six-to-one class count. Conditional known-graph propagation and unconditioned
+target distinguishability are different operational questions. Continuum scaling,
+relational instruments and other limits are not universally ruled out.
+
+**Verification:** frozen source passed 1,129 tests. Independent state/statistical
+and graph/static audits reproduce the decision with zero failures, including
+all recorded response estimands, checkpoints, selected full evolutions, Gibbs laws,
+measurement branches and 2,052,828 graph/static scalar comparisons. The scientific
+digest is `0328f5beb3501f9ca9701594920c208beea37e6d6c274f1f0c5134634f162bec`.
+Full frozen replay reproduces all 238 scientific artifacts, including seven figures,
+byte for byte; repeat runtime 618.222 s and peak RSS 330,399,744 bytes. Previous archive
+and atlas tree hashes are unchanged. The publication branch passed 1,142 tests and a fresh end-to-end smoke CLI.
+
+**Closure:** overall conclusion B. Stop this seven-experiment computational
+programme; do not propose Experiment 8 or further classifier/Hamiltonian tuning.
+The reusable contribution is explicit mathematics, counterexamples, reproducible
+evidence and honest limits. No emergent physical spacetime, Einstein dynamics,
+physical black-hole model or singularity resolution was established. A restart
+needs an independently justified physical principle, controlled derivation or
+empirically discriminating prediction.

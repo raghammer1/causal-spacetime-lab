@@ -1,0 +1,138 @@
+{
+  "method": "exact binomial enumeration; grid includes all CI endpoints",
+  "passed": true,
+  "rows": [
+    {
+      "family": 12,
+      "grid_points": 1025,
+      "minimum_enumerated_coverage": 0.9975499294282084,
+      "passed": true,
+      "required_marginal_coverage": 0.9958333333333333,
+      "simulation_covered": 9981,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 12
+    },
+    {
+      "family": 18,
+      "grid_points": 1025,
+      "minimum_enumerated_coverage": 0.9980139561605765,
+      "passed": true,
+      "required_marginal_coverage": 0.9972222222222222,
+      "simulation_covered": 9998,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 12
+    },
+    {
+      "family": 24,
+      "grid_points": 1025,
+      "minimum_enumerated_coverage": 0.9981678587019931,
+      "passed": true,
+      "required_marginal_coverage": 0.9979166666666667,
+      "simulation_covered": 9997,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 12
+    },
+    {
+      "family": 36,
+      "grid_points": 1025,
+      "minimum_enumerated_coverage": 0.9992345848952159,
+      "passed": true,
+      "required_marginal_coverage": 0.9986111111111111,
+      "simulation_covered": 10000,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 12
+    },
+    {
+      "family": 12,
+      "grid_points": 1049,
+      "minimum_enumerated_coverage": 0.9966603221894764,
+      "passed": true,
+      "required_marginal_coverage": 0.9958333333333333,
+      "simulation_covered": 9972,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 24
+    },
+    {
+      "family": 18,
+      "grid_points": 1049,
+      "minimum_enumerated_coverage": 0.9975924647571908,
+      "passed": true,
+      "required_marginal_coverage": 0.9972222222222222,
+      "simulation_covered": 9990,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 24
+    },
+    {
+      "family": 24,
+      "grid_points": 1049,
+      "minimum_enumerated_coverage": 0.9983140002475489,
+      "passed": true,
+      "required_marginal_coverage": 0.9979166666666667,
+      "simulation_covered": 9991,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 24
+    },
+    {
+      "family": 36,
+      "grid_points": 1049,
+      "minimum_enumerated_coverage": 0.998780577050357,
+      "passed": true,
+      "required_marginal_coverage": 0.9986111111111111,
+      "simulation_covered": 9998,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 24
+    },
+    {
+      "family": 12,
+      "grid_points": 1073,
+      "minimum_enumerated_coverage": 0.9960158339847732,
+      "passed": true,
+      "required_marginal_coverage": 0.9958333333333333,
+      "simulation_covered": 9996,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 36
+    },
+    {
+      "family": 18,
+      "grid_points": 1073,
+      "minimum_enumerated_coverage": 0.9973439633121681,
+      "passed": true,
+      "required_marginal_coverage": 0.9972222222222222,
+      "simulation_covered": 9978,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 36
+    },
+    {
+      "family": 24,
+      "grid_points": 1073,
+      "minimum_enumerated_coverage": 0.9980588947119701,
+      "passed": true,
+      "required_marginal_coverage": 0.9979166666666667,
+      "simulation_covered": 9992,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 36
+    },
+    {
+      "family": 36,
+      "grid_points": 1073,
+      "minimum_enumerated_coverage": 0.9987219069357395,
+      "passed": true,
+      "required_marginal_coverage": 0.9986111111111111,
+      "simulation_covered": 9990,
+      "simulation_probability": 0.37,
+      "simulation_trials": 10000,
+      "trials": 36
+    }
+  ]
+}

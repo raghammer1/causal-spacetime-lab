@@ -1,0 +1,359 @@
+{
+  "alpha": 0.05,
+  "cells": [
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 0,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 1,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 2,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 0,
+        "L": 1,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 3,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 2,
+        "L": 3,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 4,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 1,
+        "L": 2,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 4,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 5,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 0,
+        "L": 2,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 0,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 1,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 1,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 1,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 2,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 2,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 3,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 1,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 4,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 1,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    },
+    {
+      "N": 5,
+      "assessment": "fails",
+      "attempted": 12,
+      "cell": 5,
+      "cohort_complete": true,
+      "component_successes": {
+        "C": 0,
+        "D": 0,
+        "L": 0,
+        "T": 0
+      },
+      "cp_family_bounds": [
+        0.0,
+        0.40218992470918974
+      ],
+      "cp_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_go_bounds": [
+        0.0,
+        0.43574242607069247
+      ],
+      "degree_null_successes": 0,
+      "successes": 0,
+      "valid": 12
+    }
+  ],
+  "complete_expected_cohorts": true,
+  "decision": "NO-GO",
+  "eliminated_parameter_settings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "family_size": 12,
+  "geometry_beyond_graph": "UNRESOLVED at these sizes",
+  "independent_control_validation_passed": true,
+  "limitation": "A necessary screen cannot establish LIMITED GO without the separate mechanism and null requirements.",
+  "limited_go_requires_independently_verified_mechanism": true,
+  "scope": "registered finite unconditioned dynamically organized locality",
+  "statistically_eligible_parameter_settings": [],
+  "target_joint_probability": 0.8
+}
