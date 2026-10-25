@@ -132,10 +132,11 @@ because two independent points have concordant `u,v` rankings with probability
 `1/2`; pairs sharing an event are correlated, so a binomial error bar for all pairs
 would be unjustified.
 
-## Planned dimension work: conventions first
+## Dimension reconstruction: conventions first
 
-Dimension estimation is a **future milestone**, not an implemented outcome of
-this study. Let `R` count ordered relations `i≺j`, once per comparable unordered
+Dimension estimation is implemented separately in Experiment 2; see its
+[full derivation](DIMENSION_THEORY.md) and [protocol](DIMENSION_RECONSTRUCTION_PROTOCOL.md).
+It is not an outcome of the finite-density time study. Let `R` count ordered relations `i≺j`, once per comparable unordered
 pair. The repository's statistic is
 
 \[
@@ -161,9 +162,9 @@ This distinction is explicit in Eqs. (6), (11) and (12) of
 The integral can be evaluated by using `q=(T,0)`, radial measure
 `Ω_(d−2) r^(d−2) dr dt`, radius bound `r<min(t,T−t)`, and
 `Vol(I(x,q))=C_d[(T−t)²−r²]^(d/2)`, where
-`C_d=Ω_(d−2)/(2^(d−1)d(d−1))` for `d≥2`. The planned implementation must reproduce
-this beta/gamma integral and validate the dimension dependence with separate
-sprinklings before numerically inverting `p_d`. Original attribution is to
+`C_d=Ω_(d−2)/(2^(d−1)d(d−1))` for `d≥2`. Experiment 2 derives this beta/gamma
+integral and checks it with independent quadrature before testing numerical
+inversion of `p_d` on separate sprinklings. Original attribution is to
 J. Myrheim, *Statistical Geometry*, CERN-TH-2538 (1978), and
 [D. A. Meyer, *The Dimension of Causal Sets*, MIT thesis](https://hdl.handle.net/1721.1/14328).
 MIT's catalog dates the thesis to 1989; it is commonly cited as 1988. The verified

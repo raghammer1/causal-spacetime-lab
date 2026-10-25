@@ -21,3 +21,5 @@ jobs:
         run: python -m causal_lab.cli --seed 20261025 --repeats 100 --out results
       - name: Reproduce finite-density smoke study
         run: python -m causal_lab.scaling --seed 20261025 --densities 8 32 --durations 0.5 1 --repeats 8 --bootstrap 100 --order-repeats 2 --benchmark-repeats 1 --out results/scaling-smoke
+      - name: Reproduce dimension smoke study
+        run: python -m causal_lab.dimension_study --dimensions 2 3 --counts 16 --repeats 3 --calibration-repeats 10 --bootstrap 100 --benchmark-repeats 1 --out results/dimension-smoke
