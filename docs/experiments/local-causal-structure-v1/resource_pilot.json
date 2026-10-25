@@ -1,0 +1,762 @@
+{
+  "seed": 20261024,
+  "purpose": "timing-only; no pilot scientific outcomes retained or inspected",
+  "timings": [
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.018078875000355765,
+      "feature_seconds": 0.009957666014088318
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.00014150000060908496,
+      "feature_seconds": 0.007513999997172505
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.00019925000378862023,
+      "feature_seconds": 0.005221083993092179
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.00013425000361166894,
+      "feature_seconds": 0.0042754170135594904
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 8.274998981505632e-05,
+      "feature_seconds": 0.008079416991677135
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 0.0002639580052345991,
+      "feature_seconds": 0.008876750012859702
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 2,
+      "search_seconds": 0.038174624991370365,
+      "checkpoint_seconds": 0.02008979200036265
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 2,
+      "search_seconds": 0.02781179200974293,
+      "checkpoint_seconds": 0.017655416013440117
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.0001470420102123171,
+      "feature_seconds": 0.003727583010913804
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.00012441701255738735,
+      "feature_seconds": 0.0038419580087065697
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.00015558299492113292,
+      "feature_seconds": 0.0031294579966925085
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.0001431669807061553,
+      "feature_seconds": 0.0032045000116340816
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 9.541699546389282e-05,
+      "feature_seconds": 0.003682832990307361
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 9.250000584870577e-05,
+      "feature_seconds": 0.003670541977044195
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 3,
+      "search_seconds": 0.0291264170082286,
+      "checkpoint_seconds": 0.010902916983468458
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 3,
+      "search_seconds": 0.03371079100179486,
+      "checkpoint_seconds": 0.01157220799359493
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.00017608300549909472,
+      "feature_seconds": 0.0028475830040406436
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.00015112498658709228,
+      "feature_seconds": 0.0027519170253071934
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.00017487499280832708,
+      "feature_seconds": 0.0025035420258063823
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.0001635420194361359,
+      "feature_seconds": 0.002566249982919544
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.00011666599311865866,
+      "feature_seconds": 0.0030408750171773136
+    },
+    {
+      "kind": "parent",
+      "count": 64,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.00011424999684095383,
+      "feature_seconds": 0.002813416998833418
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 4,
+      "search_seconds": 0.03531908299191855,
+      "checkpoint_seconds": 0.007684041978791356
+    },
+    {
+      "kind": "search",
+      "count": 64,
+      "dimension": 4,
+      "search_seconds": 0.0254373750067316,
+      "checkpoint_seconds": 0.00900037499377504
+    },
+    {
+      "kind": "pair",
+      "count": 64,
+      "scaling": "fixed",
+      "seconds": 0.011047165986383334
+    },
+    {
+      "kind": "pair",
+      "count": 64,
+      "scaling": "inflated",
+      "seconds": 0.018054540996672586
+    },
+    {
+      "kind": "synthetic",
+      "count": 64,
+      "family": "rank2",
+      "seconds": 0.005544666986679658
+    },
+    {
+      "kind": "synthetic",
+      "count": 64,
+      "family": "rank3",
+      "seconds": 0.004190500010736287
+    },
+    {
+      "kind": "synthetic",
+      "count": 64,
+      "family": "interval",
+      "seconds": 0.004377250006655231
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.00019129199790768325,
+      "feature_seconds": 0.02264733301126398
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.0001747080241329968,
+      "feature_seconds": 0.020849124994128942
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.0002020419924519956,
+      "feature_seconds": 0.016637791006360203
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.00019449999672360718,
+      "feature_seconds": 0.015232999983709306
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 0.00014012499013915658,
+      "feature_seconds": 0.020862042001681402
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 0.00013987498823553324,
+      "feature_seconds": 0.021247083001071587
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 2,
+      "search_seconds": 0.1839305829780642,
+      "checkpoint_seconds": 0.0647471249976661
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 2,
+      "search_seconds": 0.2041266669984907,
+      "checkpoint_seconds": 0.06864179100375623
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.00029562501003965735,
+      "feature_seconds": 0.01347412500763312
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.0002549170167185366,
+      "feature_seconds": 0.010409040987724438
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.0002808330173138529,
+      "feature_seconds": 0.008191999979317188
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.00026920801610685885,
+      "feature_seconds": 0.008739583980059251
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 0.00021525000920519233,
+      "feature_seconds": 0.014195083000231534
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 0.00021337502403184772,
+      "feature_seconds": 0.013715916982619092
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 3,
+      "search_seconds": 0.2508130829955917,
+      "checkpoint_seconds": 0.03404825000325218
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 3,
+      "search_seconds": 0.23690104199340567,
+      "checkpoint_seconds": 0.03763166698627174
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.00035062499227933586,
+      "feature_seconds": 0.007276000018464401
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.00032037499477155507,
+      "feature_seconds": 0.007474957994418219
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.00035270798252895474,
+      "feature_seconds": 0.006423542014090344
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.00034279198735021055,
+      "feature_seconds": 0.006640292005613446
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.0002910829789470881,
+      "feature_seconds": 0.009029084001667798
+    },
+    {
+      "kind": "parent",
+      "count": 128,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.0002862499968614429,
+      "feature_seconds": 0.00840799999423325
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 4,
+      "search_seconds": 0.20825462500215508,
+      "checkpoint_seconds": 0.023261333990376443
+    },
+    {
+      "kind": "search",
+      "count": 128,
+      "dimension": 4,
+      "search_seconds": 0.22975366600439884,
+      "checkpoint_seconds": 0.022678542009089142
+    },
+    {
+      "kind": "pair",
+      "count": 128,
+      "scaling": "fixed",
+      "seconds": 0.026158916007261723
+    },
+    {
+      "kind": "pair",
+      "count": 128,
+      "scaling": "inflated",
+      "seconds": 0.06549737500608899
+    },
+    {
+      "kind": "synthetic",
+      "count": 128,
+      "family": "rank2",
+      "seconds": 0.021145250007975847
+    },
+    {
+      "kind": "synthetic",
+      "count": 128,
+      "family": "rank3",
+      "seconds": 0.013322082988452166
+    },
+    {
+      "kind": "synthetic",
+      "count": 128,
+      "family": "interval",
+      "seconds": 0.015550707990769297
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.0005233339907135814,
+      "feature_seconds": 0.09523162501864135
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "diamond",
+      "generation_seconds": 0.0004193330241832882,
+      "feature_seconds": 0.09602733299834654
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.0004552080063149333,
+      "feature_seconds": 0.06747174999327399
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "slab",
+      "generation_seconds": 0.0004612499906215817,
+      "feature_seconds": 0.06255504200817086
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 0.00038104201667010784,
+      "feature_seconds": 0.08975741700851358
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 2,
+      "family": "box",
+      "generation_seconds": 0.0003768750175368041,
+      "feature_seconds": 0.08982662498601712
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 2,
+      "search_seconds": 1.6152657910133712,
+      "checkpoint_seconds": 0.298046667012386
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 2,
+      "search_seconds": 1.9366605000104755,
+      "checkpoint_seconds": 0.2878252499795053
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.0008405830012634397,
+      "feature_seconds": 0.052760499995201826
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "diamond",
+      "generation_seconds": 0.0007649589970242232,
+      "feature_seconds": 0.05061587499221787
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.0007860420155338943,
+      "feature_seconds": 0.03865266698994674
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "slab",
+      "generation_seconds": 0.0009896669944282621,
+      "feature_seconds": 0.03748816598090343
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 0.0007310410146601498,
+      "feature_seconds": 0.0687904589867685
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 3,
+      "family": "box",
+      "generation_seconds": 0.0006878330023027956,
+      "feature_seconds": 0.058176958991680294
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 3,
+      "search_seconds": 2.8447144169767853,
+      "checkpoint_seconds": 0.18721458400250413
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 3,
+      "search_seconds": 2.226565374992788,
+      "checkpoint_seconds": 0.16049545799614862
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.0011850830051116645,
+      "feature_seconds": 0.02806016698013991
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "diamond",
+      "generation_seconds": 0.0009771659970283508,
+      "feature_seconds": 0.026841791986953467
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.0010202499979641289,
+      "feature_seconds": 0.022340916009852663
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "slab",
+      "generation_seconds": 0.001006957987556234,
+      "feature_seconds": 0.023447708023013547
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.0009223329834640026,
+      "feature_seconds": 0.03322633300558664
+    },
+    {
+      "kind": "parent",
+      "count": 256,
+      "dimension": 4,
+      "family": "box",
+      "generation_seconds": 0.0009239999926649034,
+      "feature_seconds": 0.03388341600657441
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 4,
+      "search_seconds": 2.2145569999993313,
+      "checkpoint_seconds": 0.09811066600377671
+    },
+    {
+      "kind": "search",
+      "count": 256,
+      "dimension": 4,
+      "search_seconds": 2.1249953340156935,
+      "checkpoint_seconds": 0.0830364580033347
+    },
+    {
+      "kind": "pair",
+      "count": 256,
+      "scaling": "fixed",
+      "seconds": 0.08419537500594743
+    },
+    {
+      "kind": "pair",
+      "count": 256,
+      "scaling": "inflated",
+      "seconds": 0.12854749997495674
+    },
+    {
+      "kind": "synthetic",
+      "count": 256,
+      "family": "rank2",
+      "seconds": 0.09050416699028574
+    },
+    {
+      "kind": "synthetic",
+      "count": 256,
+      "family": "rank3",
+      "seconds": 0.05179712499375455
+    },
+    {
+      "kind": "synthetic",
+      "count": 256,
+      "family": "interval",
+      "seconds": 0.07511866599088535
+    }
+  ],
+  "reference_timings": [
+    {
+      "dimension": 2,
+      "seconds": 1.33592100001988
+    },
+    {
+      "dimension": 3,
+      "seconds": 0.01275724999140948
+    },
+    {
+      "dimension": 4,
+      "seconds": 0.012331832986092195
+    }
+  ],
+  "reference_projection_seconds": 5.099283446645131,
+  "analysis_allowance_seconds": 180.0,
+  "assumed_parallel_speedup": 2.0,
+  "safety_factor": 1.5,
+  "candidates": [
+    {
+      "repeats": 200,
+      "fiber_repeats": 32,
+      "projected_seconds": 1425.6757903908292,
+      "eligible": true
+    },
+    {
+      "repeats": 200,
+      "fiber_repeats": 16,
+      "projected_seconds": 1139.3180976478761,
+      "eligible": true
+    },
+    {
+      "repeats": 200,
+      "fiber_repeats": 8,
+      "projected_seconds": 996.1392512763996,
+      "eligible": true
+    },
+    {
+      "repeats": 100,
+      "fiber_repeats": 32,
+      "projected_seconds": 1138.0200505233515,
+      "eligible": true
+    },
+    {
+      "repeats": 100,
+      "fiber_repeats": 16,
+      "projected_seconds": 851.6623577803985,
+      "eligible": true
+    },
+    {
+      "repeats": 100,
+      "fiber_repeats": 8,
+      "projected_seconds": 708.4835114089219,
+      "eligible": true
+    },
+    {
+      "repeats": 50,
+      "fiber_repeats": 32,
+      "projected_seconds": 994.1921805896127,
+      "eligible": true
+    },
+    {
+      "repeats": 50,
+      "fiber_repeats": 16,
+      "projected_seconds": 707.8344878466596,
+      "eligible": true
+    },
+    {
+      "repeats": 50,
+      "fiber_repeats": 8,
+      "projected_seconds": 564.6556414751831,
+      "eligible": true
+    }
+  ],
+  "selected": {
+    "repeats": 200,
+    "fiber_repeats": 32,
+    "projected_seconds": 1425.6757903908292,
+    "eligible": true
+  },
+  "source_commit": "e92c6e4fd372c05a554862112e97578cf7b71a62",
+  "working_tree_dirty": true,
+  "source_hashes": {
+    "docs/LOCAL_CAUSAL_STRUCTURE_PROTOCOL.md": "ad6bfe26c4755a86e3d8d46ec31b1e507c08f37e93d7794bc051fa05a81a6243",
+    "docs/LOCAL_CAUSAL_STRUCTURE_THEORY.md": "eb642c673bc41aeaf8f8bfd34e1cf68ef09236f9cf8b014bf428f5b32ad93ea9",
+    "src/causal_lab/__init__.py": "945c1b0c1f23b05139ed37d1d62a51748273d214f922b41e4c1ce1207f16f75a",
+    "src/causal_lab/adversarial_artifacts.py": "dbf215f4e883224e08dfb6dcdd354bbba128137451613eba5e29d2d026cf22d6",
+    "src/causal_lab/adversarial_detectors.py": "c3730143ac1648e5a8db88f43a58c53940bf6899d24f1f8187be91dc54053579",
+    "src/causal_lab/adversarial_features.py": "9e9fde42beca9fa1feaa9218e71e74ebdecba72f42b3d5defc0cd8489e00608e",
+    "src/causal_lab/adversarial_generators.py": "a64da15509096d4cae169ffb9fd4afa337c9101220ce641b0be607ca0ac07488",
+    "src/causal_lab/adversarial_study.py": "29c8da9f0541c13882dfb83615f01c29277dbc55ac4bdee2f3c8cdabc934f6c1",
+    "src/causal_lab/cli.py": "6449a264d0542995a87b3ee0c70d01ceb98257962ce3355472257959f4727abc",
+    "src/causal_lab/core.py": "554056e015741f5156433dc2852f5caf3e307d49ea48d86393775bf1216ca62c",
+    "src/causal_lab/dimension.py": "75523622ffc7b9eb324b8f719eb703b0d644a9a91f803f42b4780a99635f18bc",
+    "src/causal_lab/dimension_study.py": "2019120dec509fa2bc3123e138c45e8839d86a3b33b7e13443aaeaaa80e16860",
+    "src/causal_lab/local_generators.py": "12cd9cbc86996c38250c1b81e139f7c6d2a08b5543b0d5b0ffea73eb54b6c2f7",
+    "src/causal_lab/local_random.py": "6886f177070ada0af1d2746d37624b2a6ed583918fa1dabe52f3105c77c2f97e",
+    "src/causal_lab/local_statistics.py": "0ba483e23e23e6b640ecbd156aa265fed6ce367af324f21e01e68fd4eafa0192",
+    "src/causal_lab/local_structure.py": "c65b7f80c0c31dbd25c5b8d7ace7f079303fbffa0cffc898795ce63bd31dcb81",
+    "src/causal_lab/local_structure_artifacts.py": "be39a13171e16d2d846c04a43f31d120d4df8a4467cba20d44da492d926351fc",
+    "src/causal_lab/local_structure_study.py": "25097ab4b2901901dd9818fbd4222681af969d79bd38d896afec453faeee6d41",
+    "src/causal_lab/order_observables.py": "bad1156090c3463adbef1b8ffed6fae60db65f2351c1039002cd33762a4d2412",
+    "src/causal_lab/scaling.py": "5ec5b85ab2008612772594bf3f6c43c4508acca6545b34c06be8947717a24276"
+  },
+  "python": "3.14.4",
+  "numpy": "2.5.4",
+  "platform": "Darwin",
+  "machine": "arm64"
+}
