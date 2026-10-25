@@ -35,3 +35,9 @@ jobs:
           OMP_NUM_THREADS: '1'
           VECLIB_MAXIMUM_THREADS: '1'
         run: python -m causal_lab.quantum_study --smoke --output results/quantum-smoke
+      - name: Reproduce dynamical quantum locality smoke study
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: python -m causal_lab.dynamical_study --mode smoke --output results/dynamical-smoke

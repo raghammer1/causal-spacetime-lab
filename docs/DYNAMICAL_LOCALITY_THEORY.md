@@ -571,3 +571,28 @@ mapping of units. This model contains no controlled black-hole sector, horizons,
 semiclassical gravity or singularity calculation. It offers no substantive result
 about physical black holes. The seven-experiment synthesis must close the program
 according to the registered evidence, without automatically inventing a next model.
+
+## 11. Pre-primary audit of the tiny-size degree-null gate
+
+Exhaustive graph classification and an independent counting argument identified a
+limitation of the registered extra GO condition before primary generation. At N4,
+conditioning on the full labeled degree vector fixes connectivity. At N5 the only
+degree classes allowing both connected and disconnected realizations have degree
+multiset (2,2,2,1,1). For each fixed assignment of its two degree-one vertices,
+there are six labeled P5 paths (the three internal vertices can be ordered in3!
+ways) and one C3 disjoint union K2. The degree-preserving uniform null consequently
+has connectivity6/7 in each such class. Other classes have fixed connectivity:
+a disconnected five-vertex graph with no isolated vertex has component sizes2+3;
+K2 union P3 has only three edges and cannot also realize a connected graph.
+
+It follows for any law P that
+
+    P(connected) − Q_degree(connected) = [P(P5) − 6 P(C3 union K2)] / 7 <= 1/7.
+
+The registered connectivity advantage >=.1 therefore requires P(P5)>=.7. This
+is a strong finite-size path-selection constraint imposed by the GO screen, not
+a discovery of dimension or a neutral universal definition of geometric order.
+The threshold is preserved; the limitation is disclosed before outcomes. The
+primary C/L/T/D necessary-screen failure does not depend on this additional gate.
+No observed failure of the path-selective gate can establish a general physical
+no-go. At larger N the degree classes have different combinatorial freedom.
