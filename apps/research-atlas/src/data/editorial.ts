@@ -1,5 +1,5 @@
 /** Editorial claims are sourced to the immutable, verified research baseline. */
-export const SCIENTIFIC_REF = "9bc5984c656271c247354e0079fd900702642064";
+export const SCIENTIFIC_REF = "4e1a667ad2d590ee365a395021f0c9772e63b8d1";
 export const sourceUrl = (path: string): string =>
   /^https?:\/\//.test(path)
     ? path
@@ -449,7 +449,7 @@ export const experiments: Experiment[] = [
       "This investigated classical growth route does not reproduce the required Minkowski sampling limit. Its no-go is model- and limit-specific; it does not disprove emergent spacetime.",
     unresolved:
       "Different microscopic dynamics, including quantum proposals, remain open. They need explicit assumptions, consistency, covariance, a convergence target and eventually physical tests. No gravity or black-hole interior was modeled.",
-    next: "The next step is a different, mathematically justified dynamics or convergence question. Tuning this same baseline cannot evade its known structural obstruction.",
+    next: "Historically, this obstruction led to Experiment 6: could quantum correlations reveal geometric structure? The completed programme now ends with Experiment 7 and the final synthesis; this transition is not a proposal for more simulations.",
     explorer:
       "A new dot chooses older dots, then inherits their ancestors. Some finite networks can look geometric, but the growth rule produces the wrong long-run relationship patterns for our target. The broader possibility of emergent spacetime remains untested.",
     engineer:
@@ -526,6 +526,156 @@ export const experiments: Experiment[] = [
         label: "Brightwell & Georgiou: continuum-limit restriction",
         path: "https://nicholasgeorgiou.webspace.durham.ac.uk/wp-content/uploads/sites/199/2021/04/contlim.pdf",
       },
+    ],
+  },
+  {
+    id: 6,
+    slug: "quantum-information",
+    title: "Can quantum information reveal space?",
+    shortTitle: "Read quantum relationships",
+    question:
+      "Can relationships between quantum subsystems reveal geometry beyond the interactions already supplied to the model?",
+    analogy:
+      "A pattern of shared information can reveal who is connected, much as shared messages reveal a communication network. Recovering the wiring does not explain why that wiring forms a physical space.",
+    hypothesis:
+      "Mutual-information neighborhoods might show reproducible proximity beyond supplied couplings, while physical null states and exact counterexamples could falsify a geometric advancement claim.",
+    setup:
+      "Use transverse-field Ising systems with 6, 8 and 10 matter qubits: homogeneous all-to-all couplings, random all-to-all couplings, and a randomly relabeled chain whose locality is explicitly supplied. Infer from mutual information alone; evaluate against withheld couplings, perturbations, phase-scrambled states and exact controls.",
+    assumptions: [
+      "The tensor factorization, Hamiltonian, state preparation and external simulation time are supplied; no coordinates are needed to supply interactions.",
+      "Fields h = 0.5, 1 and 2, three independent batches, and eight realizations per batch were fixed before primary execution.",
+      "Fields, perturbations, phase scrambles and time snapshots from one realization are dependent branches, not fresh independent samples.",
+      "Mutual information measures total correlation. Pair entanglement, operational signalling and geometric distance are different quantities.",
+    ],
+    measured:
+      "1,818 state records, including 873 ground-state solves, with zero numerical failures. At h = 1, each size has 24 independent chain realizations; all 72 recover every supplied chain bond.",
+    found:
+      "The h = 1 chain has AUC = 1 and edge recall = 1 in all 72 cases; the multiplicity-adjusted exact success-probability lower bound is 0.84316 at each size. Random all-to-all models have stable proximity rankings, but the required advantage over physical phase-scrambled controls fails at n = 6 and 10.",
+    survived:
+      "Quantum correlations can recover supplied interaction structure and characterize finite proximity. The exact symmetric ground state has no distinguishable pair neighborhoods; sign gauges and multipartite examples expose information that pair summaries cannot identify.",
+    failed:
+      "No limited GO for geometric emergence. Nominal 95% bootstrap intervals covered only 365/400 independent calibration means, or 91.25%, so those intervals remain descriptive. Supplied-chain bond recovery also deteriorates at h = 0.5 as size grows.",
+    unresolved:
+      "A stable ranking is not a metric, a dimension or a controlled continuum limit. These fixed-interaction systems do not establish independent effective locality, emergent time, gravity or spacetime.",
+    next:
+      "Experiment 7 then made the links quantum degrees of freedom and tested operational influence under one frozen dynamical law. It was the final experiment, not the start of another search for better-looking networks.",
+    explorer:
+      "Two qubits can share information without being neighbors in a physical space. Our method recognized every bond in the supplied chain at the registered field, but other states also produced convincing diagrams. The controls kept that visual resemblance separate from evidence of geometry.",
+    engineer:
+      "Partial traces give one- and two-qubit density matrices; their entropies produce mutual information. Inference receives only that matrix and returns the full MDS spectrum, while a separate evaluator sees couplings and chain labels. Three distance floors, fractional tie handling, independent seeds and replay prevent hidden choices from becoming evidence. Shortest-path closure imposes triangle inequalities and can retain zero-distance degeneracy.",
+    researcher:
+      "For fixed finite n and weak Ising couplings, leading mutual information depends on Jᵢⱼ², so interaction reconstruction is expected. Perron–Frobenius gives a unique symmetric finite ground state for the homogeneous model at h > 0. Physical phase scrambles preserve all computational-basis probabilities but change quantum correlations. The bootstrap calibration failure invalidates a nominal coverage interpretation; the separate chain success gate uses exact binomial bounds. No MDS participation rank is interpreted as spacetime dimension.",
+    equations: [
+      {
+        label: "Supplied fixed interaction law",
+        expression: "H = −h Σᵢ Xᵢ − Σᵢ<ⱼ Jᵢⱼ ZᵢZⱼ",
+        explanation:
+          "The chain, homogeneous and random coupling matrices are different supplied microscopic assumptions. A hidden label permutation removes coordinate access, not the chain's imposed locality.",
+      },
+      {
+        label: "Total pair correlation",
+        expression: "I(i:j) = S(ρᵢ) + S(ρⱼ) − S(ρᵢⱼ)",
+        explanation:
+          "Entropy uses base-two logarithms. A Bell pair has I = 2 bits; a GHZ pair has I = 1 bit but zero pair negativity. Correlation alone is not a signal.",
+      },
+      {
+        label: "An assumed dissimilarity, not an automatic metric",
+        expression: "dᵢⱼ = −ln[max(I(i:j), ε)/2]",
+        explanation:
+          "Bell partners have zero distance despite being distinct subsystems, and a purified-AND counterexample violates triangle inequalities. A floor or layout does not repair the physical interpretation.",
+      },
+    ],
+    limitations: [
+      "The 1,818 records are not 1,818 independent realizations. Perturbations, fields, cuts and snapshots share a realization.",
+      "The 91.25% calibration coverage failure is preserved; deterministic replay does not turn descriptive bootstrap intervals into calibrated guarantees.",
+      "The h = 0.5 chain failure shows that a genuinely supplied local Hamiltonian can fail an information-based reconstruction criterion.",
+      "Bell, GHZ and phase-scrambled controls expose degeneracies. Attractive projections and a small cut-law defect do not establish connected geometry.",
+      "No feedback law was invented to improve the result. The completed programme's stopping decision is in the final synthesis.",
+    ],
+    sources: [
+      { label: "Quantum results and uncertainty", path: "docs/QUANTUM_EMERGENCE_RESULTS.md" },
+      { label: "Registered quantum protocol", path: "docs/QUANTUM_EMERGENCE_PROTOCOL.md" },
+      { label: "Quantum derivations and primary references", path: "docs/QUANTUM_EMERGENCE_THEORY.md" },
+      { label: "Archived quantum summary", path: "docs/experiments/quantum-information-v1/summary.csv" },
+      { label: "Retained calibration failure", path: "docs/experiments/quantum-information-v1/calibration.json" },
+      { label: "Independent state audit", path: "docs/experiments/quantum-information-v1/state_audit.json" },
+      { label: "MI-only inference implementation", path: "src/causal_lab/quantum_geometry.py" },
+    ],
+  },
+  {
+    id: 7,
+    slug: "dynamical-locality",
+    title: "Can changing quantum links create locality?",
+    shortTitle: "Test dynamical locality",
+    question:
+      "Can a permutation-invariant quantum law organize changing interaction links into persistent neighborhoods that support operationally local influence?",
+    analogy:
+      "Imagine a communication network whose switches can change as messages pass. The test is whether that changing network creates persistent neighborhoods, not whether a drawing of one switch configuration resembles a map.",
+    hypothesis:
+      "One registered quantum-link Hamiltonian might produce stable connected Born laws and concentrated, perturbation-stable target responses that improve over frozen links. Joint failure would reject this finite benchmark.",
+    setup:
+      "Evolve all matter and link qubits coherently at N = 4 and 5. Test six fixed parameter settings with symmetric preparations and 12 independently sampled exchangeable preparations per cell. Apply a local Pauli-Y intervention after age 2 and compare target reduced states with a matched unperturbed evolution.",
+    assumptions: [
+      "h = g = U = 1, μ ∈ {2, 0.1, −2}, Γ ∈ {0.25, 1}; no outcome-based parameter tuning or connectivity reward.",
+      "Matter/link factorization, complete possible-pair incidence, degree costs and external time are supplied. Coordinate-free does not mean structure-free.",
+      "A quantum link superposition is not a realized classical graph. Exact Born enumeration and unselected illustration draws have different roles.",
+      "Each whole exchangeable preparation is one independent unit. Source-target pairs, times, perturbations and Born outcomes are dependent.",
+    ],
+    measured:
+      "168 preparation bundles: 144 independent exchangeable preparations and 24 deterministic symmetric preparations; 12 ground states, 12 exact N = 4 Gibbs laws, 36 independent-link controls and all 1,088 labeled N = 4/5 classical graphs. No numerical failures or missing units.",
+    found:
+      "All twelve parameter/size cells have 0/12 joint successes. The simultaneous exact binomial upper bound is 0.402190, below the required success probability 0.8. Only 5/144 exchangeable preparations pass the connectedness condition across all late ages; none passes both late Born-law stability limits.",
+    survived:
+      "The links develop correlated Born laws, and nonselective measurement changes subsequent probabilities. A supplied static chain validates the operational response assay. These useful effects survive the model's failed advancement test.",
+    failed:
+      "NO-GO for the registered finite-system, unconditioned locality benchmark. Every parameter setting fails at both tested sizes. No N = 5 preparation passes the locality-concentration condition, although small Γ perturbations often preserve rankings.",
+    unresolved:
+      "Four and five vertices cannot settle geometric scaling, thermodynamic symmetry breaking or every graph-adapted relational instrument. The result is not a universal impossibility theorem for this Hamiltonian or emergent spacetime.",
+    next:
+      "The programme is closed. Final conclusion B: useful mathematical/computational research, but insufficient evidence to pursue the physical hypothesis through more simulations. Read the final synthesis; no Experiment 8 or replacement Hamiltonian is proposed.",
+    explorer:
+      "We changed one matter qubit and measured how distinguishable another became. That tests influence rather than shared information. A known chain gave the expected nearby-to-distant response, but the evolving quantum-link model failed its registered test. Some measured graphs look structured; that alone is not an emergent space.",
+    engineer:
+      "The full Hilbert space has Q = N + N(N − 1)/2 qubits: 10 at N = 4 and 15 at N = 5. Exact Born probabilities enumerate 64 and 1,024 graphs. Independent dense/static and state audits verify reduced-state trace distance, conservation, graph nulls and semantic seeds. A complete replay reproduced all 238 deterministic scientific artifacts byte for byte; it is computational reproducibility, not a new preparation cohort.",
+    researcher:
+      "A local unitary changes no other reduction at zero delay. The registered Y intervention probes the aged joint state; its linear response depends on ⟨nᵢⱼZᵢXⱼ⟩ and ⟨nᵢⱼZᵢYⱼ⟩, not edge occupation alone. Symmetric preparations retain equal labeled target responses, while relational Born structure remains possible. Exact two-sided Clopper–Pearson intervals use family size 12 and α = 0.05. The additional N = 5 degree-null GO gate is path-selective; the primary C/L/T/D rejection does not depend on it.",
+    equations: [
+      {
+        label: "One frozen quantum-link law",
+        expression: "H = −hΣᵢXᵢ − gΣᵢ<ⱼnᵢⱼZᵢZⱼ − ΓΣₑXₑ + μΣₑnₑ + UΣᵢDᵢ(Dᵢ−1)/2",
+        explanation:
+          "nₑ = (I − Zₑ)/2 and Dᵢ sums incident link occupations. The degree cost already supplies an energetic preference; no loop, target-dimension or connectivity reward was added.",
+      },
+      {
+        label: "Operational target response",
+        expression: "Rᵢ→ⱼ(τ) = ½ ‖ρⱼ[U(τ)Yᵢψ(2)] − ρⱼ[U(τ)ψ(2)]‖₁",
+        explanation:
+          "Matched states evolve with the same Hamiltonian. At zero delay, every other target is unchanged even if the aged state is entangled. This is not a correlation-derived distance.",
+      },
+      {
+        label: "Simultaneous finite-cohort rejection",
+        expression: "pupper = 1 − (0.05/24)^(1/12) = 0.402190 < 0.8",
+        explanation:
+          "Each of twelve cells has zero joint successes in twelve independent preparations. The bound applies to the registered population and joint screen, not every possible definition of locality.",
+      },
+    ],
+    limitations: [
+      "N = 6 quantum execution was excluded by the registered timing policy; no partial cohort or favorable parameter subset was substituted.",
+      "Twelve preparations per cell cannot certify GO even with all successes. They do reject the observed large failure; continuum behavior remains unresolved.",
+      "At N = 5 the extra degree-null connectivity gain of 0.1 requires at least 0.7 probability on P5 paths. This finite-size selection bias does not cause the primary NO-GO.",
+      "Averaging graph-conditioned trace distances differs from the trace distance of averaged target states. Independent Born snapshots are not persistent graph trajectories.",
+      "No physical spacetime, emergent time, gravitational equation or black-hole result follows. Programme conclusion B stops further model exploration without claiming universal impossibility.",
+    ],
+    sources: [
+      { label: "Final dynamical results and decision", path: "docs/DYNAMICAL_LOCALITY_RESULTS.md" },
+      { label: "Registered dynamical protocol", path: "docs/DYNAMICAL_LOCALITY_PROTOCOL.md" },
+      { label: "Quantum-link theory and literature", path: "docs/DYNAMICAL_LOCALITY_THEORY.md" },
+      { label: "Frozen workload and power limits", path: "docs/DYNAMICAL_LOCALITY_WORKLOAD.md" },
+      { label: "Primary advancement data", path: "docs/experiments/dynamical-quantum-locality-v1/advancement.csv" },
+      { label: "Independent numerical audit", path: "docs/experiments/dynamical-locality-independent-audit.json" },
+      { label: "Complete frozen replay", path: "docs/experiments/dynamical-locality-replay-audit.json" },
+      { label: "Quantum-link implementation", path: "src/causal_lab/dynamical_core.py" },
+      { label: "Final synthesis and programme closure", path: "docs/FINAL_RESEARCH_SYNTHESIS.md" },
     ],
   },
 ];
@@ -662,18 +812,76 @@ export const claims: Claim[] = [
     ],
   },
   {
+    id: "quantum-reconstruction",
+    title: "Quantum correlations can recover supplied interaction structure",
+    status: "supported",
+    precise:
+      "MI-only inference recovers the supplied hidden-label chain in the registered h = 1 finite-system benchmark.",
+    evidence:
+      "All 72 independent chain realizations at n = 6, 8 and 10 have AUC = 1 and bond recall = 1. Each size has 24/24 successes and exact multiplicity-adjusted lower bound 0.84316 > 0.8.",
+    assumptions:
+      "Specified transverse-field Ising ground states, supplied nearest-neighbor couplings, h = 1, three sizes, and a separate evaluator with access to hidden chain labels.",
+    scope:
+      "Reconstruction of supplied locality, not creation of physical space. Recovery deteriorates at h = 0.5, and the failed bootstrap calibration does not validate unrelated descriptive intervals.",
+    experiments: [6],
+    sources: [
+      { label: "Quantum chain results", path: "docs/QUANTUM_EMERGENCE_RESULTS.md" },
+      { label: "Archived quantum summary", path: "docs/experiments/quantum-information-v1/summary.json" },
+      { label: "Independent quantum statistics audit", path: "docs/experiments/quantum-information-v1/statistics_audit.json" },
+    ],
+  },
+  {
+    id: "fixed-quantum-emergence",
+    title: "The fixed quantum models meet their geometric advancement criteria",
+    status: "falsified",
+    precise:
+      "The registered fixed-interaction models pass every condition required for limited geometric advancement beyond supplied coupling structure.",
+    evidence:
+      "Random all-to-all ground states pass the descriptive proximity screen but fail required physical phase-scramble advantages at n = 6 and 10. Homogeneous ground states have no distinguished pair neighborhoods, and exact Bell/GHZ/AND controls expose interpretation failures.",
+    assumptions:
+      "The registered finite sizes, state families, field values, inference maps, nulls and advancement criteria. Bootstrap intervals have failed nominal coverage and remain descriptive.",
+    scope:
+      "Failure of these advancement criteria is not a theorem against every geometric interpretation or every quantum state. Stable rankings remain useful diagnostics; no independent geometric mechanism is established.",
+    experiments: [6],
+    sources: [
+      { label: "Quantum decision and calibration limits", path: "docs/QUANTUM_EMERGENCE_RESULTS.md" },
+      { label: "Physical-null comparison data", path: "docs/experiments/quantum-information-v1/summary.csv" },
+      { label: "Exact quantum counterexamples", path: "docs/QUANTUM_EMERGENCE_THEORY.md" },
+    ],
+  },
+  {
+    id: "dynamical-locality",
+    title: "The quantum-link model passes the registered locality benchmark",
+    status: "falsified",
+    precise:
+      "At one of six frozen parameter settings, the specified exchangeable preparations pass the joint finite unconditioned locality screen with probability at least 0.8 across all tested sizes.",
+    evidence:
+      "Every N = 4/5 parameter cell has 0/12 joint successes. Its simultaneous exact binomial upper bound is 0.402190 < 0.8. Controls and independent audits pass, and the complete seeded replay reproduces 238 scientific artifacts.",
+    assumptions:
+      "One frozen Hamiltonian, N = 4 and 5, twelve independent preparations per cell, registered ages/delays and Y intervention. C/L/T/D measure connectedness, concentration, stability and improvement over initially frozen links.",
+    scope:
+      "Finite-model NO-GO for this unconditioned screen; geometric scaling and broader relational protocols remain unresolved. Final programme conclusion B closes this computational exploration without asserting universal impossibility.",
+    experiments: [7],
+    sources: [
+      { label: "Finite-model decision and qualifications", path: "docs/DYNAMICAL_LOCALITY_RESULTS.md" },
+      { label: "Primary joint-success bounds", path: "docs/experiments/dynamical-quantum-locality-v1/advancement.csv" },
+      { label: "Independent primary audit", path: "docs/experiments/dynamical-locality-independent-audit.json" },
+      { label: "Programme conclusion B", path: "docs/FINAL_RESEARCH_SYNTHESIS.md" },
+    ],
+  },
+  {
     id: "emergence-impossible",
     title: "All possible emergent-spacetime theories are impossible",
     status: "untested",
     precise:
       "No microscopic quantum or mathematical mechanism can produce effective spacetime.",
     evidence:
-      "None of these experiments tests this universal claim. The first four reconstruct or diagnose orders sampled from supplied geometry; the fifth studies a restricted classical growth route.",
+      "None of these seven experiments tests this universal claim. They examine supplied geometric laws, one classical growth route, fixed quantum interactions and one finite quantum-link benchmark. Their failures have explicit model, state and limit conditions.",
     assumptions:
       "A universal impossibility claim would need arguments covering every candidate mechanism and a precise meaning of emergence. This research does not supply them.",
     scope:
-      "The broader emergence hypothesis remains open. Failure of one route is not evidence that every other route fails.",
-    experiments: [1, 2, 3, 4, 5],
+      "The broader emergence hypothesis remains open. Programme conclusion B stops this computational exploration for insufficient physical evidence; it does not assert that every other route fails.",
+    experiments: [1, 2, 3, 4, 5, 6, 7],
     sources: [
       {
         label: "Growth conclusion and open requirements",
@@ -683,6 +891,7 @@ export const claims: Claim[] = [
         label: "Continuum interpretation",
         path: "docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md",
       },
+      { label: "Final programme synthesis", path: "docs/FINAL_RESEARCH_SYNTHESIS.md" },
     ],
   },
   {
@@ -697,10 +906,11 @@ export const claims: Claim[] = [
       "A physical claim requires a theory connected to measurable predictions and evidence that distinguishes it from alternatives.",
     scope:
       "Drawing dots and reproducing geometric statistics cannot establish the ontology of physical spacetime. The microscopic depiction in the introduction is explicitly speculative.",
-    experiments: [1, 2, 3, 4, 5],
+    experiments: [1, 2, 3, 4, 5, 6, 7],
     sources: [
       { label: "Interpretation boundaries", path: "README.md" },
       { label: "Research log", path: "docs/RESEARCH_LOG.md" },
+      { label: "Final synthesis and physical limits", path: "docs/FINAL_RESEARCH_SYNTHESIS.md" },
     ],
   },
   {
@@ -708,9 +918,9 @@ export const claims: Claim[] = [
     title: "Our models resolve black-hole singularities",
     status: "untested",
     precise:
-      "These causal-order models provide a validated replacement for the classical black-hole singularity and recover appropriate gravitational dynamics.",
+      "These causal-order or quantum models provide a validated replacement for the classical black-hole singularity and recover appropriate gravitational dynamics.",
     evidence:
-      "No black-hole solution, gravitational field equation, curved interior or observational prediction is simulated in these five studies.",
+      "No black-hole solution, gravitational field equation, curved interior or empirically discriminating prediction is established in these seven studies.",
     assumptions:
       "Such a result would require controlled curved and continuum limits, consistent dynamics, exterior and horizon behavior, and a justified treatment of singular behavior.",
     scope:
@@ -726,6 +936,7 @@ export const claims: Claim[] = [
         label: "Finkelstein: the regular horizon",
         path: "https://doi.org/10.1103/PhysRev.110.965",
       },
+      { label: "Final quantum-link limitations", path: "docs/DYNAMICAL_LOCALITY_RESULTS.md" },
     ],
   },
 ];

@@ -6,12 +6,14 @@ visibly separate from archived ensemble measurements.
 
 ## Verified source and reproducible transformation
 
-The scientific source is verified main commit
-`9bc5984c656271c247354e0079fd900702642064`, which includes Experiment 5 (PR #5).
-The existing Python CI on that main commit passed. Every input's local bytes
-were independently compared with `git show <commit>:<path>` when establishing
-`scripts/source-lock.json`. The converter rejects a hash mismatch instead of
-silently pointing changed data at an immutable historical URL.
+The scientific source is immutable research commit
+`4e1a667ad2d590ee365a395021f0c9772e63b8d1`, which contains all seven reports,
+their archives and the final synthesis. This pin does not imply that the
+experimental PR has merged. Every source input is locked to its committed bytes
+in `scripts/source-lock.json`. The converter rejects a hash mismatch instead of
+silently pointing changed data at an immutable historical URL. The original
+thirteen datasets retain their scientific values; quantum and dynamical tables
+extend the atlas without rerunning or modifying research.
 
 Run from the repository root:
 
@@ -32,9 +34,8 @@ complete records. No observation is averaged or pooled by the conversion.
 
 Generated JSON stores the column names once and each record as an aligned value
 array. `src/data/hydrate.ts` restores the public `Dataset.rows` objects exactly,
-rejecting mismatched row widths. This lossless transport reduces the 13-dataset
-JSON payload from 7,890,736 to about 3,915,336 bytes (50.4%) without removing any
-scalar, missingness marker, interval string or interval endpoint. Browser routes
+rejecting mismatched row widths. This lossless transport stores scalars,
+missingness markers, interval strings and interval endpoints without change. Browser routes
 continue to receive the same dataset API. `catalog.ts` supplies metadata and source
 provenance without observations; `loader.ts` dynamically imports and hydrates only
 the selected dataset, caches successful requests and permits retry after a failed
@@ -46,7 +47,8 @@ The generated provenance manifest records reports, protocols, derivations and
 table SHA256s from the explicit source lock. Each actual data input is checked
 against its locked bytes on every build. Documentary references retain the
 reviewed commit's hashes and URLs even when the current research log or roadmap
-evolves; later experiment documents are not added to this first-five snapshot.
+evolves. The source set includes both quantum reports, their protocols and theory,
+and `docs/FINAL_RESEARCH_SYNTHESIS.md`.
 `local-dimensions` joins the archived local estimator from
 `summary.json` and global estimator from `global.csv`; both hashes are retained.
 These represent different nonlinear estimands, not interchangeable measurements.
@@ -76,6 +78,13 @@ them to the verified commit rather than to a moving branch.
 | **Exact fixed-p limit:** uniform finite sampled suborders approach chain law. | `docs/BACKGROUND_FREE_GROWTH_THEORY.md`, §§4–5 | Fixed 0<p<1; does not imply the infinite order is total or H/N→1. Sparse incomparable adjacent births persist. Finite motif trajectories need not be monotone. |
 | **Known class-specific obstruction:** studied ordinary CSG cannot approach the nondegenerate Minkowski sampling target. | Same theory; Brightwell–Georgiou, definitions1.2–1.3 and theorems1.4–1.6 | Nonnegative couplings with t0 or t1 positive; expected finite uniformly sampled labeled-order convergence to an atomless ordered probability space. Almost-semiorder limit forbids positive induced2+2/3+1 density. Not every modified dynamics or local scaling limit. |
 | **Exact insufficiency plus numerical illustration:** height-two control matches E[t22]=1/24 and passes its signature. | Growth theory §6, report, `primary.csv`, `global.csv` | iid fair lower/upper labels with q=(1-sqrt(1-4/(3sqrt2)))/2. Forced balanced layers would change the finite-N law. H≤2, no nonempty intervals, no3+1. |
+| **Supplied-interaction reconstruction:** all 72 registered h=1 hidden-chain realizations recover every bond. | `docs/QUANTUM_EMERGENCE_RESULTS.md`; `docs/experiments/quantum-information-v1/summary.json` | 24 independent realizations at each of n=6,8,10; exact adjusted success lower bound 0.84316. The chain locality is supplied; h=.5 recovery deteriorates. |
+| **Failed fixed-quantum advancement:** random all-to-all models fail physical phase-scramble advantages at n=6,10. | Quantum report and `summary.csv`; `QUANTUM_EMERGENCE_PROTOCOL.md` | Descriptive proximity survives. Nominal 95% bootstrap calibration covered 365/400 means, 91.25%; do not present its intervals as calibrated confidence. Fixed-model failure does not exclude every quantum geometry. |
+| **Exact quantum interpretation limits:** symmetric ground-state ties, sign-gauge ambiguity, Bell zero distance, purified-AND triangle violation and GHZ pair MI without pair negativity. | `docs/QUANTUM_EMERGENCE_THEORY.md`; quantum results | Theorems and explicit counterexamples under specified assumptions. Shortest-path closure enforces triangle inequalities but can leave a pseudometric. MDS rank is not spacetime dimension. |
+| **Finite registered quantum-link NO-GO:** all twelve cells have 0/12 joint successes; simultaneous exact upper bound 0.402190 < 0.8. | `docs/DYNAMICAL_LOCALITY_RESULTS.md`; `docs/experiments/dynamical-quantum-locality-v1/advancement.csv`; independent audit | One Hamiltonian, six parameter settings, N4/5, 12 independent E preparations/cell, specified ages/delays and intervention. Every critical numerical/control check passes. This is not a universal impossibility theorem or a scaling result. |
+| **Useful effects without advancement:** Born laws differ from graph nulls and nonselective measurement alters future laws. | Dynamical report; `structure.csv`, `raw.json.gz`, `equilibrium.json` | Exact finite probabilities, dependent branches and descriptive preparation means. Individual Born drawings are measurements, not persistent quantum trajectories or unique physical space. |
+| **Tiny-size extra-gate bias:** at N5 the degree-null connectivity advantage is `[P(P5)−6P(C3∪K2)]/7`. | Dynamical theory; `degree_identifiability.json`; independent graph audit | Requiring ≥0.1 forces P(P5) ≥0.7. Derived before primary generation; retained as a limitation. Primary C/L/T/D rejection does not depend on this additional GO condition. |
+| **Programme decision B:** close this computational exploration for insufficient physical evidence. | `docs/FINAL_RESEARCH_SYNTHESIS.md` | Original project artifacts and exact deductions are independently checkable, without a novelty or new-law claim. No Experiment 8, universal emergence no-go, gravity derivation or singularity resolution follows. |
 | **Open or untested physical claims:** all emergent-spacetime theories are impossible; physical spacetime is discrete; singularities are resolved. | Interpretation boundaries in every report and `docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md` | None is established or tested by these numerical studies. The broader emergence hypothesis remains open. No Einstein dynamics or black-hole solution is implemented. |
 
 ## Dataset inventory and uncertainty
@@ -95,9 +104,25 @@ them to the verified commit rather than to a moving branch.
 | growth-global | 2,200 | 96 histories per family; prefixes and four half-thinnings retain dependence. |
 | growth-primary | 64 | 48 growth entries with shared simultaneous bands;16 control entries with separate eight-entry bands. |
 | growth-conditional | 4,968 | Equal-batch pooled-count conditional ratios; whole-history uncertainty and independent reference uncertainty. |
+| quantum-summary | 2,043 | Nineteen selected named metrics from all 141 archived summary groups: 1,983 reported entries plus 60 wholly undefined entries explicitly represented with null values and their original undefined counts. Bootstrap bounds are descriptive after failed calibration. |
+| quantum-chain | 3 | One registered h=1 success result per size, each based on 24 independent realizations; exact multiplicity-adjusted binomial lower bounds. |
+| quantum-calibration | 16 | One archived normal-mean bootstrap coverage result (0.9125, with its Monte Carlo SE) plus fifteen exact-binomial coverage checks. These are distinct calibration procedures, not sixteen interchangeable estimates. |
+| dynamical-primary | 12 | One registered parameter/size cell per row, each containing 12 independent E preparations; simultaneous exact binomial bounds and component counts. |
+| dynamical-structure | 1,008 | Six structure ages for each of 168 primary preparation bundles; times within a preparation are dependent. Deterministic symmetric preparations have no ensemble CI. |
+| dynamical-response | 336 | Two registered gate delays for each of 168 bundles, copied from `gate.response_details`; actual full-quantum and paired-control response summaries, not fresh independent units. |
+| dynamical-conditioned | 216 | Existing secondary aggregate rows for graph-adapted fresh-matter frozen controls. Means, SDs, ranges and defined/undefined counts retain their archived meanings; no new equivalence test or pooling. |
 
 Check row counts from generated data if the presentation selection is ever
 intentionally revised. The immutable source tables remain the authority.
+
+The seven quantum/dynamical additions bring the catalog to twenty datasets. The
+converter splits archived interval endpoints without refitting. Where displayed,
+success fraction is only the transparent ratio of archived successes to attempts.
+Dynamical μ and Γ are joined from exact raw parameters by `(N, cell)`; no parameter
+is inferred from a plot or rounded label. The primary response extraction copies
+336 existing `gate.response_details` entries, while the conditioned table flattens
+216 existing descriptive aggregates. No new scientific mean, pooled effect,
+confidence interval, simulation or state amplitude is generated for the frontend.
 
 ## Preserved adverse outcomes and display rules
 
@@ -121,6 +146,19 @@ intentionally revised. The immutable source tables remain the authority.
   reference for all dimensions, metrics or boundary shapes.
 - Abstract graph layouts and high-dimensional projections are visualization
   coordinates. They are not inferred physical positions.
+- Experiment 6's 1,818 records include correlated fields, perturbations and snapshots;
+  they are not 1,818 independent realizations. Bootstrap intervals stay descriptive
+  after the 91.25% calibration coverage failure. The independent chain gate uses
+  separate exact binomial bounds.
+- Experiment 7 uses 144 independent E preparations across twelve cells. Its 168 total
+  preparation bundles also include 24 deterministic symmetric preparations. Exact
+  Born enumeration removes shot noise, not uncertainty across preparations.
+- Twelve E units per cell cannot certify GO even with all successes. They can
+  reject the observed large failure. N6 timing exclusion and the pre-primary
+  resource amendments are disclosed; continuum behavior remains unresolved.
+- Average graph-conditioned trace distance differs from trace distance of averaged
+  targets. The secondary graph-adapted F table retains undefined mass and makes no
+  new confidence or equivalence claim.
 - The event horizon is not the classical curvature singularity. Singularity
   motivation is educational context, not a result of a black-hole calculation.
 
@@ -146,3 +184,11 @@ intentionally revised. The immutable source tables remain the authority.
 The archived reports distinguish literature theorems, lab derivations and
 numerical tests. The atlas should preserve those distinctions; statistical
 compatibility never becomes a physical discovery by presentation.
+
+Quantum primary-source discussions are in `QUANTUM_EMERGENCE_THEORY.md` and
+`DYNAMICAL_LOCALITY_THEORY.md`, including Quantum Graphity (Konopka, Markopoulou
+and Severini, 2008), evolving-graph Bose–Hubbard dynamics (Hamma et al., 2010),
+low-temperature graphity (Caravelli and Markopoulou, 2011), and fragmentation under
+epitaxial optimization (Wilkinson and Greentree, 2015). Their Hamiltonians and
+approximations differ from this lab's; their results are not imported as universal
+claims about the registered model.

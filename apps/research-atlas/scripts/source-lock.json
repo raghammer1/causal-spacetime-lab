@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "9bc5984c656271c247354e0079fd900702642064",
+  "sourceCommit": "4e1a667ad2d590ee365a395021f0c9772e63b8d1",
   "sha256": {
     "docs/ADVERSARIAL_GEOMETRY_AUDIT.md": "d8dace10cc80dffe72a6df95614d4a3bae42562cbab930a56fd4c37069f4bd22",
     "docs/ADVERSARIAL_GEOMETRY_PROTOCOL.md": "7504899a67e9d563610d1b7a776df05b6e953c56f311bbd6d1a30ee41bfda190",
@@ -13,8 +13,13 @@
     "docs/DIMENSION_RECONSTRUCTION_PROTOCOL.md": "dfddc11a661df82aba12ffdf6af506f765095bd52b891e63f44a252195ce5f3d",
     "docs/DIMENSION_RECONSTRUCTION_RESULTS.md": "48b7efa472efef2134f4e36769d8a8a8836d21e6bdb45f631ad9ab7f08bc3f37",
     "docs/DIMENSION_THEORY.md": "2d9ba44b0c8fef7481a6ad9cb11fc0996a54970c35308171dbd6c4a2b147bc74",
+    "docs/DYNAMICAL_LOCALITY_COMPUTATIONAL_PLAN.md": "ef6a85a52e83d572d3f7fed331ed000c13d11fb881c3673a8651bdaee06b8034",
+    "docs/DYNAMICAL_LOCALITY_PROTOCOL.md": "f40df4d4a9b82f585c3c916793c8254d3119ea2ce0c8e1d43cea9209164d6ec2",
+    "docs/DYNAMICAL_LOCALITY_RESULTS.md": "d66dab283bf4c183e5e01b13c8609965c85e56ecdd159337c2e3a4e25c371937",
+    "docs/DYNAMICAL_LOCALITY_THEORY.md": "fcbe94446dfc2c99bf7196de38fa9eb12ad769f7f4ba8bde5625b1128438af07",
     "docs/EQUAL_COUNT_FOLLOWUP_PROTOCOL.md": "464ab5410cc7a2442fdf00eaf428fb449eebbdfe99c163aad24d715fa3f2d03e",
-    "docs/EXPERIMENTS.md": "0f529dce47394f35c2d7c539a3e52a819d941cc16c89401a99c3a16dea270d51",
+    "docs/EXPERIMENTS.md": "2aa60fbe21a1c55f5b65fdb975995bd2cc942de9dd425d294d98f4e45226d5d6",
+    "docs/FINAL_RESEARCH_SYNTHESIS.md": "d346587b83743e77c3e4d1cd66178d45edccc6f0739d2b33c66f66b8fef2c4ca",
     "docs/FINITE_DENSITY_PROTOCOL.md": "b05beac6c926d992a46a1a0806a0f53d071e79b50529a02d5eff0eb5969218fa",
     "docs/FINITE_DENSITY_RESULTS.md": "c46956fe649f1ecfac99024fe1e9bb46d7d4477cf5b6ae14978b387da621c5ef",
     "docs/LOCAL_CAUSAL_STRUCTURE_CONTINUUM.md": "2107bedd4a1bacfdbc37ebf917e4670ea4c32759521bdf0b1d7d1d452fceb166",
@@ -22,7 +27,11 @@
     "docs/LOCAL_CAUSAL_STRUCTURE_RESULTS.md": "25b2286dbaf2a758da9e8507bf56d3177d53ec4b01647d7a25783c00949fa1fa",
     "docs/LOCAL_CAUSAL_STRUCTURE_THEORY.md": "eb642c673bc41aeaf8f8bfd34e1cf68ef09236f9cf8b014bf428f5b32ad93ea9",
     "docs/LOCAL_CAUSAL_STRUCTURE_WORKLOAD.md": "361e37fe0364521f85fd65517efc5a430073ac3c0d2380a9ed98a07b8246f66a",
-    "docs/RESEARCH_LOG.md": "e0636b84cbbb85cf9b4c9a844d24d2a7401f700ef3c865862921915244ea2345",
+    "docs/QUANTUM_EMERGENCE_PROTOCOL.md": "090ddc3bc28b32a097a1c0c8741b76f514a7fc79de07f1a612ee9cf60b7c0909",
+    "docs/QUANTUM_EMERGENCE_RESULTS.md": "747f92f9728fdc04ad0eb422241daeba6d7905cced69665f010e2e1626c16761",
+    "docs/QUANTUM_EMERGENCE_THEORY.md": "28e7eef277863c4b73f6dd95af061ab9ca4aa3e726020afe0a74a070bc2bf3f7",
+    "docs/QUANTUM_EMERGENCE_WORKLOAD.md": "073f885a339e2f92f7a5e8448d54cf07bb42a21097db11a9a6ddfbd786708a07",
+    "docs/RESEARCH_LOG.md": "58de42083d920849be0fbe7c2b36d95027a3168f781e99e3313a477f84cda2db",
     "docs/THEORY.md": "25de4f2b082f40de6f0ebdad8aab91aa0b3c56f007a88bd82799cf973ac7860f",
     "docs/experiments/adversarial-geometry-v1/advancement.json": "841ebd524402f18d3ccdc2f29fde6dc03f6c740ec27e92a3845bdc8b8fadc042",
     "docs/experiments/adversarial-geometry-v1/rates.csv": "cea816366391537785494b90ee9d761abf781fc55978810aef18826552451c69",
@@ -31,10 +40,16 @@
     "docs/experiments/background-free-growth-v1/global.csv": "1e5c53af7221811d31003ca83454b7a9ab13c881779b747bfcc9ecb281807520",
     "docs/experiments/background-free-growth-v1/primary.csv": "448a1dba9f20b5cf43d710a1dba2e383e524a3af3b07adadeb10e1b46bc0f011",
     "docs/experiments/dimension-reconstruction-v1/summary.csv": "ccdd1d774594299eec5a6ea91a99cfdd0a33ae1b94068586f4b8723bfd7be4fb",
+    "docs/experiments/dynamical-locality-conditioned-response.json": "a33be0e29167754d2c7ab04314d9008c00bdcd6fe0d71cf5a6deeffbab9bc5f5",
+    "docs/experiments/dynamical-quantum-locality-v1/raw.json.gz": "05dfc7f7d217c3c4da228861d5edf25996dbae42ca78c3884f61c283b5254c72",
+    "docs/experiments/dynamical-quantum-locality-v1/structure.csv": "048215972552f8034d5e25dc01755106c10df5003c4ea763dd6d639a87298358",
+    "docs/experiments/dynamical-quantum-locality-v1/summary.json": "ed210ffa6d6a810854146e62622b4252c606ce69ff719415f7d1a684db75468c",
     "docs/experiments/equal-count-followup/summary.csv": "c18d7fd0075add7a62394a891521f1a7045b3b00a6d3a6a8d35d97a7de54680e",
     "docs/experiments/finite-density-scaling-v1/summary.csv": "d4d6574dbe04886cbe465ec3ede68b7b613a33b9671b0a1384e690bc23ce13c7",
     "docs/experiments/local-causal-structure-v1/conditional.csv": "99fe9556088eecf3c1e1d1fa44df0afc7d64f802d587ac86b5ce0120a501011b",
     "docs/experiments/local-causal-structure-v1/global.csv": "0be64aed37d7ee2e7ef3b61dda42af230d2ee7f40cd0933c03e950b9d83db9f4",
-    "docs/experiments/local-causal-structure-v1/summary.json": "b41482b889e3495c9f7279b66b021d89aabbee0052bd069aea83a2e345dff687"
+    "docs/experiments/local-causal-structure-v1/summary.json": "b41482b889e3495c9f7279b66b021d89aabbee0052bd069aea83a2e345dff687",
+    "docs/experiments/quantum-information-v1/calibration.json": "1b5c3cc899e0087d159c9386c456fca1cc2fcda7e10e145d68a31d7a4315ff19",
+    "docs/experiments/quantum-information-v1/summary.json": "9d66d8f9a958b3e2bae2432b595cd5cde335b513caf09d2941413a79955b58f3"
   }
 }

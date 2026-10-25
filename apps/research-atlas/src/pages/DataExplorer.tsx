@@ -1,12 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 import { datasetCatalog as datasets } from "../data/catalog";
 import AsyncDataPanel from "../components/AsyncDataPanel";
+import { experiments } from "../data/editorial";
 export default function DataExplorer() {
   const [params, setParams] = useSearchParams();
   const requested = datasets.find((d) => d.id === params.get("dataset"));
   const candidate =
     Number(params.get("experiment")) || requested?.experiment || 1;
-  const experiment = [1, 2, 3, 4, 5].includes(candidate) ? candidate : 1;
+  const experiment = experiments.some(e => e.id === candidate) ? candidate : 1;
   const choices = datasets.filter((d) => d.experiment === experiment);
   const current =
     requested?.experiment === experiment
@@ -31,18 +32,9 @@ export default function DataExplorer() {
             value={experiment}
             onChange={(e) => setParams({ experiment: e.target.value })}
           >
-            {[1, 2, 3, 4, 5].map((n) => (
-              <option key={n} value={n}>
-                {String(n).padStart(2, "0")} ·{" "}
-                {
-                  [
-                    "Time reconstruction",
-                    "Dimension reconstruction",
-                    "Adversarial geometry",
-                    "Local causal structure",
-                    "Background-free growth",
-                  ][n - 1]
-                }
+            {experiments.map((e) => (
+              <option key={e.id} value={e.id}>
+                {String(e.id).padStart(2, "0")} · {e.shortTitle}
               </option>
             ))}
           </select>
@@ -69,7 +61,7 @@ export default function DataExplorer() {
       <AsyncDataPanel key={current.id} datasetId={current.id} />
       <aside className="note-box">
         <strong>Read uncertainty in context.</strong> Pointwise bootstrap
-        intervals, Wilson intervals and simultaneous decision bands answer
+        intervals, Wilson intervals, exact binomial bounds and simultaneous decision bands answer
         different questions. Some retained percentile intervals do not contain
         their point estimate. We preserve these adverse results rather than
         adjusting the display.
