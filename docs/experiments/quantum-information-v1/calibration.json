@@ -1,0 +1,84 @@
+{
+  "binomial_exact_coverage": [
+    {
+      "coverage": 0.9977701562500001,
+      "n": 6,
+      "p": 0.05
+    },
+    {
+      "coverage": 0.9984000000000005,
+      "n": 6,
+      "p": 0.2
+    },
+    {
+      "coverage": 0.9843750000000002,
+      "n": 6,
+      "p": 0.5
+    },
+    {
+      "coverage": 1.0000000000000002,
+      "n": 6,
+      "p": 0.8
+    },
+    {
+      "coverage": 1.0,
+      "n": 6,
+      "p": 0.95
+    },
+    {
+      "coverage": 0.9977635967702722,
+      "n": 12,
+      "p": 0.05
+    },
+    {
+      "coverage": 0.996096868352,
+      "n": 12,
+      "p": 0.2
+    },
+    {
+      "coverage": 0.9968261718750007,
+      "n": 12,
+      "p": 0.5
+    },
+    {
+      "coverage": 1.0000000000000002,
+      "n": 12,
+      "p": 0.8
+    },
+    {
+      "coverage": 1.0,
+      "n": 12,
+      "p": 0.95
+    },
+    {
+      "coverage": 0.9940254494135117,
+      "n": 24,
+      "p": 0.05
+    },
+    {
+      "coverage": 0.987378910079903,
+      "n": 24,
+      "p": 0.2
+    },
+    {
+      "coverage": 0.9886720776557929,
+      "n": 24,
+      "p": 0.5
+    },
+    {
+      "coverage": 0.9952776335171305,
+      "n": 24,
+      "p": 0.8
+    },
+    {
+      "coverage": 1.0000000000000002,
+      "n": 24,
+      "p": 0.95
+    }
+  ],
+  "interpretation": "Coverage audit only; no threshold tuning or fitted classifier.",
+  "normal_coverage": 0.9125,
+  "normal_coverage_mc_se": 0.014128318194321646,
+  "normal_trials": 400,
+  "phase": "calibration"
+}

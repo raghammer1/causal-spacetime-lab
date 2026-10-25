@@ -29,3 +29,9 @@ jobs:
         run: python -m causal_lab.local_structure_study --smoke --workers 1 --output results/local-structure-smoke
       - name: Reproduce background-free growth smoke study
         run: python -m causal_lab.growth_study --smoke --workers 1 --output results/growth-smoke
+      - name: Reproduce quantum information smoke study
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: python -m causal_lab.quantum_study --smoke --output results/quantum-smoke
