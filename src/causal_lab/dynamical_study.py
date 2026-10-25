@@ -456,6 +456,10 @@ def pilot(out):
         if projection<=1200:chosen=r;break
     else:
         checkpoint()
+        write_json(out/'pilot.json',dict(status='infeasible',source=initial_source,measurements=measurements,
+            maxima=maxima,fixed_seconds=fixed,decisions=decision,choices=choices,
+            postprocessing_seconds_largest_candidate=overhead,pilot_elapsed_seconds=time.monotonic()-start,
+            peak_rss_bytes=peak_bytes()))
         raise RuntimeError('mandatory minimum cohort does not fit; pre-primary computational amendment required')
     if 'N6' not in decision:
         allcost=2*(sum(maxima[n]*6*(3*chosen+2)+fixed[n] for n in (4,5,6))+overhead)

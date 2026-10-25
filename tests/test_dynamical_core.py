@@ -514,3 +514,116 @@ def test_matrix_free_zero_generator_and_replay_are_deterministic():
     nonzero = build_hamiltonian(parameters(), representation="matrix_free")
     state = random_state(nonzero.params, 382)
     np.testing.assert_array_equal(evolve_state(nonzero, state, .42), evolve_state(nonzero, state, .42))
+
+
+@pytest.mark.parametrize("mode", ["csr", "matrix_free"])
+@pytest.mark.parametrize("mu,U", [(-.7, .9), (2., 1.), (.3, 0.)])
+def test_frozen_sectors_match_full_dense_complex_entangled_evolution(mode, mu, U):
+    params = replace(parameters(), Gamma=0., mu=mu, U=U)
+    model = build_hamiltonian(params, representation=mode)
+    state = random_state(params, 939)
+    matrix = dense_hamiltonian(params)
+    reference = state_diagnostics(model, state)
+    born = born_probabilities(state, params.N)
+    for dt in (.125, 2., -1.5, 13.):
+        actual = evolve_state(model, state, dt)
+        # Full complex amplitudes test the relative graph-sector phases too.
+        np.testing.assert_allclose(actual, expm(-1j * dt * matrix) @ state, atol=8e-13)
+        np.testing.assert_allclose(evolve_state(model, actual, -dt), state, atol=4e-14)
+        np.testing.assert_allclose(born_probabilities(actual, params.N), born, atol=2e-15)
+        assert state_diagnostics(model, actual, reference)["valid"]
+
+
+def test_frozen_full_response_matches_independent_dense_reductions():
+    params = replace(parameters(), Gamma=0.)
+    matrix = dense_hamiltonian(params)
+    model = build_hamiltonian(params)
+    aged = random_state(params, 10229)
+    delays = [0., .05, .5, 2.]
+    result = response_trajectories(model, aged, delays)
+    for t_index, time in enumerate(delays):
+        evolution = expm(-1j * time * matrix)
+        baseline = evolution @ aged
+        for source in range(params.N):
+            probe = evolution @ local(Y, source, params.Q) @ aged
+            for target in range(params.N):
+                difference = (independent_density(probe, target, params.Q)
+                              - independent_density(baseline, target, params.Q))
+                expected = np.abs(np.linalg.eigvalsh(difference)).sum() / 2
+                assert result["response"][t_index, source, target] == pytest.approx(expected, abs=1e-13)
+    assert result["diagnostics"]["valid"]
+    assert result["diagnostics"]["max_scaled_energy_drift"] < 2e-13
+    assert result["diagnostics"]["max_scaled_parity_drift"] < 2e-13
+
+
+def test_frozen_cache_reuses_only_real_matter_eigenpairs_across_graph_costs(monkeypatch):
+    core._frozen_matter_spectra.cache_clear()
+    original = np.linalg.eigh
+    calls = []
+
+    def record(blocks):
+        calls.append(blocks.shape)
+        return original(blocks)
+
+    monkeypatch.setattr(np.linalg, "eigh", record)
+    params = replace(parameters(), Gamma=0.)
+    state = random_state(params, 1987)
+    for mu, U in ((-.7, .9), (2., 1.), (.1, .4)):
+        evolve_state(build_hamiltonian(replace(params, mu=mu, U=U)), state, .37)
+    assert calls == [(8, 8, 8)]
+    values, vectors = core._frozen_matter_spectra(params.N, params.h, params.g)
+    assert values.dtype == vectors.dtype == np.float64
+    assert not values.flags.writeable and not vectors.flags.writeable
+    assert core._frozen_matter_spectra.cache_info().maxsize == 2
+    with pytest.raises(ValueError, match="N<=5"):
+        core._frozen_matter_spectra(6, 1., 1.)
+
+
+def test_n5_frozen_spectral_action_matches_sparse_action_without_global_rng(monkeypatch):
+    params = Parameters(5, 1., 1., 0., 2., 1.)
+    model = build_hamiltonian(params)
+    state = random_state(params, 12721)
+    # Independent Taylor action on the original sparse matrix at a safe norm.
+    dt = .3
+    expected = core.expm_multiply(-1j * dt * model.operator, state,
+                                 traceA=-1j * dt * model.trace)
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("frozen propagation must not call random norm probes or the Taylor action")
+
+    monkeypatch.setattr(np.random, "randint", forbidden)
+    monkeypatch.setattr(core, "expm_multiply", forbidden)
+    before = np.random.get_state()
+    actual = evolve_state(model, state, dt)
+    assert_same_legacy_rng(before, np.random.get_state())
+    np.testing.assert_allclose(actual, expected, atol=2e-14)
+    np.testing.assert_allclose(evolve_state(model, actual, -dt), state, atol=2e-14)
+    np.testing.assert_allclose(born_probabilities(actual, 5), born_probabilities(state, 5), atol=2e-16)
+    assert state_diagnostics(model, actual, state_diagnostics(model, state))["valid"]
+    values, vectors = core._frozen_matter_spectra(5, 1., 1.)
+    assert values.nbytes + vectors.nbytes == 8.25 * 1024 ** 2
+    # Inspect selected blocks by an independent bit-based matter Hamiltonian.
+    for graph in (0, 1, 137, 1023):
+        block = np.zeros((32, 32))
+        for matter in range(32):
+            for site in range(5):
+                block[matter, matter ^ (1 << (4 - site))] = -params.h
+            block[matter, matter] = direct_basis_energy(replace(params, mu=0., U=0.), (matter << 10) | graph)
+        np.testing.assert_allclose(block @ vectors[graph], vectors[graph] * values[graph], atol=3e-14)
+        np.testing.assert_allclose(vectors[graph].T @ vectors[graph], np.eye(32), atol=3e-15)
+
+
+def test_frozen_eigensolver_failure_is_explicit_without_retry(monkeypatch):
+    core._frozen_matter_spectra.cache_clear()
+    calls = []
+
+    def fail(*args, **kwargs):
+        calls.append(1)
+        raise np.linalg.LinAlgError("injected sector failure")
+
+    monkeypatch.setattr(np.linalg, "eigh", fail)
+    params = replace(parameters(2), Gamma=0.)
+    with pytest.raises(DynamicalNumericalError) as caught:
+        evolve_state(build_hamiltonian(params), random_state(params), .2)
+    assert calls == [1]
+    assert caught.value.diagnostics == {"valid": False, "failure": "sector_nonconvergence"}

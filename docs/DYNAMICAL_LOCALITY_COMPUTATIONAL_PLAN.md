@@ -51,3 +51,26 @@ The numerical method is the scaled Taylor exponential action of Al-Mohy and High
 implemented by SciPy; the private core is guarded and verified in repository tests.
 [Original numerical paper](https://doi.org/10.1137/100788860),
 [SciPy exponential-action documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.expm_multiply.html).
+
+## Resource failure retained; exact frozen-sector optimization
+
+The first complete N4/N5 timing pilot on source24b7525 exceeded the conservative
+planning target even at R4: its projection lower bound was1986.030 seconds,
+excluding postprocessing. The retained timing record is
+[attempt1](experiments/dynamical-locality-pilot-attempt1.json). No primary outcomes
+were generated or inspected. N6 also failed its censored admission test.
+
+Before a second pilot, the Gamma=0 controls use their exact block decomposition:
+
+    H_(Gamma=0) = direct_sum_G [K_G + C_G I],
+    K_G = −h sum_i X_i − g sum_(ij in G) ZiZj,
+    C_G = mu |E(G)| + U sum_i choose(d_i(G),2).
+
+For any input, including an entangled matter/link state, apply
+exp(−i C_G t) exp(−i K_G t) to its matter-amplitude column for each graph G.
+This retains coherent relative phases and performs no measurement or graph
+selection. For N<=5, cache real eigensystems keyed only by N,h,g, with at most two
+cached sizes. The matrix-free N6 path is unchanged. Independent dense-state,
+entangled-state, phase, reversal and conservation tests validate the optimization.
+This changes computation only; the full primary Hamiltonian, controls, parameter
+families, scientific thresholds, precision and resource limits remain frozen.

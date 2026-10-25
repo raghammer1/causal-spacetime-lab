@@ -302,10 +302,59 @@ def state_diagnostics(model: Hamiltonian, state, reference=None) -> dict:
     return result
 
 
+@lru_cache(maxsize=2)
+def _frozen_matter_spectra(N, h, g):
+    """Real eigenpairs of the matter Hamiltonian in every fixed graph sector.
+
+    At Gamma=0 each graph mask is conserved. The scalar graph cost depends on
+    mu and U, but these matter eigenvectors do not. Two cached entries bound
+    storage to at most 16.5 MiB at N<=5; N=6 must use the matrix-free action.
+    Eigenvector axes are [graph,matter,eigenvector]. No state is cached.
+    """
+    if not 1 <= N <= 5:
+        raise ValueError("fixed-graph spectral cache is restricted to N<=5")
+    _, occupations, _, _, pairs = _basis(N)
+    matter_count = 1 << N
+    matter_labels = np.arange(matter_count)
+    blocks = np.zeros((len(occupations), matter_count, matter_count))
+    blocks[:, matter_labels, matter_labels] = -g * (pairs @ occupations.T).T
+    for site in range(N):
+        blocks[:, matter_labels, matter_labels ^ (1 << (N - 1 - site))] = -h
+    try:
+        energies, vectors = np.linalg.eigh(blocks)
+    except np.linalg.LinAlgError as error:
+        raise DynamicalNumericalError("fixed-graph eigensolver did not converge",
+                                      {"valid": False, "failure": "sector_nonconvergence"}) from error
+    if not np.all(np.isfinite(energies)) or not np.all(np.isfinite(vectors)):
+        raise DynamicalNumericalError("nonfinite fixed-graph eigenpairs", {"valid": False})
+    energies.setflags(write=False)
+    vectors.setflags(write=False)
+    return energies, vectors
+
+
+def _evolve_frozen_sectors(model, vector, dt):
+    """Exact block decomposition, including graph-dependent scalar phases.
+
+    This acts on all amplitudes, including arbitrary matter-link entanglement;
+    no graph is sampled or dephased. Each real symmetric block is diagonalized
+    in double precision, then its spectral exponential is applied.
+    """
+    params = model.params
+    energies, vectors = _frozen_matter_spectra(params.N, params.h, params.g)
+    _, occupations, degrees, _, _ = _basis(params.N)
+    graph_cost = (params.mu * occupations.sum(axis=1)
+                  + params.U * (degrees * (degrees - 1)).sum(axis=1) / 2)
+    amplitudes = vector.reshape(1 << params.N, 1 << params.M).T
+    coefficients = np.einsum("gmk,gm->gk", vectors, amplitudes, optimize=False)
+    coefficients *= np.exp(-1j * dt * (energies + graph_cost[:, None]))
+    return np.einsum("gmk,gk->gm", vectors, coefficients, optimize=False).T.reshape(-1)
+
+
 def evolve_state(model: Hamiltonian, state, dt) -> np.ndarray:
     """Apply exp(-i H dt) without SciPy's hidden global-random norm estimation.
 
-    CSR steps have centered one-norm at most60 (below SciPy's guarded63.36
+    Gamma=0 at N<=5 uses the exact fixed-graph block spectral decomposition.
+    Otherwise CSR steps have centered one-norm at most60 (below SciPy's guarded63.36
     threshold for one RHS). Matrix-free action reuses SciPy's existing Taylor
     kernel and theta table with exact analytic-norm degree/scaling selection.
     Both preserve the same2**-53 kernel tolerance. Negative dt verifies reversal.
@@ -315,9 +364,11 @@ def evolve_state(model: Hamiltonian, state, dt) -> np.ndarray:
         raise ValueError("time increment must be finite and real")
     if dt == 0:
         return vector.copy()
-    kernel, theta_table = _private_expm_contract()
     norm = abs(float(dt)) * model.centered_one_norm
-    if model.representation == "csr":
+    if model.params.Gamma == 0 and model.params.N <= 5:
+        result = _evolve_frozen_sectors(model, vector, float(dt))
+    elif model.representation == "csr":
+        _private_expm_contract()
         # This public path uses the exact sparse norm, then its nonrandom branch.
         steps = max(1, math.ceil(norm / 60.))
         step = float(dt) / steps
@@ -326,6 +377,7 @@ def evolve_state(model: Hamiltonian, state, dt) -> np.ndarray:
             result = expm_multiply((-1j * step) * model.operator, result,
                                    traceA=-1j * step * model.trace)
     else:
+        kernel, theta_table = _private_expm_contract()
         center = model.trace / model.params.dimension
         def centered_action(array):
             return model.operator @ array - center * array
