@@ -318,3 +318,13 @@ evidence and honest limits. No emergent physical spacetime, Einstein dynamics,
 physical black-hole model or singularity resolution was established. A restart
 needs an independently justified physical principle, controlled derivation or
 empirically discriminating prediction.
+
+**Publication portability correction:** the first Python 3.10 push CI retained one
+static-cache regression failure (scaled energy drift 1.1111161e−12 versus test-only
+1e−12). Both independently triggered PR jobs passed. The corrected test uses
+2e−11 and additionally checks its worst-drift graph with an independent matrix
+exponential at zero relative tolerance. The registered 2e−8 conservation limit,
+frozen production source, primary data and scientific decision are unchanged.
+The initial failure is linked in the final results report.
+The corrected full suite (1,142 tests) and smoke CLI passed locally under both
+Python 3.14.4 and 3.10.19; older-environment warnings are disclosed in the report.

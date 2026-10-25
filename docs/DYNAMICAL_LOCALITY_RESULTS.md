@@ -440,6 +440,23 @@ uses a guarded private SciPy kernel to avoid hidden global-random norm estimates
 that implementation dependency is explicit. Frozen Γ=0 propagation retains all
 coherent graph-sector phases. No classical surrogate is mixed with quantum data.
 
+The [first published Python 3.10 push run](https://github.com/raghammer1/causal-spacetime-lab/actions/runs/40180992979)
+retains one regression-test failure: the N=5 static cache had scaled energy drift
+1.1111161e−12 against a test-only 1e−12 allowance. The independently triggered PR
+run passed on both Python 3.10 and 3.14. A post-primary portability correction sets
+that regression allowance to 2e−11 and adds an independent matrix-exponential
+comparison for the graph with the largest measured drift, using absolute tolerance
+2e−11 and zero relative tolerance. This is an engineering tolerance, not a rigorous
+roundoff bound. It remains 1,000 times tighter than the unchanged registered energy
+limit of 2e−8. Frozen production code, source hashes, scientific gates and primary
+artifacts are unchanged; the initial failed CI is not omitted from the record.
+The corrected full suite and end-to-end smoke CLI passed locally on both Python
+3.14.4 and 3.10.19 (1,142 tests each). The older macOS NumPy/SciPy environment emitted
+474 non-fatal test warnings, including matrix-multiplication runtime warnings;
+finite-value and independent numerical assertions still passed. The primary
+archive and replay use the recorded Python 3.14 environment, not this compatibility
+environment.
+
 On the publication branch, run the new smoke CLI and the independent auditors:
 
 ```bash
